@@ -705,7 +705,7 @@ if st.session_state.kelompok['kondisi4']:
         st.rerun()
         
 def soal_adaptif():
-    st.markdown(""" <div style="display:flex; justify-content:space-evenly;align-items:center; border:2px solid white; margin-bottom:10px; padding:2px;background-color:grey">
+    st.markdown(""" <div style="display:flex; justify-content:space-evenly;align-items:center; border:2px solid white; margin-bottom:10px; padding:2px;background-color:grey;">
                     <img src='https://i.pinimg.com/originals/48/59/55/485955115c68020ce3ba16bf18a95d8a.gif' style='width:100px;'></img>
                     <div class="label">Level Pertama</div>
                     </div>""",unsafe_allow_html=True)
@@ -1022,6 +1022,7 @@ if st.session_state.kelompok['kondisi11']:
         st.session_state.kelompok['kondisi12']=True
         st.rerun()
     
+
 
 
 
