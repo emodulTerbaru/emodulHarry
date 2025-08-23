@@ -22,7 +22,7 @@ if "adaptif" not in st.session_state:
 if "kelompok" not in st.session_state:
     st.session_state.kelompok = {'kondisi1':True,'kondisi2':True,'kondisi3':False,'kondisi4':False,'kondisi5':False,
                                  'kondisi6':False,'kondisi7':False,'kondisi8':False,'kondisi9':False, 'kondisi10':False,
-                                 'kondisi11':False,'kondisi12':False,'kondisi13':False,'kondisi14':False, 'kondisi15':False}
+                                 'kondisi11':False,'kondisi12':False,'kondisi13':False,'kondisi14':False, 'kondisi15':False, 'kondisi16':False}
 
 if "jawaban" not in st.session_state:
     st.session_state.jawaban = {"jawab1":0,"jawab2":0,"jawab3":0,"jawab4":0,"jawab5":0,
@@ -49,7 +49,18 @@ if "cerita5" not in st.session_state:
     st.session_state.cerita5 = False
 if "cerita6" not in st.session_state:
     st.session_state.cerita6 = False
-
+if "cerita7" not in st.session_state:
+    st.session_state.cerita7 = False
+if "cerita8" not in st.session_state:
+    st.session_state.cerita8 = False
+if "cerita9" not in st.session_state:
+    st.session_state.cerita9 = False
+if "cerita10" not in st.session_state:
+    st.session_state.cerita10 = False
+if "jawaban1" not in st.session_state:
+    st.session_state.jawaban1 = {"jawab1":"","jawab2":"","jawab3":"","jawab4":"","jawab5":"",
+                                "jawab6":"","jawab7":"","jawab8":"","jawab9":"","jawab10":""}
+st.sidebar.image("https://res.cloudinary.com/ikip-siliwangi/image/upload/v1753921874/logo_rw63xi.jpg", width=100)
 kolom = st.columns(3)
 with kolom[0]:
     nama = st.text_input("Nama: ")
@@ -161,117 +172,13 @@ def pemetaan():
     st.markdown('##### Pelajari video tentang persamaan dan pertidaksamaan satu variabel')
     st.video("https://youtu.be/OJhDRcYojt8?si=-igxq_rr3taW-Un5")
     st.markdown('##### Permainan tentang persamaan dan pertidaksamaan satu variabel')
-    kode_html="""
-    <!DOCTYPE html>
-<html lang="id">
-<head>
-  <meta charset="UTF-8">
-  <title>Math Quest: Persamaan & Pertidaksamaan</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: linear-gradient(to right, #6dd5fa, #2980b9);
-      color: #fff;
-      text-align: center;
-      padding: 50px;
-    }
-
-    h1 {
-      font-size: 2em;
-      margin-bottom: 20px;
-    }
-
-    #game-box {
-      background: rgba(0,0,0,0.3);
-      padding: 20px;
-      border-radius: 15px;
-      width: 400px;
-      margin: auto;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.5);
-    }
-
-    .btn {
-      padding: 10px 20px;
-      margin: 10px;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-      font-size: 16px;
-      background: #27ae60;
-      color: white;
-      transition: 0.3s;
-    }
-    .btn:hover {
-      background: #2ecc71;
-    }
-
-    #feedback {
-      margin-top: 15px;
-      font-size: 18px;
-      font-weight: bold;
-    }
-
-    #score {
-      margin-top: 20px;
-      font-size: 20px;
-    }
-  </style>
-</head>
-<body>
-  <h1>🎮 Math Quest: Persamaan & Pertidaksamaan 🎮</h1>
-  <div id="game-box">
-    <p id="question">Klik "Mulai" untuk bermain!</p>
-    <input type="text" id="answer" placeholder="Jawabanmu" />
-    <br><br>
-    <button class="btn" onclick="checkAnswer()">Jawab</button>
-    <button class="btn" onclick="nextQuestion()">Soal Berikutnya</button>
-    <div id="feedback"></div>
-    <div id="score">Skor: 0</div>
-  </div>
-
-  <script>
-    const questions = [
-      {q: "2x + 5 = 11, berapakah x?", ans: 3},
-      {q: "5x - 7 = 8, berapakah x?", ans: 3},
-      {q: "3x + 2 < 11, nilai maksimum x adalah?", ans: 2},
-      {q: "10 - 2x = 4, berapakah x?", ans: 3},
-      {q: "x/2 + 4 = 7, berapakah x?", ans: 6},
-      {q: "7x > 21, nilai terkecil x adalah?", ans: 4},
-    ];
-
-    let currentIndex = -1;
-    let score = 0;
-
-    function nextQuestion() {
-      currentIndex = Math.floor(Math.random() * questions.length);
-      document.getElementById("question").innerText = questions[currentIndex].q;
-      document.getElementById("answer").value = "";
-      document.getElementById("feedback").innerText = "";
-    }
-
-    function checkAnswer() {
-      let userAns = document.getElementById("answer").value;
-      if (userAns === "") {
-        document.getElementById("feedback").innerText = "⚠️ Jawaban belum diisi!";
-        return;
-      }
-      if (parseFloat(userAns) === questions[currentIndex].ans) {
-        document.getElementById("feedback").innerText = "✅ Benar!";
-        score += 10;
-      } else {
-        document.getElementById("feedback").innerText = "❌ Salah! Jawaban benar: " + questions[currentIndex].ans;
-        score -= 5;
-      }
-      document.getElementById("score").innerText = "Skor: " + score;
-    }
-  </script>
-</body>
-</html>
-    """
-    st.components.v1.html(kode_html,height=500)
+    
+    st.markdown("""
+    <iframe src='https://emodulterbaru.github.io/persamaan1variabel/PSLV.html' style='width:100%; height:2400px'></iframe>
+    """,unsafe_allow_html=True)
 
 def kover():
-    st.markdown('<div id="gambar"></div>',unsafe_allow_html=True)
+    st.markdown('<div id="gambar" ></div>',unsafe_allow_html=True)
 
 if st.session_state.peta:
     pemetaan()
@@ -294,6 +201,10 @@ if st.session_state.kelompok['kondisi2']:
         st.session_state.cerita4=False
         st.session_state.cerita5=False
         st.session_state.cerita6=False
+        st.session_state.cerita7=False
+        st.session_state.cerita8=False
+        st.session_state.cerita9=False
+        st.session_state.cerita10=False
         st.rerun()
 
 def soal_prasyarat():
@@ -381,6 +292,10 @@ def soal_prasyarat():
             st.session_state.cerita4=False
             st.session_state.cerita5=False
             st.session_state.cerita6=False
+            st.session_state.cerita7=False
+            st.session_state.cerita8=False
+            st.session_state.cerita9=False
+            st.session_state.cerita10=False
             st.rerun()
     
 if st.session_state.prasyarat:
@@ -401,6 +316,10 @@ if st.session_state.kelompok['kondisi3']:
         st.session_state.cerita4=False
         st.session_state.cerita5=False
         st.session_state.cerita6=False
+        st.session_state.cerita7=False
+        st.session_state.cerita8=False
+        st.session_state.cerita9=False
+        st.session_state.cerita10=False
         st.rerun()
 def materi_prasyarat_tampil():
     st.error("Nilai Anda: "+str(st.session_state.nilai_prasyarat))
@@ -702,10 +621,14 @@ if st.session_state.kelompok['kondisi4']:
         st.session_state.cerita4=False
         st.session_state.cerita5=False
         st.session_state.cerita6=False
+        st.session_state.cerita7=False
+        st.session_state.cerita8=False
+        st.session_state.cerita9=False
+        st.session_state.cerita10=False
         st.rerun()
         
 def soal_adaptif():
-    st.markdown(""" <div style="display:flex; justify-content:space-evenly;align-items:center; border:2px solid white; margin-bottom:10px; padding:2px;background-color:grey;">
+    st.markdown(""" <div style="display:flex; justify-content:space-evenly;align-items:center; border:2px solid white; margin-bottom:10px; padding:2px; background-color:grey">
                     <img src='https://i.pinimg.com/originals/48/59/55/485955115c68020ce3ba16bf18a95d8a.gif' style='width:100px;'></img>
                     <div class="label">Level Pertama</div>
                     </div>""",unsafe_allow_html=True)
@@ -739,7 +662,7 @@ def soal_adaptif():
 if st.session_state.adaptif:
     soal_adaptif()
 def level_kedua():
-    st.markdown(""" <div style="display:flex; justify-content:space-evenly;align-items:center; border:2px solid white; margin-bottom:10px; padding:2px; background-color:grey">
+    st.markdown(""" <div style="display:flex; justify-content:space-evenly;align-items:center; border:2px solid white; margin-bottom:10px; padding:2px;">
                     <img src='https://i.pinimg.com/originals/48/59/55/485955115c68020ce3ba16bf18a95d8a.gif' style='width:100px;'></img>
                     <div class="label">Level Kedua</div>
                     </div>""",unsafe_allow_html=True)
@@ -772,7 +695,7 @@ if st.session_state.pengecekan1:
     level_kedua()
 
 def level_ketiga():
-    st.markdown(""" <div style="display:flex; justify-content:space-evenly;align-items:center; border:2px solid white; margin-bottom:10px; padding:2px;background-color:grey">
+    st.markdown(""" <div style="display:flex; justify-content:space-evenly;align-items:center; border:2px solid white; margin-bottom:10px; padding:2px;">
                     <img src='https://i.pinimg.com/originals/48/59/55/485955115c68020ce3ba16bf18a95d8a.gif' style='width:100px;'></img>
                     <div class="label">Level Ketiga</div>
                     </div>""",unsafe_allow_html=True)
@@ -803,6 +726,10 @@ if st.session_state.kelompok['kondisi5']:
         st.session_state.cerita4=False
         st.session_state.cerita5=False
         st.session_state.cerita6=False
+        st.session_state.cerita7=False
+        st.session_state.cerita8=False
+        st.session_state.cerita9=False
+        st.session_state.cerita10=False
         st.session_state.adaptif=True
         st.session_state.kelompok['kondisi6']=True
         st.rerun()
@@ -822,6 +749,7 @@ def soal_cerita1():
                 - ##### Tentukan berapa sumbangan Pak Candra dengan menggunakan persamaan satu variabel.
                 - ##### Bagaimana kegiatan gotong royong ini mencerminkan nilai persatuan dalam Pancasila?
                 """)
+    st.session_state.jawaban1['jawab1']=st.text_area("Keterangan Jawaban1")
 if st.session_state.cerita1:
     soal_cerita1()
 if st.session_state.kelompok['kondisi6']:
@@ -838,6 +766,10 @@ if st.session_state.kelompok['kondisi6']:
         st.session_state.cerita4=False
         st.session_state.cerita5=False
         st.session_state.cerita6=False
+        st.session_state.cerita7=False
+        st.session_state.cerita8=False
+        st.session_state.cerita9=False
+        st.session_state.cerita10=False
         st.session_state.pengecekan1 = False
         st.session_state.pengecekan2 = False
         st.session_state.kelompok['kondisi7']=True
@@ -858,6 +790,7 @@ def soal_cerita2():
                 - ##### Tentukan berapa sumbangan Pak Candra dengan menggunakan persamaan satu variabel.
                 - ##### Mengapa kejujuran dalam mencatat hasil penjualan merupakan bagian dari nilai kemanusiaan yang adil dan beradab?
                 """)
+    st.session_state.jawaban1['jawab2']=st.text_area("Keterangan Jawaban2")
 if st.session_state.cerita2:
     soal_cerita2()
 if st.session_state.kelompok['kondisi7']:
@@ -873,6 +806,10 @@ if st.session_state.kelompok['kondisi7']:
         st.session_state.cerita4=False
         st.session_state.cerita5=False
         st.session_state.cerita6=False
+        st.session_state.cerita7=False
+        st.session_state.cerita8=False
+        st.session_state.cerita9=False
+        st.session_state.cerita10=False
         st.session_state.pengecekan1 = False
         st.session_state.pengecekan2 = False
         st.session_state.kelompok['kondisi8']=True
@@ -893,6 +830,7 @@ def soal_cerita3():
                 - ##### Tentukan berapa jumlah siswa dalam kelas tersebut.
                 - ##### Bagaimana sikap membantu teman ini mencerminkan nilai keadilan sosial dalam Pancasila?
                 """)
+    st.session_state.jawaban1['jawab3']=st.text_area("Keterangan Jawaban3")
 if st.session_state.cerita3:
     soal_cerita3()
 if st.session_state.kelompok['kondisi8']:
@@ -908,6 +846,10 @@ if st.session_state.kelompok['kondisi8']:
         st.session_state.cerita4=False
         st.session_state.cerita5=False
         st.session_state.cerita6=False
+        st.session_state.cerita7=False
+        st.session_state.cerita8=False
+        st.session_state.cerita9=False
+        st.session_state.cerita10=False
         st.session_state.pengecekan1 = False
         st.session_state.pengecekan2 = False
         st.session_state.kelompok['kondisi9']=True
@@ -928,6 +870,7 @@ def soal_cerita4():
                 - ##### Tentukan jumlah siswa dalam kelas tersebut dengan menggunakan persamaan satu variabel.
                 - ##### Bagaimana kegiatan musyawarah dalam menentukan biaya ini sesuai dengan nilai kerakyatan dalam Pancasila?
                 """)
+    st.session_state.jawaban1['jawab4']=st.text_area("Keterangan Jawaban4")
 if st.session_state.cerita4:
     soal_cerita4()
 if st.session_state.kelompok['kondisi9']:
@@ -943,6 +886,10 @@ if st.session_state.kelompok['kondisi9']:
         st.session_state.cerita4=True
         st.session_state.cerita5=False
         st.session_state.cerita6=False
+        st.session_state.cerita7=False
+        st.session_state.cerita8=False
+        st.session_state.cerita9=False
+        st.session_state.cerita10=False
         st.session_state.pengecekan1 = False
         st.session_state.pengecekan2 = False
         st.session_state.kelompok['kondisi10']=True
@@ -964,6 +911,7 @@ def soal_cerita5():
                 - ##### Tentukan berapa banyak karung beras yang disumbangkan masing-masing kelompok dengan menggunakan persamaan satu variabel.
                 - ##### Mengapa kegiatan ini mencerminkan nilai toleransi dan Ketuhanan Yang Maha Esa dalam Pancasila?
                 """)
+    st.session_state.jawaban1['jawab5']=st.text_area("Keterangan Jawaban5")
 if st.session_state.cerita5:
     soal_cerita5()
 if st.session_state.kelompok['kondisi10']:
@@ -979,6 +927,10 @@ if st.session_state.kelompok['kondisi10']:
         st.session_state.cerita4=False
         st.session_state.cerita5=True
         st.session_state.cerita6=False
+        st.session_state.cerita7=False
+        st.session_state.cerita8=False
+        st.session_state.cerita9=False
+        st.session_state.cerita10=False
         st.session_state.pengecekan1 = False
         st.session_state.pengecekan2 = False
         st.session_state.kelompok['kondisi11']=True
@@ -1001,6 +953,7 @@ def soal_cerita6():
                 - ##### Berapakah rentang nilai sumbangan yang mungkin diminta panitia?
                 - ##### Bagaimana kegiatan gotong royong ini mencerminkan nilai persatuan dan kebersamaan dalam Pancasila?
                 """)
+    st.session_state.jawaban1['jawab6']=st.text_area("Keterangan Jawaban6")
 if st.session_state.cerita6:
     soal_cerita6()
 if st.session_state.kelompok['kondisi11']:
@@ -1017,13 +970,202 @@ if st.session_state.kelompok['kondisi11']:
         st.session_state.cerita4=False
         st.session_state.cerita5=False
         st.session_state.cerita6=True
+        st.session_state.cerita7=False
+        st.session_state.cerita8=False
+        st.session_state.cerita9=False
+        st.session_state.cerita10=False
         st.session_state.pengecekan1 = False
         st.session_state.pengecekan2 = False
         st.session_state.kelompok['kondisi12']=True
         st.rerun()
-    
 
+def soal_cerita7():
+    st.markdown("""
+                <div class="efek1">Kejujuran dalam Jualan Kantin(Sila ke-2: Kemanusiaan yang Adil dan Beradab)</div>""",unsafe_allow_html=True)
+    st.image("https://bimamedia-gurusiana.ap-south-1.linodeobjects.com/dd6298e7c9a2c63b6ab43846ddd7ddbe/2023/09/19/l-img20230919132907jpg20230919132935.jpeg",use_container_width=True)
+    st.markdown("##### Ani berjualan roti di kantin sekolah.")
+    st.markdown("""
+                - ##### Harga satu roti adalah Rp3.500. 
+                - ##### Dalam sehari, Ani membawa paling sedikit 40 roti, tetapi tidak lebih dari 80 roti.
+                - ##### Jika jumlah roti yang tidak terjual dikurangi, Ani akan rugi. Oleh karena itu, ia ingin memastikan jumlah roti yang dibawa masih cukup wajar agar bisa laku habis.
+                """)
+    st.markdown("##### Pertanyaan")
+    st.markdown("""
+                - ##### Tuliskan pertidaksamaan yang menyatakan jumlah roti yang dibawa Ani.
+                - ##### Jika setiap roti yang terjual memberi keuntungan Rp1.000, tentukan batas minimum dan maksimum keuntungan Ani dalam sehari.
+                - ##### Mengapa sikap jujur Ani dalam mencatat hasil penjualan sesuai dengan nilai kemanusiaan yang adil dan beradab?
+                """)
+    st.session_state.jawaban1['jawab7']=st.text_area("Keterangan Jawaban7")
+if st.session_state.cerita7:
+    soal_cerita7()
+if st.session_state.kelompok['kondisi12']:
+    if st.sidebar.button("Kejujuran"):
+        st.session_state.peta = False
+        st.session_state.prasyarat = False
+        st.session_state.materi_prasyarat = False
+        st.session_state.materi = False
+        st.session_state.adaptif=False
+        st.session_state.cerita1=False
+        st.session_state.cerita2=False
+        st.session_state.cerita3=False
+        st.session_state.cerita4=False
+        st.session_state.cerita5=False
+        st.session_state.cerita6=False
+        st.session_state.cerita7=True
+        st.session_state.cerita8=False
+        st.session_state.cerita9=False
+        st.session_state.cerita10=False
+        st.session_state.pengecekan1 = False
+        st.session_state.pengecekan2 = False
+        st.session_state.kelompok['kondisi13']=True
+        st.rerun()
 
+def soal_cerita8():
+    st.markdown("""
+                <div class="efek1">Membantu Teman yang Sakit(Sila ke-5: Keadilan Sosial bagi Seluruh Rakyat Indonesia)</div>""",unsafe_allow_html=True)
+    st.image("https://i0.wp.com/legutykids.com/wp-content/uploads/2021/05/Terima-kasih-sudah-memberikan-apresiasi-terhadap-buku-Aku-Cinta-Al-Quran.jpg?fit=2000%2C1332&quality=99&ssl=1",use_container_width=True)
+    st.markdown("##### Siswa kelas 8 SMP mengadakan penggalangan dana untuk membantu teman yang sedang dirawat di rumah sakit.")
+    st.markdown("""
+                - ##### Setiap siswa menyumbang minimal Rp10.000, tetapi maksimal Rp30.000. 
+                - ##### Jumlah siswa di kelas ada 36 orang.
+                - ##### Total dana yang akan terkumpul bergantung pada berapa besar sumbangan tiap siswa.
+                """)
+    st.markdown("##### Pertanyaan")
+    st.markdown("""
+                - ##### Nyatakan jumlah sumbangan tiap siswa sebagai $x$, lalu buat pertidaksamaan yang menggambarkan kondisi tersebut.
+                - ##### Tentukan rentang total dana yang mungkin terkumpul.
+                - ##### Bagaimana kegiatan ini mencerminkan nilai keadilan sosial dalam Pancasila?
+                """)
+    st.session_state.jawaban1['jawab8']=st.text_area("Keterangan Jawaban8")
+if st.session_state.cerita8:
+    soal_cerita8()
+if st.session_state.kelompok['kondisi13']:
+    if st.sidebar.button("Membantu Teman"):
+        st.session_state.peta = False
+        st.session_state.prasyarat = False
+        st.session_state.materi_prasyarat = False
+        st.session_state.materi = False
+        st.session_state.adaptif=False
+        st.session_state.cerita1=False
+        st.session_state.cerita2=False
+        st.session_state.cerita3=False
+        st.session_state.cerita4=False
+        st.session_state.cerita5=False
+        st.session_state.cerita6=False
+        st.session_state.cerita7=False
+        st.session_state.cerita8=True
+        st.session_state.cerita9=False
+        st.session_state.cerita10=False
+        st.session_state.pengecekan1 = False
+        st.session_state.pengecekan2 = False
+        st.session_state.kelompok['kondisi14']=True
+        st.rerun()
 
+def soal_cerita9():
+    st.markdown("""
+                <div class="efek1">Musyawarah Menentukan Uang Kas(Sila ke-4: Kerakyatan yang Dipimpin oleh Hikmat Kebijaksanaan)</div>""",unsafe_allow_html=True)
+    st.image("https://i.pinimg.com/736x/81/2b/1a/812b1acc0b6856b3eefde041db3bb318.jpg",use_container_width=True)
+    st.markdown("##### Sebuah kelas berencana mengumpulkan uang kas untuk kegiatan akhir tahun.")
+    st.markdown("""
+                - ##### Mereka bermusyawarah dan memutuskan bahwa uang kas per siswa adalah Rp $x$   
+                - ##### Agar tidak memberatkan siswa, uang kas minimal Rp20.000 dan maksimal Rp40.000 per bulan.
+                - ##### Jumlah siswa dalam kelas adalah 30 orang.
+                """)
+    st.markdown("##### Pertanyaan")
+    st.markdown("""
+                - ##### Nyatakan kondisi di atas dalam bentuk pertidaksamaan.
+                - ##### Tentukan batas minimum dan maksimum uang kas kelas dalam sebulan.
+                - ##### Bagaimana kegiatan musyawarah ini mencerminkan nilai demokrasi dalam Pancasila?
+                """)
+    st.session_state.jawaban1['jawab9']=st.text_area("Keterangan Jawaban9")
+if st.session_state.cerita9:
+    soal_cerita9()
+if st.session_state.kelompok['kondisi14']:
+    if st.sidebar.button("Musyawarah"):
+        st.session_state.peta = False
+        st.session_state.prasyarat = False
+        st.session_state.materi_prasyarat = False
+        st.session_state.materi = False
+        st.session_state.adaptif=False
+        st.session_state.cerita1=False
+        st.session_state.cerita2=False
+        st.session_state.cerita3=False
+        st.session_state.cerita4=False
+        st.session_state.cerita5=False
+        st.session_state.cerita6=False
+        st.session_state.cerita7=False
+        st.session_state.cerita8=False
+        st.session_state.cerita9=True
+        st.session_state.cerita10=False
+        st.session_state.pengecekan1 = False
+        st.session_state.pengecekan2 = False
+        st.session_state.kelompok['kondisi15']=True
+        st.rerun()
+
+def soal_cerita10():
+    st.markdown("""
+                <div class="efek1">Toleransi dalam Bakti Sosial Antar Umat Beragama(Sila ke-1: Ketuhanan Yang Maha Esa)</div>""",unsafe_allow_html=True)
+    st.image("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT73VR8497iR5RWViDdDXNK_Vwz1fole01r7g&s",use_container_width=True)
+    st.markdown("##### Sebuah kampung mengadakan bakti sosial lintas agama.")
+    st.markdown("""
+                - ##### Setiap warga berkomitmen menyumbangkan beras minimal 2 kg, tetapi tidak lebih dari 8 kg.   
+                - ##### Jika jumlah warga yang ikut serta adalah 60 orang, maka jumlah total beras yang terkumpul akan berada dalam batas tertentu.
+                """)
+    st.markdown("##### Pertanyaan")
+    st.markdown("""
+                - ##### Buat pertidaksamaan untuk menggambarkan jumlah sumbangan beras tiap warga.
+                - ##### Tentukan rentang jumlah total beras yang mungkin terkumpul.
+                - ##### Bagaimana kegiatan ini mencerminkan nilai toleransi antar umat beragama dan Ketuhanan Yang Maha Esa?
+                """)
+    st.session_state.jawaban1['jawab10']=st.text_area("Keterangan Jawaban10")
+if st.session_state.cerita10:
+    soal_cerita10()
+if st.session_state.kelompok['kondisi15']:
+    if st.sidebar.button("Toleransi"):
+        st.session_state.peta = False
+        st.session_state.prasyarat = False
+        st.session_state.materi_prasyarat = False
+        st.session_state.materi = False
+        st.session_state.adaptif=False
+        st.session_state.cerita1=False
+        st.session_state.cerita2=False
+        st.session_state.cerita3=False
+        st.session_state.cerita4=False
+        st.session_state.cerita5=False
+        st.session_state.cerita6=False
+        st.session_state.cerita7=False
+        st.session_state.cerita8=False
+        st.session_state.cerita9=False
+        st.session_state.cerita10=True
+        st.session_state.pengecekan1 = False
+        st.session_state.pengecekan2 = False
+        st.session_state.kelompok['kondisi16']=True
+        st.rerun()
+
+if st.session_state.kelompok['kondisi16']:
+    if st.sidebar.button("Lihat Hasil Akhir"):
+        st.write(st.session_state.jawaban1)
+        if nama and kelas and sekolah:
+            url = "https://docs.google.com/forms/u/0/d/e/1FAIpQLSewIefkRWG20MZKNTE9uj2GsAGcJh7692-F9sA3MZBmwwmLIg/formResponse"
+            data = {
+            "entry.998794637": nama,   # Ganti dengan entry ID dari form
+            "entry.1343498210": kelas,   # Ganti dengan entry ID dari form
+            "entry.1376928479": sekolah,   # Ganti dengan entry ID dari form
+            "entry.830868808": st.session_state.jawaban1['jawab1'],   # Ganti dengan entry ID dari form
+            "entry.737462487": st.session_state.jawaban1['jawab2'],   # Ganti dengan entry ID dari form
+            "entry.489962711": st.session_state.jawaban1['jawab3'],   # Ganti dengan entry ID dari form
+            "entry.1164660499": st.session_state.jawaban1['jawab4'],   # Ganti dengan entry ID dari form
+            "entry.745281971": st.session_state.jawaban1['jawab5'],   # Ganti dengan entry ID dari form
+            "entry.1568896331": st.session_state.jawaban1['jawab6'],   # Ganti dengan entry ID dari form
+            "entry.433217618": st.session_state.jawaban1['jawab7'],   # Ganti dengan entry ID dari form
+            "entry.1675641791": st.session_state.jawaban1['jawab8'],   # Ganti dengan entry ID dari form
+            "entry.1207143181": st.session_state.jawaban1['jawab9'],   # Ganti dengan entry ID dari form
+            "entry.125676604": st.session_state.jawaban1['jawab10'],   # Ganti dengan entry ID dari form
+            }
+            response = requests.post(url, data=data)
+            if response.status_code == 200:
+                st.success("Berhasil dikirim!")
+            else:
+                st.error(f"Gagal mengirim. Status code: {response.status_code}")
 
 
