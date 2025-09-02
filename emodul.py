@@ -209,7 +209,6 @@ def pemetaan():
     """,unsafe_allow_html=True)
 
 def kover():
-    st.markdown("<a href='https://emodulterbaru.github.io/pretestHarry/pretest'>Pretest</a>",unsafe_allow_html=True)
     st.markdown('<div id="gambar" ></div>',unsafe_allow_html=True)
 
 if st.session_state.peta:
@@ -1365,7 +1364,7 @@ def materi_pertidaksamaan():
 </body>
 </html>
 '''
-    components.html(koding_html, height=2300, width=None)
+    components.html(koding_html, height=2600, width=None)
 if st.session_state.materi1:
     materi_pertidaksamaan()
 if st.session_state.kelompok['kondisi20']:
@@ -1977,6 +1976,7 @@ if st.session_state.kelompok['kondisi16']:
                 st.success("Berhasil dikirim!")
             else:
                 st.error(f"Gagal mengirim. Status code: {response.status_code}")
+
 
 
 
