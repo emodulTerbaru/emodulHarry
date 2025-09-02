@@ -68,7 +68,7 @@ with kolom[1]:
     kelas = st.text_input("Kelas: ")
 with kolom[2]:
     sekolah = st.text_input("Sekolah: ")
-    
+st.markdown("<a src='https://emodulterbaru.github.io/pretestHarry/pretest'></a>",unsafe_allow_html=True)
 st.markdown('''
             <style>
                 #konsep{
@@ -1167,5 +1167,6 @@ if st.session_state.kelompok['kondisi16']:
                 st.success("Berhasil dikirim!")
             else:
                 st.error(f"Gagal mengirim. Status code: {response.status_code}")
+
 
 
