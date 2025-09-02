@@ -68,7 +68,6 @@ with kolom[1]:
     kelas = st.text_input("Kelas: ")
 with kolom[2]:
     sekolah = st.text_input("Sekolah: ")
-st.markdown("<a href='https://emodulterbaru.github.io/pretestHarry/pretest'>Pretest</a>",unsafe_allow_html=True)
 st.markdown('''
             <style>
                 #konsep{
@@ -178,6 +177,7 @@ def pemetaan():
     """,unsafe_allow_html=True)
 
 def kover():
+    st.markdown("<a href='https://emodulterbaru.github.io/pretestHarry/pretest'>Pretest</a>",unsafe_allow_html=True)
     st.markdown('<div id="gambar" ></div>',unsafe_allow_html=True)
 
 if st.session_state.peta:
@@ -1167,6 +1167,7 @@ if st.session_state.kelompok['kondisi16']:
                 st.success("Berhasil dikirim!")
             else:
                 st.error(f"Gagal mengirim. Status code: {response.status_code}")
+
 
 
 
