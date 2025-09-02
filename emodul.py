@@ -398,9 +398,6 @@ if st.session_state.kelompok['kondisi3']:
 def tampilkan_video1():
     st.markdown("<div class='video'>Video Persamaan Satu variabel</div>",unsafe_allow_html=True)
     st.video("https://www.youtube.com/embed/7veosRwnWVg?si=rt4Dahc9Ax30PAyw")
-    st.markdown("""<iframe width="560" height="315" src="https://www.youtube.com/embed/7veosRwnWVg?si=rt4Dahc9Ax30PAyw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write;
-encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin"
-allowfullscreen></iframe>""",unsafe_allow_html=True)
     st.markdown('**Courtesy by Youtube: https://www.youtube.com/embed/7veosRwnWVg?si=rt4Dahc9Ax30PAyw**')
 if st.session_state.video1:
     tampilkan_video1()
@@ -790,9 +787,7 @@ if st.session_state.kelompok['kondisi4']:
         st.rerun()
 def video_pertidaksamaan():
     st.markdown("<div class='video'>Video Pertidaksamaan Satu variabel</div>",unsafe_allow_html=True)
-    st.markdown("""<iframe width="560" height="315" src="https://www.youtube.com/embed/SM7qejnJv28?si=8r2mqnQDD0-Eo1T5"
-title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope;
-picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>""",unsafe_allow_html=True)
+    st.video("https://www.youtube.com/embed/SM7qejnJv28?si=8r2mqnQDD0-Eo1T5")
     st.markdown('**Courtesy by Youtube: https://www.youtube.com/embed/SM7qejnJv28?si=8r2mqnQDD0-Eo1T5**')
 if st.session_state.video2:
     video_pertidaksamaan()
@@ -1370,7 +1365,7 @@ def materi_pertidaksamaan():
 </body>
 </html>
 '''
-    components.html(koding_html, height=1800, width=None)
+    components.html(koding_html, height=2300, width=None)
 if st.session_state.materi1:
     materi_pertidaksamaan()
 if st.session_state.kelompok['kondisi20']:
@@ -1982,6 +1977,7 @@ if st.session_state.kelompok['kondisi16']:
                 st.success("Berhasil dikirim!")
             else:
                 st.error(f"Gagal mengirim. Status code: {response.status_code}")
+
 
 
 
