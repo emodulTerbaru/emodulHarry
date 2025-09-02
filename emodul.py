@@ -397,6 +397,7 @@ if st.session_state.kelompok['kondisi3']:
 
 def tampilkan_video1():
     st.markdown("<div class='video'>Video Persamaan Satu variabel</div>",unsafe_allow_html=True)
+    st.video("https://www.youtube.com/embed/7veosRwnWVg?si=rt4Dahc9Ax30PAyw")
     st.markdown("""<iframe width="560" height="315" src="https://www.youtube.com/embed/7veosRwnWVg?si=rt4Dahc9Ax30PAyw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write;
 encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin"
 allowfullscreen></iframe>""",unsafe_allow_html=True)
@@ -1981,6 +1982,7 @@ if st.session_state.kelompok['kondisi16']:
                 st.success("Berhasil dikirim!")
             else:
                 st.error(f"Gagal mengirim. Status code: {response.status_code}")
+
 
 
 
