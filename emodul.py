@@ -1,5 +1,6 @@
 import streamlit as st
 import requests
+import streamlit.components.v1 as components
 
 if "peta" not in st.session_state:
     st.session_state.peta = False
@@ -7,6 +8,15 @@ if "peta" not in st.session_state:
 if "prasyarat" not in st.session_state:
     st.session_state.prasyarat = False
 
+if "pretest" not in st.session_state:
+    st.session_state.pretest = False
+    
+if "video1" not in st.session_state:
+    st.session_state.video1=False
+
+if "video2" not in st.session_state:
+    st.session_state.video2=False
+    
 if "materi_prasyarat" not in st.session_state:
     st.session_state.materi_prasyarat=False
 
@@ -15,14 +25,16 @@ if "nilai_prasyarat" not in st.session_state:
 
 if "materi" not in st.session_state:
     st.session_state.materi=False
-
+if "materi1" not in st.session_state:
+    st.session_state.materi1=False
 if "adaptif" not in st.session_state:
     st.session_state.adaptif=False
 
 if "kelompok" not in st.session_state:
     st.session_state.kelompok = {'kondisi1':True,'kondisi2':True,'kondisi3':False,'kondisi4':False,'kondisi5':False,
                                  'kondisi6':False,'kondisi7':False,'kondisi8':False,'kondisi9':False, 'kondisi10':False,
-                                 'kondisi11':False,'kondisi12':False,'kondisi13':False,'kondisi14':False, 'kondisi15':False, 'kondisi16':False}
+                                 'kondisi11':False,'kondisi12':False,'kondisi13':False,'kondisi14':False, 'kondisi15':False,
+                                 'kondisi16':False,'kondisi17':False,'kondisi18':False,'kondisi19':False,'kondisi20':False}
 
 if "jawaban" not in st.session_state:
     st.session_state.jawaban = {"jawab1":0,"jawab2":0,"jawab3":0,"jawab4":0,"jawab5":0,
@@ -162,6 +174,26 @@ st.markdown('''
                 @keyframes hue{
                     to{background-position:200% 0}
                 }
+                #format{
+                    text-decoration:none;
+                    font-family:"Cooper Black";
+                    font-size:30px;
+                    color:blue;
+                    text-shadow:0px 0px 3px white;
+                    text-align:center;
+                }
+                .video{
+                    font-family:stencil;
+                    color:red;
+                    text-shadow:0px 0px 3px yellow;
+                    font-size:40px;
+                }
+                .cek{
+                    font-family:broadway;
+                    font-size:30px;
+                    color:green;
+                    text-shadow:0px 0px 3px cyan
+                }
             </style>
             ''',unsafe_allow_html=True)
 
@@ -186,11 +218,11 @@ if st.session_state.peta:
 if st.session_state.kelompok['kondisi1']:
     kover()
 if st.session_state.kelompok['kondisi2']:
-    if st.sidebar.button("Peta konsep"):
-        st.session_state.peta=True
-        st.session_state.prasyarat = False
-        st.session_state.kelompok['kondisi3']=True
+    if st.sidebar.button("Prasyarat"):
+        st.session_state.peta=False
+        st.session_state.prasyarat = True
         st.session_state.kelompok['kondisi1']=False
+        st.session_state.kelompok['kondisi17']=True
         st.session_state.adaptif=False
         st.session_state.materi = False
         st.session_state.pengecekan1 = False
@@ -205,8 +237,40 @@ if st.session_state.kelompok['kondisi2']:
         st.session_state.cerita8=False
         st.session_state.cerita9=False
         st.session_state.cerita10=False
+        st.session_state.pretest = False
+        st.session_state.video1 = False
+        st.session_state.video2 = False
+        st.session_state.materi1 = False
         st.rerun()
-
+def soal_pretest():
+    st.markdown("<span>klik di sini </span> <a id='format' href='https://emodulterbaru.github.io/pretestHarry1/pretest1'> Soal Pretest</a>",unsafe_allow_html=True)
+if st.session_state.pretest:
+    soal_pretest()
+if st.session_state.kelompok['kondisi17']:
+    if st.sidebar.button("Pretest"):
+        st.session_state.peta=False
+        st.session_state.prasyarat = False
+        st.session_state.pretest = True
+        st.session_state.kelompok['kondisi3']=True
+        st.session_state.adaptif=False
+        st.session_state.materi = False
+        st.session_state.pengecekan1 = False
+        st.session_state.pengecekan2 = False
+        st.session_state.cerita1=False
+        st.session_state.cerita2=False
+        st.session_state.cerita3=False
+        st.session_state.cerita4=False
+        st.session_state.cerita5=False
+        st.session_state.cerita6=False
+        st.session_state.cerita7=False
+        st.session_state.cerita8=False
+        st.session_state.cerita9=False
+        st.session_state.cerita10=False
+        st.session_state.video1 = False
+        st.session_state.video2 = False
+        st.session_state.materi1 = False
+        st.rerun()
+    
 def soal_prasyarat():
     st.markdown("<div class='menu'>Soal Prasyarat</div>",unsafe_allow_html=True)
     st.markdown("<div class='submenu'>A. Operasi Bilangan Bulat dan Pecahan</div>",unsafe_allow_html=True)
@@ -296,16 +360,21 @@ def soal_prasyarat():
             st.session_state.cerita8=False
             st.session_state.cerita9=False
             st.session_state.cerita10=False
+            st.session_state.pretest = False
+            st.session_state.video1 = False
+            st.session_state.video2 = False
+            st.session_state.materi1 = False
             st.rerun()
     
 if st.session_state.prasyarat:
     soal_prasyarat()
+
 if st.session_state.kelompok['kondisi3']:
-    if st.sidebar.button("Prasyarat"):
-        st.session_state.kelompok['kondisi4']=True
-        st.session_state.peta = False
+    if st.sidebar.button("Peta Konsep"):
+        st.session_state.kelompok['kondisi18']=True
+        st.session_state.peta = True
         st.session_state.adaptif=False
-        st.session_state.prasyarat = True
+        st.session_state.prasyarat = False
         st.session_state.materi_prasyarat = False
         st.session_state.materi = False
         st.session_state.pengecekan1 = False
@@ -320,6 +389,44 @@ if st.session_state.kelompok['kondisi3']:
         st.session_state.cerita8=False
         st.session_state.cerita9=False
         st.session_state.cerita10=False
+        st.session_state.pretest = False
+        st.session_state.video1 = False
+        st.session_state.video2 = False
+        st.session_state.materi1 = False
+        st.rerun()
+
+def tampilkan_video1():
+    st.markdown("<div class='video'>Video Persamaan Satu variabel</div>",unsafe_allow_html=True)
+    st.markdown("""<iframe width="560" height="315" src="https://www.youtube.com/embed/7veosRwnWVg?si=rt4Dahc9Ax30PAyw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write;
+encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin"
+allowfullscreen></iframe>""",unsafe_allow_html=True)
+    st.markdown('**Courtesy by Youtube: https://www.youtube.com/embed/7veosRwnWVg?si=rt4Dahc9Ax30PAyw**')
+if st.session_state.video1:
+    tampilkan_video1()
+if st.session_state.kelompok['kondisi18']:
+    if st.sidebar.button("Video Persamaan 1 Variabel"):
+        st.session_state.kelompok['kondisi4']=True
+        st.session_state.peta = False
+        st.session_state.video1 = True
+        st.session_state.adaptif=False
+        st.session_state.prasyarat = False
+        st.session_state.materi_prasyarat = False
+        st.session_state.materi = False
+        st.session_state.pengecekan1 = False
+        st.session_state.pengecekan2 = False
+        st.session_state.cerita1=False
+        st.session_state.cerita2=False
+        st.session_state.cerita3=False
+        st.session_state.cerita4=False
+        st.session_state.cerita5=False
+        st.session_state.cerita6=False
+        st.session_state.cerita7=False
+        st.session_state.cerita8=False
+        st.session_state.cerita9=False
+        st.session_state.cerita10=False
+        st.session_state.pretest = False
+        st.session_state.video2 = False
+        st.session_state.materi1 = False
         st.rerun()
 def materi_prasyarat_tampil():
     st.error("Nilai Anda: "+str(st.session_state.nilai_prasyarat))
@@ -580,38 +687,698 @@ def materi_tampilkan():
     st.markdown("""<div class='sublat1'>Soal Langsung</div>""",unsafe_allow_html=True)
     st.markdown("**1. Tentukan Persamaan nilai x dari persamaan:**")
     st.latex("2x+7=15")
-    st.text_input("Jawaban no. 1")
+    jawab1 = st.text_input("Jawaban no. 1")
+    if jawab1:
+        if int(jawab1)==4:
+            st.markdown("<div class='cek'>Benar</div>",unsafe_allow_html=True)
+        else:
+            st.markdown("<div class='cek'>Salah</div>",unsafe_allow_html=True)
     st.markdown("**2. Selesaikan Persamaan Berikut:**")
     st.latex("9x-4=23")
-    st.text_input("Jawaban no. 2")
+    jawab2 = st.text_input("Jawaban no. 2")
+    if jawab2:
+        if int(jawab2)==3:
+            st.markdown("<div class='cek'>Benar</div>",unsafe_allow_html=True)
+        else:
+            st.markdown("<div class='cek'>Salah</div>",unsafe_allow_html=True)
     st.markdown("**3. Tentukan nilai x:**")
     st.latex("12=3x+6")
-    st.text_input("Jawaban no. 3")
+    jawab3 = st.text_input("Jawaban no. 3")
+    if jawab3:
+        if int(jawab3)==2:
+            st.markdown("<div class='cek'>Benar</div>",unsafe_allow_html=True)
+        else:
+            st.markdown("<div class='cek'>Salah</div>",unsafe_allow_html=True)
     st.markdown("**4. Jika $4x-5=11$, tentukan nilai x**")
-    st.text_input("Jawaban no. 4")
+    jawab4 = st.text_input("Jawaban no. 4")
+    if jawab4:
+        if int(jawab4)==4:
+            st.markdown("<div class='cek'>Benar</div>",unsafe_allow_html=True)
+        else:
+            st.markdown("<div class='cek'>Salah</div>",unsafe_allow_html=True)
     st.markdown("**5. Selesaikan persamaan:**")
     st.latex("7x+8=3x+20")
-    st.text_input("Jawaban no. 5")
+    jawab5 = st.text_input("Jawaban no. 5")
+    if jawab5:
+        if int(jawab5)==3:
+            st.markdown("<div class='cek'>Benar</div>",unsafe_allow_html=True)
+        else:
+            st.markdown("<div class='cek'>Salah</div>",unsafe_allow_html=True)
     st.markdown("""<div class='sublat1'>Soal Cerita</div>""",unsafe_allow_html=True)
     st.markdown("**6. Umur Dina 3 tahun lebih tua dari umur Rina. Jika jumlah umur mereka 27 tahun, tentukan umur Rina.**")
-    st.text_input("Jawaban no. 6")
+    jawab6 = st.text_input("Jawaban no. 6")
+    if jawab6:
+        if int(jawab6)==12:
+            st.markdown("<div class='cek'>Benar</div>",unsafe_allow_html=True)
+        else:
+            st.markdown("<div class='cek'>Salah</div>",unsafe_allow_html=True)
     st.markdown("**7. Sebuah bilangan jika dikalikan 4 hasilnya 28. Tentukan bilangan tersebut.**")
-    st.text_input("Jawaban no. 7")
+    jawab7 = st.text_input("Jawaban no. 7")
+    if jawab7:
+        if int(jawab7)==7:
+            st.markdown("<div class='cek'>Benar</div>",unsafe_allow_html=True)
+        else:
+            st.markdown("<div class='cek'>Salah</div>",unsafe_allow_html=True)
     st.markdown("**8. Jumlah dari 2 kali suatu bilangan dengan 5 sama dengan 19. Tentukan bilangan tersebut.**")
-    st.text_input("Jawaban no. 8")
+    jawab8 = st.text_input("Jawaban no. 8")
+    if jawab8:
+        if int(jawab8)==7:
+            st.markdown("<div class='cek'>Benar</div>",unsafe_allow_html=True)
+        else:
+            st.markdown("<div class='cek'>Salah</div>",unsafe_allow_html=True)
     st.markdown("**9. Harga sebuah buku tulis Rp2.500. Jika Andi membeli 4 buku tulis dan membayar Rp15.000, berapa uang kembalian Andi?**")
-    st.text_input("Jawaban no. 9")
+    jawab9 = st.text_input("Jawaban no. 9")
+    if jawab9:
+        if int(jawab9)==5000:
+            st.markdown("<div class='cek'>Benar</div>",unsafe_allow_html=True)
+        else:
+            st.markdown("<div class='cek'>Salah</div>",unsafe_allow_html=True)
     st.markdown("**10. Selisih dua kali suatu bilangan dengan 7 adalah 15. Tentukan bilangan tersebut.**")
-    st.text_input("Jawaban no. 10")
+    jawab10 = st.text_input("Jawaban no. 10")
+    if jawab10:
+        if int(jawab10)==11:
+            st.markdown("<div class='cek'>Benar</div>",unsafe_allow_html=True)
+        else:
+            st.markdown("<div class='cek'>Salah</div>",unsafe_allow_html=True)
 if st.session_state.materi:
     materi_tampilkan()
 if st.session_state.kelompok['kondisi4']:
-    if st.sidebar.button("Materi Persamaan"):
+    if st.sidebar.button("Materi Persamaan 1 variabel"):
         st.session_state.peta = False
         st.session_state.prasyarat = False
         st.session_state.materi_prasyarat = False
         st.session_state.adaptif=False
         st.session_state.materi = True
+        st.session_state.kelompok['kondisi19']=True
+        st.session_state.pengecekan1 = False
+        st.session_state.pengecekan2 = False
+        st.session_state.cerita1=False
+        st.session_state.cerita2=False
+        st.session_state.cerita3=False
+        st.session_state.cerita4=False
+        st.session_state.cerita5=False
+        st.session_state.cerita6=False
+        st.session_state.cerita7=False
+        st.session_state.cerita8=False
+        st.session_state.cerita9=False
+        st.session_state.cerita10=False
+        st.session_state.pretest = False
+        st.session_state.video1 = False
+        st.session_state.video2 = False
+        st.session_state.materi1 = False
+        st.rerun()
+def video_pertidaksamaan():
+    st.markdown("<div class='video'>Video Pertidaksamaan Satu variabel</div>",unsafe_allow_html=True)
+    st.markdown("""<iframe width="560" height="315" src="https://www.youtube.com/embed/SM7qejnJv28?si=8r2mqnQDD0-Eo1T5"
+title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope;
+picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>""",unsafe_allow_html=True)
+    st.markdown('**Courtesy by Youtube: https://www.youtube.com/embed/SM7qejnJv28?si=8r2mqnQDD0-Eo1T5**')
+if st.session_state.video2:
+    video_pertidaksamaan()
+if st.session_state.kelompok['kondisi19']:
+    if st.sidebar.button("Video Pertidaksamaan 1 Variabel"):
+        st.session_state.peta = False
+        st.session_state.prasyarat = False
+        st.session_state.materi_prasyarat = False
+        st.session_state.adaptif=False
+        st.session_state.materi = False
+        st.session_state.kelompok['kondisi5']=False
+        st.session_state.kelompok['kondisi20']=True
+        st.session_state.pengecekan1 = False
+        st.session_state.pengecekan2 = False
+        st.session_state.cerita1=False
+        st.session_state.cerita2=False
+        st.session_state.cerita3=False
+        st.session_state.cerita4=False
+        st.session_state.cerita5=False
+        st.session_state.cerita6=False
+        st.session_state.cerita7=False
+        st.session_state.cerita8=False
+        st.session_state.cerita9=False
+        st.session_state.cerita10=False
+        st.session_state.pretest = False
+        st.session_state.video1 = False
+        st.session_state.video2 = True
+        st.session_state.materi1 = False
+        st.rerun()
+def materi_pertidaksamaan():
+    koding_html='''
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pertidaksamaan 1 Variabel</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(45deg, #4facfe 0%, #00f2fe 100%);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .header p {
+            font-size: 1.2em;
+            opacity: 0.9;
+        }
+
+        .nav-tabs {
+            display: flex;
+            background: #f8f9fa;
+            border-bottom: 2px solid #e9ecef;
+        }
+
+        .nav-tab {
+            flex: 1;
+            padding: 15px 20px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 600;
+            color: #6c757d;
+            transition: all 0.3s ease;
+        }
+
+        .nav-tab:hover {
+            background: #e9ecef;
+        }
+
+        .nav-tab.active {
+            background: white;
+            color: #4facfe;
+            border-bottom: 3px solid #4facfe;
+        }
+
+        .content {
+            padding: 30px;
+            min-height: 600px;
+        }
+
+        .tab-content {
+            display: none;
+            animation: fadeIn 0.5s ease;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .section {
+            margin-bottom: 30px;
+            padding: 25px;
+            background: #f8f9fa;
+            border-radius: 10px;
+            border-left: 5px solid #4facfe;
+        }
+
+        .section h3 {
+            color: #333;
+            margin-bottom: 15px;
+            font-size: 1.4em;
+        }
+
+        .section p, .section li {
+            color: #555;
+            line-height: 1.6;
+            margin-bottom: 10px;
+        }
+
+        .formula {
+            background: #fff;
+            padding: 15px;
+            border-radius: 8px;
+            border: 2px solid #e9ecef;
+            font-family: 'Courier New', monospace;
+            font-size: 1.1em;
+            color: #333;
+            margin: 15px 0;
+        }
+
+        .example {
+            background: #e8f4f8;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 15px 0;
+            border-left: 4px solid #17a2b8;
+        }
+
+        .exercise {
+            background: #fff;
+            padding: 25px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            border: 1px solid #e9ecef;
+        }
+
+        .exercise h4 {
+            color: #333;
+            margin-bottom: 15px;
+            font-size: 1.2em;
+        }
+
+        .answer-input {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #e9ecef;
+            border-radius: 8px;
+            font-size: 16px;
+            margin: 10px 0;
+            transition: border-color 0.3s ease;
+        }
+
+        .answer-input:focus {
+            outline: none;
+            border-color: #4facfe;
+            box-shadow: 0 0 0 3px rgba(79, 172, 254, 0.1);
+        }
+
+        .check-btn {
+            background: linear-gradient(45deg, #28a745, #20c997);
+            color: white;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 600;
+            transition: transform 0.2s ease;
+            margin-top: 10px;
+        }
+
+        .check-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(40, 167, 69, 0.3);
+        }
+
+        .result {
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 15px;
+            font-weight: 600;
+            display: none;
+        }
+
+        .result.correct {
+            background: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+
+        .result.incorrect {
+            background: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+
+        .result.show {
+            display: block;
+            animation: slideDown 0.3s ease;
+        }
+
+        @keyframes slideDown {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .score-board {
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .score-board h3 {
+            margin-bottom: 10px;
+        }
+
+        .score {
+            font-size: 2em;
+            font-weight: bold;
+        }
+
+        ul {
+            padding-left: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                margin: 10px;
+            }
+            
+            .header h1 {
+                font-size: 2em;
+            }
+            
+            .nav-tabs {
+                flex-direction: column;
+            }
+            
+            .content {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🔢 Pertidaksamaan 1 Variabel</h1>
+            <p>Pelajari konsep dan latihan soal pertidaksamaan linear</p>
+        </div>
+
+        <div class="nav-tabs">
+            <button class="nav-tab active" onclick="showTab('materi')">📚 Materi</button>
+            <button class="nav-tab" onclick="showTab('latihan')">✏️ Latihan</button>
+            <button class="nav-tab" onclick="showTab('hasil')">📊 Hasil</button>
+        </div>
+
+        <div class="content">
+            <!-- Tab Materi -->
+            <div id="materi" class="tab-content active">
+                <div class="section">
+                    <h3>🎯 Pengertian Pertidaksamaan 1 Variabel</h3>
+                    <p>Pertidaksamaan linear satu variabel adalah kalimat matematika yang memuat variabel berpangkat satu dan dihubungkan dengan tanda pertidaksamaan.</p>
+                    
+                    <div class="formula">
+                        Tanda-tanda pertidaksamaan:<br>
+                        • &lt; (kurang dari)<br>
+                        • &gt; (lebih dari)<br>
+                        • ≤ (kurang dari atau sama dengan)<br>
+                        • ≥ (lebih dari atau sama dengan)
+                    </div>
+
+                    <div class="example">
+                        <strong>Contoh:</strong><br>
+                        • 2x + 3 &lt; 7<br>
+                        • -3x + 5 ≥ 11<br>
+                        • 4x - 1 &gt; 2x + 5
+                    </div>
+                </div>
+
+                <div class="section">
+                    <h3>🔧 Cara Menyelesaikan Pertidaksamaan</h3>
+                    <p>Langkah-langkah menyelesaikan pertidaksamaan linear:</p>
+                    <ul>
+                        <li>Kumpulkan suku-suku sejenis</li>
+                        <li>Pindahkan variabel ke satu ruas dan konstanta ke ruas lain</li>
+                        <li>Bagi atau kalikan dengan koefisien variabel</li>
+                        <li><strong>PENTING:</strong> Jika membagi/mengalikan dengan bilangan negatif, balik tanda pertidaksamaan!</li>
+                    </ul>
+
+                    <div class="example">
+                        <strong>Contoh Penyelesaian:</strong><br>
+                        Selesaikan: 3x - 7 &lt; 2x + 5<br><br>
+                        <strong>Langkah 1:</strong> 3x - 2x &lt; 5 + 7<br>
+                        <strong>Langkah 2:</strong> x &lt; 12<br><br>
+                        <strong>Jadi, penyelesaiannya adalah x &lt; 12</strong>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <h3>⚠️ Aturan Khusus</h3>
+                    <div class="example">
+                        <strong>Ingat!</strong> Ketika membagi atau mengalikan dengan bilangan negatif, tanda pertidaksamaan dibalik.<br><br>
+                        <strong>Contoh:</strong><br>
+                        -2x &gt; 6<br>
+                        x &lt; -3 (tanda &gt; berubah menjadi &lt; karena dibagi -2)
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tab Latihan -->
+            <div id="latihan" class="tab-content">
+                <div class="score-board">
+                    <h3>📊 Skor Anda</h3>
+                    <div class="score" id="score">0 / 0</div>
+                </div>
+
+                <div class="exercise" id="exercise1">
+                    <h4>Soal 1</h4>
+                    <p>Selesaikan pertidaksamaan: <strong>2x + 5 &lt; 13</strong></p>
+                    <input type="text" class="answer-input" id="answer1" placeholder="Contoh: x < 4 atau x > -2">
+                    <button class="check-btn" onclick="checkAnswer(1, 'x < 4')">Periksa Jawaban</button>
+                    <div class="result" id="result1"></div>
+                </div>
+
+                <div class="exercise" id="exercise2">
+                    <h4>Soal 2</h4>
+                    <p>Selesaikan pertidaksamaan: <strong>-3x + 7 ≥ 16</strong></p>
+                    <input type="text" class="answer-input" id="answer2" placeholder="Masukkan jawaban Anda">
+                    <button class="check-btn" onclick="checkAnswer(2, 'x ≤ -3')">Periksa Jawaban</button>
+                    <div class="result" id="result2"></div>
+                </div>
+
+                <div class="exercise" id="exercise3">
+                    <h4>Soal 3</h4>
+                    <p>Selesaikan pertidaksamaan: <strong>4x - 3 &gt; 2x + 9</strong></p>
+                    <input type="text" class="answer-input" id="answer3" placeholder="Masukkan jawaban Anda">
+                    <button class="check-btn" onclick="checkAnswer(3, 'x > 6')">Periksa Jawaban</button>
+                    <div class="result" id="result3"></div>
+                </div>
+
+                <div class="exercise" id="exercise4">
+                    <h4>Soal 4</h4>
+                    <p>Selesaikan pertidaksamaan: <strong>-5x + 2 &lt; 3x - 14</strong></p>
+                    <input type="text" class="answer-input" id="answer4" placeholder="Masukkan jawaban Anda">
+                    <button class="check-btn" onclick="checkAnswer(4, 'x > 2')">Periksa Jawaban</button>
+                    <div class="result" id="result4"></div>
+                </div>
+
+                <div class="exercise" id="exercise5">
+                    <h4>Soal 5</h4>
+                    <p>Selesaikan pertidaksamaan: <strong>6x + 8 ≤ 2x - 4</strong></p>
+                    <input type="text" class="answer-input" id="answer5" placeholder="Masukkan jawaban Anda">
+                    <button class="check-btn" onclick="checkAnswer(5, 'x ≤ -3')">Periksa Jawaban</button>
+                    <div class="result" id="result5"></div>
+                </div>
+            </div>
+
+            <!-- Tab Hasil -->
+            <div id="hasil" class="tab-content">
+                <div class="score-board">
+                    <h3>🎉 Hasil Akhir</h3>
+                    <div class="score" id="finalScore">0 / 0</div>
+                    <p id="performance"></p>
+                </div>
+
+                <div class="section">
+                    <h3>📝 Detail Jawaban</h3>
+                    <div id="answerDetails"></div>
+                </div>
+
+                <div class="section">
+                    <h3>💡 Rekomendasi</h3>
+                    <div id="recommendations"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let score = 0;
+        let totalQuestions = 5;
+        let answers = {};
+        let correctAnswers = {
+            1: 'x < 4',
+            2: 'x ≤ -3', 
+            3: 'x > 6',
+            4: 'x > 2',
+            5: 'x ≤ -3'
+        };
+
+        function showTab(tabName) {
+            // Hide all tabs
+            const tabs = document.querySelectorAll('.tab-content');
+            tabs.forEach(tab => tab.classList.remove('active'));
+
+            // Hide all nav tabs
+            const navTabs = document.querySelectorAll('.nav-tab');
+            navTabs.forEach(tab => tab.classList.remove('active'));
+
+            // Show selected tab
+            document.getElementById(tabName).classList.add('active');
+            event.target.classList.add('active');
+
+            // Update hasil tab when opened
+            if (tabName === 'hasil') {
+                updateResults();
+            }
+        }
+
+        function normalizeAnswer(answer) {
+            return answer.toLowerCase()
+                         .replace(/\s+/g, '')
+                         .replace(/≤/g, '<=')
+                         .replace(/≥/g, '>=')
+                         .replace(/</g, '<')
+                         .replace(/>/g, '>');
+        }
+
+        function checkAnswer(questionNum, correctAnswer) {
+            const userAnswer = document.getElementById(`answer${questionNum}`).value.trim();
+            const resultDiv = document.getElementById(`result${questionNum}`);
+            
+            if (!userAnswer) {
+                resultDiv.innerHTML = '⚠️ Silakan masukkan jawaban terlebih dahulu!';
+                resultDiv.className = 'result incorrect show';
+                return;
+            }
+
+            const normalizedUser = normalizeAnswer(userAnswer);
+            const normalizedCorrect = normalizeAnswer(correctAnswer);
+
+            // Store answer
+            answers[questionNum] = {
+                userAnswer: userAnswer,
+                correctAnswer: correctAnswer,
+                isCorrect: normalizedUser === normalizedCorrect
+            };
+
+            if (normalizedUser === normalizedCorrect) {
+                resultDiv.innerHTML = '✅ Benar! Jawaban Anda tepat.';
+                resultDiv.className = 'result correct show';
+                if (!answers[questionNum].wasCorrect) {
+                    score++;
+                    answers[questionNum].wasCorrect = true;
+                }
+            } else {
+                resultDiv.innerHTML = `❌ Kurang tepat. Jawaban yang benar: <strong>${correctAnswer}</strong><br>
+                                     <small>Coba periksa kembali langkah penyelesaian Anda.</small>`;
+                resultDiv.className = 'result incorrect show';
+            }
+
+            updateScore();
+        }
+
+        function updateScore() {
+            document.getElementById('score').textContent = `${score} / ${totalQuestions}`;
+        }
+
+        function updateResults() {
+            const finalScore = document.getElementById('finalScore');
+            const performance = document.getElementById('performance');
+            const answerDetails = document.getElementById('answerDetails');
+            const recommendations = document.getElementById('recommendations');
+
+            finalScore.textContent = `${score} / ${totalQuestions}`;
+
+            // Performance message
+            const percentage = (score / totalQuestions) * 100;
+            if (percentage >= 80) {
+                performance.innerHTML = '🌟 Excellent! Anda menguasai materi dengan baik.';
+                performance.style.color = '#28a745';
+            } else if (percentage >= 60) {
+                performance.innerHTML = '👍 Good! Anda cukup memahami materi.';
+                performance.style.color = '#ffc107';
+            } else {
+                performance.innerHTML = '📚 Perlu lebih banyak latihan untuk menguasai materi.';
+                performance.style.color = '#dc3545';
+            }
+
+            // Answer details
+            let detailsHTML = '';
+            for (let i = 1; i <= totalQuestions; i++) {
+                if (answers[i]) {
+                    const icon = answers[i].isCorrect ? '✅' : '❌';
+                    const status = answers[i].isCorrect ? 'Benar' : 'Salah';
+                    detailsHTML += `
+                        <div class="example">
+                            <strong>Soal ${i}:</strong> ${icon} ${status}<br>
+                            <strong>Jawaban Anda:</strong> ${answers[i].userAnswer || 'Tidak dijawab'}<br>
+                            <strong>Jawaban Benar:</strong> ${answers[i].correctAnswer}
+                        </div>
+                    `;
+                } else {
+                    detailsHTML += `
+                        <div class="example">
+                            <strong>Soal ${i}:</strong> ⭕ Belum dijawab<br>
+                            <strong>Jawaban Benar:</strong> ${correctAnswers[i]}
+                        </div>
+                    `;
+                }
+            }
+            answerDetails.innerHTML = detailsHTML;
+
+            // Recommendations
+            let recHTML = '';
+            if (percentage < 60) {
+                recHTML = `
+                    <p>💡 Disarankan untuk:</p>
+                    <ul>
+                        <li>Membaca kembali materi tentang aturan membalik tanda pertidaksamaan</li>
+                        <li>Berlatih lebih banyak soal pertidaksamaan</li>
+                        <li>Memperhatikan langkah-langkah penyelesaian dengan teliti</li>
+                    </ul>
+                `;
+            } else if (percentage < 80) {
+                recHTML = `
+                    <p>💡 Untuk meningkatkan pemahaman:</p>
+                    <ul>
+                        <li>Latihan soal yang lebih variatif</li>
+                        <li>Fokus pada soal dengan koefisien negatif</li>
+                    </ul>
+                `;
+            } else {
+                recHTML = `
+                    <p>🎉 Selamat! Anda sudah menguasai materi dengan baik. Lanjutkan dengan materi pertidaksamaan yang lebih kompleks.</p>
+                `;
+            }
+            recommendations.innerHTML = recHTML;
+        }
+
+        // Initialize score
+        updateScore();
+    </script>
+</body>
+</html>
+'''
+    components.html(koding_html, height=1800, width=None)
+if st.session_state.materi1:
+    materi_pertidaksamaan()
+if st.session_state.kelompok['kondisi20']:
+    if st.sidebar.button("Materi Pertidaksamaan 1 Variabel"):
+        st.session_state.peta = False
+        st.session_state.prasyarat = False
+        st.session_state.materi_prasyarat = False
+        st.session_state.adaptif=False
+        st.session_state.materi = False
         st.session_state.kelompok['kondisi5']=True
         st.session_state.pengecekan1 = False
         st.session_state.pengecekan2 = False
@@ -625,8 +1392,11 @@ if st.session_state.kelompok['kondisi4']:
         st.session_state.cerita8=False
         st.session_state.cerita9=False
         st.session_state.cerita10=False
+        st.session_state.pretest = False
+        st.session_state.video1 = False
+        st.session_state.video2 = False
+        st.session_state.materi1 = True
         st.rerun()
-        
 def soal_adaptif():
     st.markdown(""" <div style="display:flex; justify-content:space-evenly;align-items:center; border:2px solid white; margin-bottom:10px; padding:2px; background-color:grey">
                     <img src='https://i.pinimg.com/originals/48/59/55/485955115c68020ce3ba16bf18a95d8a.gif' style='width:100px;'></img>
@@ -731,7 +1501,11 @@ if st.session_state.kelompok['kondisi5']:
         st.session_state.cerita9=False
         st.session_state.cerita10=False
         st.session_state.adaptif=True
+        st.session_state.pretest = False
         st.session_state.kelompok['kondisi6']=True
+        st.session_state.video1 = False
+        st.session_state.video2 = False
+        st.session_state.materi1 = False
         st.rerun()
 def soal_cerita1():
     st.markdown("""
@@ -772,7 +1546,11 @@ if st.session_state.kelompok['kondisi6']:
         st.session_state.cerita10=False
         st.session_state.pengecekan1 = False
         st.session_state.pengecekan2 = False
+        st.session_state.pretest = False
         st.session_state.kelompok['kondisi7']=True
+        st.session_state.video1 = False
+        st.session_state.video2 = False
+        st.session_state.materi1 = False
         st.rerun()
 
 def soal_cerita2():
@@ -812,7 +1590,11 @@ if st.session_state.kelompok['kondisi7']:
         st.session_state.cerita10=False
         st.session_state.pengecekan1 = False
         st.session_state.pengecekan2 = False
+        st.session_state.pretest = False
         st.session_state.kelompok['kondisi8']=True
+        st.session_state.video1 = False
+        st.session_state.video2 = False
+        st.session_state.materi1 = False
         st.rerun()
 
 def soal_cerita3():
@@ -852,7 +1634,11 @@ if st.session_state.kelompok['kondisi8']:
         st.session_state.cerita10=False
         st.session_state.pengecekan1 = False
         st.session_state.pengecekan2 = False
+        st.session_state.pretest = False
         st.session_state.kelompok['kondisi9']=True
+        st.session_state.video1 = False
+        st.session_state.video2 = False
+        st.session_state.materi1 = False
         st.rerun()
         
 def soal_cerita4():
@@ -892,7 +1678,11 @@ if st.session_state.kelompok['kondisi9']:
         st.session_state.cerita10=False
         st.session_state.pengecekan1 = False
         st.session_state.pengecekan2 = False
+        st.session_state.pretest = False
         st.session_state.kelompok['kondisi10']=True
+        st.session_state.video1 = False
+        st.session_state.video2 = False
+        st.session_state.materi1 = False
         st.rerun()
 
 def soal_cerita5():
@@ -933,7 +1723,11 @@ if st.session_state.kelompok['kondisi10']:
         st.session_state.cerita10=False
         st.session_state.pengecekan1 = False
         st.session_state.pengecekan2 = False
+        st.session_state.pretest = False
         st.session_state.kelompok['kondisi11']=True
+        st.session_state.video1 = False
+        st.session_state.video2 = False
+        st.session_state.materi1 = False
         st.rerun()
 
 def soal_cerita6():
@@ -976,7 +1770,11 @@ if st.session_state.kelompok['kondisi11']:
         st.session_state.cerita10=False
         st.session_state.pengecekan1 = False
         st.session_state.pengecekan2 = False
+        st.session_state.pretest = False
         st.session_state.kelompok['kondisi12']=True
+        st.session_state.video1 = False
+        st.session_state.video2 = False
+        st.session_state.materi1 = False
         st.rerun()
 
 def soal_cerita7():
@@ -1017,7 +1815,11 @@ if st.session_state.kelompok['kondisi12']:
         st.session_state.cerita10=False
         st.session_state.pengecekan1 = False
         st.session_state.pengecekan2 = False
+        st.session_state.pretest = False
         st.session_state.kelompok['kondisi13']=True
+        st.session_state.video1 = False
+        st.session_state.video2 = False
+        st.session_state.materi1 = False
         st.rerun()
 
 def soal_cerita8():
@@ -1058,7 +1860,11 @@ if st.session_state.kelompok['kondisi13']:
         st.session_state.cerita10=False
         st.session_state.pengecekan1 = False
         st.session_state.pengecekan2 = False
+        st.session_state.pretest = False
         st.session_state.kelompok['kondisi14']=True
+        st.session_state.video1 = False
+        st.session_state.video2 = False
+        st.session_state.materi1 = False
         st.rerun()
 
 def soal_cerita9():
@@ -1099,7 +1905,11 @@ if st.session_state.kelompok['kondisi14']:
         st.session_state.cerita10=False
         st.session_state.pengecekan1 = False
         st.session_state.pengecekan2 = False
+        st.session_state.pretest = False
         st.session_state.kelompok['kondisi15']=True
+        st.session_state.video1 = False
+        st.session_state.video2 = False
+        st.session_state.materi1 = False
         st.rerun()
 
 def soal_cerita10():
@@ -1139,7 +1949,11 @@ if st.session_state.kelompok['kondisi15']:
         st.session_state.cerita10=True
         st.session_state.pengecekan1 = False
         st.session_state.pengecekan2 = False
+        st.session_state.pretest = False
         st.session_state.kelompok['kondisi16']=True
+        st.session_state.video1 = False
+        st.session_state.video2 = False
+        st.session_state.materi1 = False
         st.rerun()
 
 if st.session_state.kelompok['kondisi16']:
@@ -1167,6 +1981,7 @@ if st.session_state.kelompok['kondisi16']:
                 st.success("Berhasil dikirim!")
             else:
                 st.error(f"Gagal mengirim. Status code: {response.status_code}")
+
 
 
 
