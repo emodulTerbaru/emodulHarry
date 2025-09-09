@@ -10,7 +10,8 @@ if "prasyarat" not in st.session_state:
 
 if "pretest" not in st.session_state:
     st.session_state.pretest = False
-    
+if "pretest1" not in st.session_state:
+    st.session_state.pretest1 = False
 if "video1" not in st.session_state:
     st.session_state.video1=False
 
@@ -34,7 +35,8 @@ if "kelompok" not in st.session_state:
     st.session_state.kelompok = {'kondisi1':True,'kondisi2':True,'kondisi3':False,'kondisi4':False,'kondisi5':False,
                                  'kondisi6':False,'kondisi7':False,'kondisi8':False,'kondisi9':False, 'kondisi10':False,
                                  'kondisi11':False,'kondisi12':False,'kondisi13':False,'kondisi14':False, 'kondisi15':False,
-                                 'kondisi16':False,'kondisi17':False,'kondisi18':False,'kondisi19':False,'kondisi20':False}
+                                 'kondisi16':False,'kondisi17':False,'kondisi18':False,'kondisi19':False,'kondisi20':False,
+                                 'kondisi21':False}
 
 if "jawaban" not in st.session_state:
     st.session_state.jawaban = {"jawab1":0,"jawab2":0,"jawab3":0,"jawab4":0,"jawab5":0,
@@ -44,6 +46,9 @@ if "lvl1" not in st.session_state:
 
 if "lvl2" not in st.session_state:
     st.session_state.lvl2={"jwb1":'0',"jwb2":'0',"jwb3":'0',"jwb4":'0',"jwb5":'0'}
+
+if "lvl3" not in st.session_state:
+    st.session_state.lvl3={"jwb1":'0',"jwb2":'0',"jwb3":'0',"jwb4":'0',"jwb5":'0'}
 
 if "pengecekan1" not in st.session_state:
     st.session_state.pengecekan1 = False
@@ -72,6 +77,8 @@ if "cerita10" not in st.session_state:
 if "jawaban1" not in st.session_state:
     st.session_state.jawaban1 = {"jawab1":"","jawab2":"","jawab3":"","jawab4":"","jawab5":"",
                                 "jawab6":"","jawab7":"","jawab8":"","jawab9":"","jawab10":""}
+if "jawaban2" not in st.session_state:
+    st.session_state.jawaban2 = {"jawab1":"","jawab2":"","jawab3":"","jawab4":""}
 st.sidebar.image("https://res.cloudinary.com/ikip-siliwangi/image/upload/v1753921874/logo_rw63xi.jpg", width=100)
 kolom = st.columns(3)
 with kolom[0]:
@@ -194,9 +201,227 @@ st.markdown('''
                     color:green;
                     text-shadow:0px 0px 3px cyan
                 }
+                #lanjutkan, #ket{
+                    font-family:"broadway";
+                    font-size:30px;
+                    color:green;
+                    text-shadow:0px 0px 3px red;
+                }
+                #ket{
+                    color:yellow;
+                    text-shadow:0px 0px 3px green;
+                }
+                #bantuan{
+                    display:flex;
+                }
+                #bantuan a{
+                    border:2px solid cyan;
+                    text-decoration:none;
+                    padding:5px;
+                    margin:5px;
+                    border-radius:10px;
+                    background-color:red;
+                    color:yellow;
+                    
+                }
             </style>
             ''',unsafe_allow_html=True)
 
+kumpulan = st.columns(2)
+with kumpulan[0]:
+    st.markdown('''<div id="bantuan">
+            <a href="https://emodulterbaru.github.io/penjumlahan/Operasi Penjumlahan.html">Penjumlahan</a>
+            <a href="https://emodulterbaru.github.io/penjumlahan/perkalian1.html">Perkalian</a></div>
+            ''',unsafe_allow_html=True)
+with kumpulan[1]:
+    if st.button("Pretest",key="soal_1"):
+        st.session_state.peta=False
+        st.session_state.prasyarat = False
+        st.session_state.kelompok['kondisi1']=False
+        st.session_state.pretest1=True
+        st.session_state.adaptif=False
+        st.session_state.materi = False
+        st.session_state.pengecekan1 = False
+        st.session_state.pengecekan2 = False
+        st.session_state.cerita1=False
+        st.session_state.cerita2=False
+        st.session_state.cerita3=False
+        st.session_state.cerita4=False
+        st.session_state.cerita5=False
+        st.session_state.cerita6=False
+        st.session_state.cerita7=False
+        st.session_state.cerita8=False
+        st.session_state.cerita9=False
+        st.session_state.cerita10=False
+        st.session_state.pretest = False
+        st.session_state.video1 = False
+        st.session_state.video2 = False
+        st.session_state.materi_prasyarat = False
+        st.session_state.materi1 = False
+        st.rerun()
+def soal_pretest1():
+    st.write("## Soal1")
+    st.markdown('''
+    <style>
+        .text-bar {
+            min-height: 10vh; /* Tinggi penuh layar */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+            background-size: 400% 400%;
+            animation: gradientShift 15s ease infinite;
+            position: relative;
+            overflow: hidden;
+            text-align:justify;
+            padding:10px;
+            border-radius:10px;
+            margin-bottom:10px;
+        }
+
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .text-bar h1 {
+            color: white;
+            font-size: 1rem; /* Ukuran teks besar */
+            text-shadow: 
+                0 0 10px rgba(255, 255, 255, 0.5),
+                0 0 20px rgba(255, 255, 255, 0.3),
+                0 0 30px rgba(255, 255, 255, 0.2);
+            letter-spacing: 3px;
+            z-index: 2;
+            position: relative;
+            animation: textGlow 3s ease-in-out infinite alternate;
+            color:black;
+        }
+
+        @keyframes textGlow {
+            from {
+                text-shadow: 
+                    0 0 10px rgba(255, 255, 255, 0.5),
+                    0 0 20px rgba(255, 255, 255, 0.3),
+                    0 0 30px rgba(255, 255, 255, 0.2);
+            }
+            to {
+                text-shadow: 
+                    0 0 20px rgba(255, 255, 255, 0.8),
+                    0 0 30px rgba(255, 255, 255, 0.6),
+                    0 0 40px rgba(255, 255, 255, 0.4);
+            }
+        }
+
+        /* Partikel animasi latar belakang */
+        .particles {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .particle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background-color: rgba(255, 255, 255, 0.5);
+            border-radius: 50%;
+            animation: float 6s infinite ease-in-out;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0) translateX(0);
+                opacity: 0.5;
+            }
+            25% {
+                transform: translateY(-20px) translateX(10px);
+                opacity: 0.8;
+            }
+            50% {
+                transform: translateY(-10px) translateX(-15px);
+                opacity: 0.3;
+            }
+            75% {
+                transform: translateY(-30px) translateX(5px);
+                opacity: 0.9;
+            }
+        }
+
+        /* Responsif untuk mobile */
+        @media (max-width: 768px) {
+            .text-bar h1 {
+                font-size: 3rem;
+            }
+        }
+    </style>
+    <div class="text-bar">
+        <div class="particles"></div>
+        <h1>Seorang pedagang buah menjual apel dengan harga Rp5.000 per buah. Ia juga menjual jeruk dengan harga
+        Rp4.000 per buah. Pada suatu hari, seorang pembeli membeli beberapa apel dan beberapa jeruk. Jumlah apel
+        yang dibeli dua kali lebih banyak daripada jumlah jeruk. Jika total harga yang harus dibayar pembeli tersebut
+        adalah Rp46.000, tentukan berapa banyak apel dan berapa banyak jeruk yang dibeli oleh pembeli tersebut.</h1>
+    </div>
+    ''',unsafe_allow_html=True)
+    st.session_state.jawaban2['jawab1'] = st.text_area("Masuk Jawaban 1")
+    st.write("## Soal2")
+    st.markdown('''
+    <div class="text-bar">
+        <div class="particles"></div>
+        <h1>Rani menabung di celengan setiap hari dengan jumlah yang berbeda-beda. Pada minggu pertama, ia menabung Rp2.000
+        setiap hari. Pada minggu kedua, ia menaikkan jumlah tabungan hariannya menjadi Rp3.000. Rani berencana mengumpulkan
+        uang lebih dari Rp50.000 selama dua minggu tersebut. Tentukan berapa hari minimal Rani harus menabung pada minggu
+        kedua agar jumlah tabungannya lebih dari Rp50.000.</h1>
+    </div>
+    ''',unsafe_allow_html=True)
+    st.session_state.jawaban2['jawab2'] = st.text_area("Masuk Jawaban 2")
+    st.write("## Soal3")
+    st.markdown('''
+    <div class="text-bar">
+        <div class="particles"></div>
+        <h1>Sebuah taman kota berbentuk persegi panjang dengan panjang 3 kali lebarnya. Pemerintah kota berencana menambah panjang
+        taman itu sebanyak 10 meter dan lebarnya sebanyak 5 meter. Setelah diperluas, keliling taman menjadi 130 meter. Tentukan ukuran
+        panjang dan lebar taman sebelum diperluas.</h1>
+    </div>
+    ''',unsafe_allow_html=True)
+    st.session_state.jawaban2['jawab3'] = st.text_area("Masuk Jawaban 3")
+    st.write("## Soal4")
+    st.markdown('''
+    <div class="text-bar">
+        <div class="particles"></div>
+        <h1>Andi ingin membeli buku tulis dan pulpen di sebuah toko alat tulis. Harga satu buku tulis adalah Rp7.000, sedangkan harga
+        satu pulpen adalah Rp4.000. Uang yang dimiliki Andi hanya Rp70.000. Jika Andi membeli 6 buku tulis, berapa pulpen paling banyak
+        yang masih bisa dibeli Andi? Tulis jawabanmu dalam bentuk pertidaksamaan dan tentukan nilai maksimum jumlah pulpen.</h1>
+    </div>
+    ''',unsafe_allow_html=True)
+    st.session_state.jawaban2['jawab4'] = st.text_area("Masuk Jawaban 4")
+    if st.button("Masukan Hasil"):
+        if st.session_state.jawaban2['jawab1'] and st.session_state.jawaban2['jawab2'] and st.session_state.jawaban2['jawab3'] and st.session_state.jawaban2['jawab4']:
+            url = "https://docs.google.com/forms/u/0/d/e/1FAIpQLScHUxVhpKY7AFpxOX-JTHV0A1U9HQj3QrvnkX6hIsd9ybsqiA/formResponse"
+            data = {
+            "entry.664563842": nama,   # Ganti dengan entry ID dari form
+            "entry.136617365": kelas,   # Ganti dengan entry ID dari form
+            "entry.1370752344": sekolah,   # Ganti dengan entry ID dari form
+            "entry.1509446676": st.session_state.jawaban2['jawab1'],   # Ganti dengan entry ID dari form
+            "entry.2059852517": st.session_state.jawaban2['jawab2'],   # Ganti dengan entry ID dari form
+            "entry.1017002842": st.session_state.jawaban2['jawab3'],   # Ganti dengan entry ID dari form
+            "entry.1014904881": st.session_state.jawaban2['jawab4'],   # Ganti dengan entry ID dari form
+                }
+            response = requests.post(url, data=data)
+            if response.status_code == 200:
+                st.success("Berhasil dikirim!")
+            else:
+                st.error(f"Gagal mengirim. Status code: {response.status_code}")
+        else:
+            st.error("Ada Jawaban Soal yang masih kosong, Periksa lagi")
+    
+if st.session_state.pretest1:
+    soal_pretest1()
 def pemetaan():
     st.markdown('<div id="konsep">Peta Konsep</div>',unsafe_allow_html=True)
     st.markdown('<div id="gambar1"></div>',unsafe_allow_html=True)
@@ -239,7 +464,9 @@ if st.session_state.kelompok['kondisi2']:
         st.session_state.pretest = False
         st.session_state.video1 = False
         st.session_state.video2 = False
+        st.session_state.materi_prasyarat = False
         st.session_state.materi1 = False
+        st.session_state.pretest1=False
         st.rerun()
 def soal_pretest():
     st.markdown("<span>klik di sini </span> <a id='format' href='https://emodulterbaru.github.io/pretestHarry1/pretest1'> Soal Pretest</a>",unsafe_allow_html=True)
@@ -268,6 +495,8 @@ if st.session_state.kelompok['kondisi17']:
         st.session_state.video1 = False
         st.session_state.video2 = False
         st.session_state.materi1 = False
+        st.session_state.materi_prasyarat = False
+        st.session_state.pretest1=False
         st.rerun()
     
 def soal_prasyarat():
@@ -363,6 +592,7 @@ def soal_prasyarat():
             st.session_state.video1 = False
             st.session_state.video2 = False
             st.session_state.materi1 = False
+            st.session_state.pretest1=False
             st.rerun()
     
 if st.session_state.prasyarat:
@@ -392,6 +622,8 @@ if st.session_state.kelompok['kondisi3']:
         st.session_state.video1 = False
         st.session_state.video2 = False
         st.session_state.materi1 = False
+        st.session_state.materi_prasyarat = False
+        st.session_state.pretest1=False
         st.rerun()
 
 def tampilkan_video1():
@@ -424,6 +656,8 @@ if st.session_state.kelompok['kondisi18']:
         st.session_state.pretest = False
         st.session_state.video2 = False
         st.session_state.materi1 = False
+        st.session_state.materi_prasyarat = False
+        st.session_state.pretest1=False
         st.rerun()
 def materi_prasyarat_tampil():
     st.error("Nilai Anda: "+str(st.session_state.nilai_prasyarat))
@@ -783,6 +1017,8 @@ if st.session_state.kelompok['kondisi4']:
         st.session_state.video1 = False
         st.session_state.video2 = False
         st.session_state.materi1 = False
+        st.session_state.materi_prasyarat = False
+        st.session_state.pretest1=False
         st.rerun()
 def video_pertidaksamaan():
     st.markdown("<div class='video'>Video Pertidaksamaan Satu variabel</div>",unsafe_allow_html=True)
@@ -815,6 +1051,7 @@ if st.session_state.kelompok['kondisi19']:
         st.session_state.video1 = False
         st.session_state.video2 = True
         st.session_state.materi1 = False
+        st.session_state.pretest1=False
         st.rerun()
 def materi_pertidaksamaan():
     koding_html='''
@@ -1391,6 +1628,7 @@ if st.session_state.kelompok['kondisi20']:
         st.session_state.video1 = False
         st.session_state.video2 = False
         st.session_state.materi1 = True
+        st.session_state.pretest1=False
         st.rerun()
 def soal_adaptif():
     st.markdown(""" <div style="display:flex; justify-content:space-evenly;align-items:center; border:2px solid white; margin-bottom:10px; padding:2px; background-color:grey">
@@ -1465,17 +1703,29 @@ def level_ketiga():
                     <div class="label">Level Ketiga</div>
                     </div>""",unsafe_allow_html=True)
     st.markdown("**Umur Budi 3 tahun lebih tua dari umur Andi. Jika jumlah umur mereka adalah 29 tahun, berapakah umur Andi?**")
-    st.text_input("Jawaban 11")
+    st.session_state.lvl3["jwb1"]=st.text_input("Jawaban 11")
     st.markdown("**Tentukan nilai $x$ pada persamaan:**")
     st.latex("\\frac{x}{3}+5=11")
-    st.text_input("Jawaban 12")
-    st.markdown("**Seorang pedagang membeli 5 buku dan 3 pensil dengan total harga Rp27.000. Jika harga sebuah buku Rp5.000, tentukan harga sebuah pensil dengan menggunakan persamaan satu variabel.**")
-    st.text_input("Jawaban 13")
+    st.session_state.lvl3["jwb2"]=st.text_input("Jawaban 12")
+    st.markdown("**Seorang pedagang membeli 5 buku dan 3 pensil dengan total harga Rp28.000. Jika harga sebuah buku Rp5.000, tentukan harga sebuah pensil dengan menggunakan persamaan satu variabel.**")
+    st.session_state.lvl3["jwb3"]=st.text_input("Jawaban 13")
     st.markdown("**Carilah nilai $x$ pada persamaan**")
     st.latex("2(x-4)+3=11")
-    st.text_input("Jawaban 14")
+    st.session_state.lvl3["jwb4"]=st.text_input("Jawaban 14")
     st.markdown("**Panjang suatu persegi panjang adalah $x+5$ cm dan lebarnya $x-3$ cm. Jika kelilingnya 34 cm, tentukan nilai $x$**")
-    st.text_input("Jawaban 15")
+    st.session_state.lvl3["jwb5"]=st.text_input("Jawaban 15")
+    kunci2 = [13,18,1000,8,7.5]
+    skor2 = 0
+    if st.button("Evaluasi 3"):
+        indeks2=-1
+        skor2=0
+        for i in st.session_state.lvl3:
+            indeks2 +=1
+            if float(st.session_state.lvl3[i])==float(kunci2[indeks2]):
+                skor2 +=20
+    if skor2==100:
+        st.markdown("<div id='lanjutkan'> Anda Sudah Berhasil...</div><div id=''ket>Silahkan Lanjut ke Soal Cerita berikutnya</div>",unsafe_allow_html=True)
+        
 if st.session_state.pengecekan2:
     level_ketiga()
     
@@ -1501,6 +1751,7 @@ if st.session_state.kelompok['kondisi5']:
         st.session_state.video1 = False
         st.session_state.video2 = False
         st.session_state.materi1 = False
+        st.session_state.pretest1=False
         st.rerun()
 def soal_cerita1():
     st.markdown("""
@@ -1512,7 +1763,7 @@ def soal_cerita1():
                 - ##### Pak Budi menyumbang dua kali lipat dari sumbangan Pak Andi.
                 - ##### Jumlah sumbangan Pak Candra adalah Rp20.000 lebih banyak dari sumbangan Pak Budi.
                 """)
-    st.markdown("##### Total sumbangan mereka bertiga adalah Rp220.000.")
+    st.markdown("##### Total sumbangan mereka bertiga adalah Rp270.000.")
     st.markdown("##### Pertanyaan")
     st.markdown("""
                 - ##### Tentukan berapa sumbangan Pak Candra dengan menggunakan persamaan satu variabel.
@@ -1546,6 +1797,7 @@ if st.session_state.kelompok['kondisi6']:
         st.session_state.video1 = False
         st.session_state.video2 = False
         st.session_state.materi1 = False
+        st.session_state.pretest1=False
         st.rerun()
 
 def soal_cerita2():
@@ -1560,7 +1812,7 @@ def soal_cerita2():
                 """)
     st.markdown("##### Pertanyaan")
     st.markdown("""
-                - ##### Tentukan berapa sumbangan Pak Candra dengan menggunakan persamaan satu variabel.
+                - ##### Tentukan berapa jumlah roti yang Dina catat dengan menggunakan persamaan satu variabel.
                 - ##### Mengapa kejujuran dalam mencatat hasil penjualan merupakan bagian dari nilai kemanusiaan yang adil dan beradab?
                 """)
     st.session_state.jawaban1['jawab2']=st.text_area("Keterangan Jawaban2")
@@ -1590,6 +1842,7 @@ if st.session_state.kelompok['kondisi7']:
         st.session_state.video1 = False
         st.session_state.video2 = False
         st.session_state.materi1 = False
+        st.session_state.pretest1=False
         st.rerun()
 
 def soal_cerita3():
@@ -1634,6 +1887,7 @@ if st.session_state.kelompok['kondisi8']:
         st.session_state.video1 = False
         st.session_state.video2 = False
         st.session_state.materi1 = False
+        st.session_state.pretest1=False
         st.rerun()
         
 def soal_cerita4():
@@ -1678,6 +1932,7 @@ if st.session_state.kelompok['kondisi9']:
         st.session_state.video1 = False
         st.session_state.video2 = False
         st.session_state.materi1 = False
+        st.session_state.pretest1=False
         st.rerun()
 
 def soal_cerita5():
@@ -1723,6 +1978,7 @@ if st.session_state.kelompok['kondisi10']:
         st.session_state.video1 = False
         st.session_state.video2 = False
         st.session_state.materi1 = False
+        st.session_state.pretest1=False
         st.rerun()
 
 def soal_cerita6():
@@ -1770,6 +2026,7 @@ if st.session_state.kelompok['kondisi11']:
         st.session_state.video1 = False
         st.session_state.video2 = False
         st.session_state.materi1 = False
+        st.session_state.pretest1=False
         st.rerun()
 
 def soal_cerita7():
@@ -1815,6 +2072,7 @@ if st.session_state.kelompok['kondisi12']:
         st.session_state.video1 = False
         st.session_state.video2 = False
         st.session_state.materi1 = False
+        st.session_state.pretest1=False
         st.rerun()
 
 def soal_cerita8():
@@ -1860,6 +2118,7 @@ if st.session_state.kelompok['kondisi13']:
         st.session_state.video1 = False
         st.session_state.video2 = False
         st.session_state.materi1 = False
+        st.session_state.pretest1=False
         st.rerun()
 
 def soal_cerita9():
@@ -1905,6 +2164,7 @@ if st.session_state.kelompok['kondisi14']:
         st.session_state.video1 = False
         st.session_state.video2 = False
         st.session_state.materi1 = False
+        st.session_state.pretest1=False
         st.rerun()
 
 def soal_cerita10():
@@ -1949,6 +2209,7 @@ if st.session_state.kelompok['kondisi15']:
         st.session_state.video1 = False
         st.session_state.video2 = False
         st.session_state.materi1 = False
+        st.session_state.pretest1=False
         st.rerun()
 
 if st.session_state.kelompok['kondisi16']:
@@ -1976,12 +2237,3 @@ if st.session_state.kelompok['kondisi16']:
                 st.success("Berhasil dikirim!")
             else:
                 st.error(f"Gagal mengirim. Status code: {response.status_code}")
-
-
-
-
-
-
-
-
-
