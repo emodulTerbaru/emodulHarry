@@ -365,7 +365,7 @@ def soal_pretest1():
         <h1>Seorang pedagang buah menjual apel dengan harga Rp5.000 per buah. Ia juga menjual jeruk dengan harga
         Rp4.000 per buah. Pada suatu hari, seorang pembeli membeli beberapa apel dan beberapa jeruk. Jumlah apel
         yang dibeli dua kali lebih banyak daripada jumlah jeruk. Jika total harga yang harus dibayar pembeli tersebut
-        adalah Rp56.000, tentukan berapa banyak apel dan berapa banyak jeruk yang dibeli oleh pembeli tersebut.</h1>
+        adalah Rp52.000, tentukan berapa banyak apel dan berapa banyak jeruk yang dibeli oleh pembeli tersebut.</h1>
     </div>
     ''',unsafe_allow_html=True)
     st.session_state.jawaban2['jawab1'] = st.text_area("Masuk Jawaban 1")
@@ -2237,4 +2237,5 @@ if st.session_state.kelompok['kondisi16']:
                 st.success("Berhasil dikirim!")
             else:
                 st.error(f"Gagal mengirim. Status code: {response.status_code}")
+
 
