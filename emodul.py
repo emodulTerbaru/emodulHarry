@@ -94,7 +94,7 @@ if "jawaban4" not in st.session_state:
                                 "jawab6":0,"jawab7":0,"jawab8":0,"jawab9":0,"jawab10":0,
                                  "jawab11":0,"jawab12":0,"jawab13":0,"jawab14":0,"jawab15":0,
                                 "jawab16":0,"jawab17":0,"jawab18":0,"jawab19":0,"jawab20":0,
-                                 "jawab21":0,"jawab22":0,"jawab23":0
+                                 "jawab21":0,"jawab22":0,"jawab23":0, "jawab24":'',"jawab25":''
                                  }
 st.sidebar.image("https://res.cloudinary.com/ikip-siliwangi/image/upload/v1753921874/logo_rw63xi.jpg", width=100)
 kolom = st.columns(3)
@@ -439,8 +439,63 @@ def tampilkan_kevalidan():
     st.markdown('''
     <div style="background-color:black;color:yellow;padding:5px; margin:5px; font-size:18px;border-radius:8px;border:2px solid cyan;
     font-family:'comic sans ms';text-align:center;font-weight:bold">Komentar/ Saran untuk Perbaikan LMS</div>
+    <div></div>
     ''',unsafe_allow_html=True)
-    st.text_area("Mohon isi di sini")
+    st.session_state.jawaban4['jawab24']=st.text_area("Mohon isi di sini")
+    st.markdown('''
+    <div style="background-color:black;color:yellow;padding:5px; margin:5px; font-size:18px;border-radius:8px;border:2px solid cyan;
+    font-family:'comic sans ms';text-align:center;font-weight:bold">Kesimpulan</div>
+    ''',unsafe_allow_html=True)
+    st.session_state.jawaban4['jawab25']=st.radio("Bahan ajar berbentuk LKS dengan pendekatan PBL dinyatakan *)",["1 Layak digunakan di lapangan tanpa revisi","2 Layak digunakan di lapangan dengan revisi","3 Tidak layak digunakan di lapangan"],index=None)
+    st.markdown('''
+    <div>*) Pilih salah satu</div>
+    ''',unsafe_allow_html=True)
+    if st.button("Masukan jawaban kevalidan"):
+        poin = 0
+        for i in st.session_state.jawaban4:
+            if st.session_state.jawaban4[i]==None or st.session_state.jawaban4[i]=="":
+                st.error(i+" Belum terisi")
+                break
+            else:
+                poin +=1
+        st.write(poin)
+        if poin==25:
+            url = "https://docs.google.com/forms/u/0/d/e/1FAIpQLSc5AFFyrt8Ls8PoHVJ00T4YCDETux7tSD2iFE-0W9np8vSYtA/formResponse"
+            data = {
+            "entry.884183788": nama,   # Ganti dengan entry ID dari form
+            "entry.609705951": kelas,   # Ganti dengan entry ID dari form
+            "entry.1970482153": sekolah,   # Ganti dengan entry ID dari form
+            "entry.2022976301": st.session_state.jawaban4['jawab1'],   # Ganti dengan entry ID dari form
+            "entry.1143421917": st.session_state.jawaban4['jawab2'],   # Ganti dengan entry ID dari form
+            "entry.692230187": st.session_state.jawaban4['jawab3'],   # Ganti dengan entry ID dari form
+            "entry.1118222492": st.session_state.jawaban4['jawab4'],   # Ganti dengan entry ID dari form
+            "entry.90781233": st.session_state.jawaban4['jawab5'],   # Ganti dengan entry ID dari form
+            "entry.2412908": st.session_state.jawaban4['jawab6'],   # Ganti dengan entry ID dari form
+            "entry.45074186": st.session_state.jawaban4['jawab7'],   # Ganti dengan entry ID dari form
+            "entry.588722623": st.session_state.jawaban4['jawab8'],   # Ganti dengan entry ID dari form
+            "entry.1126474833": st.session_state.jawaban4['jawab9'],   # Ganti dengan entry ID dari form
+            "entry.1776452208": st.session_state.jawaban4['jawab10'],   # Ganti dengan entry ID dari form
+            "entry.1894233351": st.session_state.jawaban4['jawab11'],   # Ganti dengan entry ID dari form
+            "entry.807119423": st.session_state.jawaban4['jawab12'],   # Ganti dengan entry ID dari form
+            "entry.962584938": st.session_state.jawaban4['jawab13'],   # Ganti dengan entry ID dari form
+            "entry.1587149867": st.session_state.jawaban4['jawab14'],   # Ganti dengan entry ID dari form
+            "entry.2081490996": st.session_state.jawaban4['jawab15'],   # Ganti dengan entry ID dari form
+            "entry.1240199975": st.session_state.jawaban4['jawab16'],   # Ganti dengan entry ID dari form
+            "entry.1517972685": st.session_state.jawaban4['jawab17'],   # Ganti dengan entry ID dari form
+            "entry.1174466107": st.session_state.jawaban4['jawab18'],   # Ganti dengan entry ID dari form
+            "entry.972246048": st.session_state.jawaban4['jawab19'],   # Ganti dengan entry ID dari form
+            "entry.1280090027": st.session_state.jawaban4['jawab20'],   # Ganti dengan entry ID dari form
+            "entry.1097175283": st.session_state.jawaban4['jawab21'],   # Ganti dengan entry ID dari form
+            "entry.1660829012": st.session_state.jawaban4['jawab22'],   # Ganti dengan entry ID dari form
+            "entry.355914659": st.session_state.jawaban4['jawab23'],   # Ganti dengan entry ID dari form
+            "entry.1827587111": st.session_state.jawaban4['jawab24'],   # Ganti dengan entry ID dari form
+            "entry.1648938937": st.session_state.jawaban4['jawab25'],   # Ganti dengan entry ID dari form
+                }
+            response = requests.post(url, data=data)
+            if response.status_code == 200:
+                st.success("Berhasil dikirim!")
+            else:
+                st.error(f"Gagal mengirim. Status code: {response.status_code}")
 if st.session_state.soal_kevalidan:
     tampilkan_kevalidan()
 def tampil_kuisioner():
