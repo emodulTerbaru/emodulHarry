@@ -2183,7 +2183,7 @@ def soal_cerita2():
     st.markdown("##### Dina membuka kios kecil di sekolah. Ia menjual roti seharga Rp4.000 dan teh botol seharga Rp6.000.")
     st.markdown("""
                 <ol type="A">
-                 <li style="font-size:20px"> Suatu hari, Dina mencatat jumlah roti yang terjual adalah $x$. </li>
+                 <li style="font-size:20px"> Suatu hari, Dina mencatat jumlah roti yang terjual adalah x. </li>
                  <li style="font-size:20px"> Jumlah teh botol yang terjual adalah 2 lebih banyak dari jumlah roti.</li>
                   <li style="font-size:20px"> Uang hasil penjualan seluruhnya adalah Rp62.000.</li>
                 </ol>
