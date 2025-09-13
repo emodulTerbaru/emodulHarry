@@ -2131,16 +2131,18 @@ def soal_cerita1():
     st.image("https://quizizz.com/media/resource/gs/quizizz-media/quizzes/4204f59e-cf7a-4ec0-b2a7-d99f33f5d1e7",use_container_width=True)
     st.markdown("##### Warga sebuah desa bergotong royong membangun pos ronda.")
     st.markdown("""
-                - ##### Pak Andi menyumbang Rp50.000. 
+                - ##### Pak Andi menyumbang Rp x. 
                 - ##### Pak Budi menyumbang dua kali lipat dari sumbangan Pak Andi.
                 - ##### Jumlah sumbangan Pak Candra adalah Rp20.000 lebih banyak dari sumbangan Pak Budi.
                 """)
     st.markdown("##### Total sumbangan mereka bertiga adalah Rp270.000.")
     st.markdown("##### Pertanyaan")
     st.markdown("""
-                - ##### Tentukan berapa sumbangan Pak Candra dengan menggunakan persamaan satu variabel.
-                - ##### Bagaimana kegiatan gotong royong ini mencerminkan nilai persatuan dalam Pancasila?
-                """)
+                <ol type="A">
+                  <li style="font-size:20px">Tentukan berapa sumbangan Pak Candra dengan menggunakan persamaan satu variabel.</li>
+                  <li style="font-size:20px">Bagaimana kegiatan gotong royong ini mencerminkan nilai persatuan dalam Pancasila?</li>
+                </ol>
+                """,unsafe_allow_html=True)
     st.session_state.jawaban1['jawab1']=st.text_area("Keterangan Jawaban1")
 if st.session_state.cerita1:
     soal_cerita1()
@@ -2180,13 +2182,15 @@ def soal_cerita2():
     st.image("https://st2.depositphotos.com/26922084/44234/v/450/depositphotos_442342356-stock-illustration-male-salesman-is-working-at.jpg",use_container_width=True)
     st.markdown("##### Dina membuka kios kecil di sekolah. Ia menjual roti seharga Rp4.000 dan teh botol seharga Rp6.000.")
     st.markdown("""
-                - ##### Suatu hari, Dina mencatat jumlah roti yang terjual adalah $x$. 
-                - ##### Jumlah teh botol yang terjual adalah 2 lebih banyak dari jumlah roti.
-                - ##### Uang hasil penjualan seluruhnya adalah Rp62.000.
-                """)
+                <ol type="A">
+                 <li style="font-size:20px"> Suatu hari, Dina mencatat jumlah roti yang terjual adalah $x$. </li>
+                 <li style="font-size:20px"> Jumlah teh botol yang terjual adalah 2 lebih banyak dari jumlah roti.</li>
+                  <li style="font-size:20px"> Uang hasil penjualan seluruhnya adalah Rp62.000.</li>
+                </ol>
+                """,unsafe_allow_html=True)
     st.markdown("##### Pertanyaan")
     st.markdown("""
-                - ##### Tentukan berapa jumlah roti yang Dina catat dengan menggunakan persamaan satu variabel.
+                - ##### Tentukan berapa jumlah roti yang Dina jual dengan menggunakan persamaan satu variabel.
                 - ##### Mengapa kejujuran dalam mencatat hasil penjualan merupakan bagian dari nilai kemanusiaan yang adil dan beradab?
                 """)
     st.session_state.jawaban1['jawab2']=st.text_area("Keterangan Jawaban2")
@@ -2228,7 +2232,7 @@ def soal_cerita3():
     st.markdown("##### Sebuah kelas menggalang dana untuk membantu teman mereka yang sedang sakit.")
     st.markdown("""
                 - ##### Setiap siswa menyumbang jumlah yang sama. 
-                - ##### ika jumlah siswa adalah $x$, maka uang terkumpul Rp1.500.000.
+                - ##### Jika jumlah siswa adalah $x$, maka uang terkumpul Rp1.500.000.
                 - ##### Setelah dihitung ulang, ternyata ada 5 siswa yang tidak ikut menyumbang, sehingga total yang terkumpul hanya Rp1.350.000.
                 """)
     st.markdown("##### Pertanyaan")
@@ -2370,10 +2374,9 @@ def soal_cerita6():
     st.markdown("##### Dalam rangka memperingati Hari Kemerdekaan, sebuah desa mengadakan lomba 17 Agustus. Panitia memutuskan bahwa:.")
     st.markdown("""
                 - ##### Setiap kepala keluarga menyumbang uang dalam jumlah yang sama, yaitu Rp $x$ 
-                - ##### Agar tidak memberatkan warga, besar sumbangan tiap keluarga tidak boleh lebih dari Rp50.000.
+                - ##### Agar tidak memberatkan warga, besar sumbangan tiap keluarga tidak boleh lebih dari Rp50.000 dan tidak boleh kurang dari Rp. 5.000.
                 - ##### Jumlah keluarga di desa tersebut adalah 120.
                 """)
-    st.markdown("##### Jumlah seluruh karung beras yang terkumpul adalah 47 karung.")
     st.markdown("##### Pertanyaan")
     st.markdown("""
                 - ##### Nyatakan situasi ini dalam bentuk pertidaksamaan satu variabel.
