@@ -96,6 +96,8 @@ if "jawaban4" not in st.session_state:
                                 "jawab16":0,"jawab17":0,"jawab18":0,"jawab19":0,"jawab20":0,
                                  "jawab21":0,"jawab22":0,"jawab23":0, "jawab24":'',"jawab25":''
                                  }
+if "akhir" not in st.session_state:
+    st.session_state.akhir=False
 st.sidebar.image("https://res.cloudinary.com/ikip-siliwangi/image/upload/v1753921874/logo_rw63xi.jpg", width=100)
 kolom = st.columns(3)
 with kolom[0]:
@@ -241,6 +243,10 @@ st.markdown('''
                     color:yellow;
                     
                 }
+                .st-key-tombol1 .e1obcldf2:active{
+                    background-color:blue;
+                    color:white;
+                }
             </style>
             ''',unsafe_allow_html=True)
 
@@ -277,6 +283,7 @@ with kumpulan[1]:
         st.session_state.materi1 = False
         st.session_state.soal_kuisioner=False
         st.session_state.soal_kevalidan=False
+        st.session_state.akhir=False
         st.rerun()
 with kumpulan[2]:
     if st.button("Kuesioner Kepraktisan"):
@@ -305,6 +312,7 @@ with kumpulan[2]:
         st.session_state.materi_prasyarat = False
         st.session_state.materi1 = False
         st.session_state.soal_kevalidan=False
+        st.session_state.akhir=False
         st.rerun()
 
 if st.button("Kuesioner Kevalidan"):
@@ -333,6 +341,7 @@ if st.button("Kuesioner Kevalidan"):
     st.session_state.video2 = False
     st.session_state.materi_prasyarat = False
     st.session_state.materi1 = False
+    st.session_state.akhir=False
     st.rerun()
 
 def tampilkan_kevalidan():
@@ -791,12 +800,13 @@ def kover():
     st.markdown('<div id="gambar" ></div>',unsafe_allow_html=True)
 
 if st.session_state.peta:
+    st.markdown('<style>.st-key-tombol3 .e1obcldf2{background-color:blue;color:yellow}</style>',unsafe_allow_html=True)
     pemetaan()
     
 if st.session_state.kelompok['kondisi1']:
     kover()
 if st.session_state.kelompok['kondisi2']:
-    if st.sidebar.button("Prasyarat"):
+    if st.sidebar.button("Prasyarat",key="tombol1"):
         st.session_state.peta=False
         st.session_state.prasyarat = True
         st.session_state.kelompok['kondisi1']=False
@@ -823,13 +833,15 @@ if st.session_state.kelompok['kondisi2']:
         st.session_state.pretest1=False
         st.session_state.soal_kuisioner=False
         st.session_state.soal_kevalidan=False
+        st.session_state.akhir=False
         st.rerun()
 def soal_pretest():
+    st.markdown('<style>.st-key-tombol2 .e1obcldf2{background-color:blue;color:yellow}</style>',unsafe_allow_html=True)
     st.markdown("<span>klik di sini </span> <a id='format' href='https://emodulterbaru.github.io/pretestHarry1/pretest1'> Soal Pretest</a>",unsafe_allow_html=True)
 if st.session_state.pretest:
     soal_pretest()
 if st.session_state.kelompok['kondisi17']:
-    if st.sidebar.button("Pretest"):
+    if st.sidebar.button("Pretest", key="tombol2"):
         st.session_state.peta=False
         st.session_state.prasyarat = False
         st.session_state.pretest = True
@@ -855,6 +867,7 @@ if st.session_state.kelompok['kondisi17']:
         st.session_state.pretest1=False
         st.session_state.soal_kuisioner=False
         st.session_state.soal_kevalidan=False
+        st.session_state.akhir=False
         st.rerun()
     
 def soal_prasyarat():
@@ -953,13 +966,15 @@ def soal_prasyarat():
             st.session_state.pretest1=False
             st.session_state.soal_kuisioner=False
             st.session_state.soal_kevalidan=False
+            st.session_state.akhir=False
             st.rerun()
     
 if st.session_state.prasyarat:
+    st.markdown('<style>.st-key-tombol1 .e1obcldf2{background-color:blue;color:yellow}</style>',unsafe_allow_html=True)
     soal_prasyarat()
 
 if st.session_state.kelompok['kondisi3']:
-    if st.sidebar.button("Peta Konsep"):
+    if st.sidebar.button("Peta Konsep",key="tombol3"):
         st.session_state.kelompok['kondisi18']=True
         st.session_state.peta = True
         st.session_state.adaptif=False
@@ -986,6 +1001,7 @@ if st.session_state.kelompok['kondisi3']:
         st.session_state.pretest1=False
         st.session_state.soal_kuisioner=False
         st.session_state.soal_kevalidan=False
+        st.session_state.akhir=False
         st.rerun()
 
 def tampilkan_video1():
@@ -993,9 +1009,10 @@ def tampilkan_video1():
     st.video("https://www.youtube.com/embed/7veosRwnWVg?si=rt4Dahc9Ax30PAyw")
     st.markdown('**Courtesy by Youtube: https://www.youtube.com/embed/7veosRwnWVg?si=rt4Dahc9Ax30PAyw**')
 if st.session_state.video1:
+    st.markdown('<style>.st-key-tombol4 .e1obcldf2{background-color:blue;color:yellow}</style>',unsafe_allow_html=True)
     tampilkan_video1()
 if st.session_state.kelompok['kondisi18']:
-    if st.sidebar.button("Video Persamaan 1 Variabel"):
+    if st.sidebar.button("Video Persamaan 1 Variabel", key="tombol4"):
         st.session_state.kelompok['kondisi4']=True
         st.session_state.peta = False
         st.session_state.video1 = True
@@ -1022,6 +1039,7 @@ if st.session_state.kelompok['kondisi18']:
         st.session_state.pretest1=False
         st.session_state.soal_kuisioner=False
         st.session_state.soal_kevalidan=False
+        st.session_state.akhir=False
         st.rerun()
 def materi_prasyarat_tampil():
     st.error("Nilai Anda: "+str(st.session_state.nilai_prasyarat))
@@ -1356,9 +1374,10 @@ def materi_tampilkan():
         else:
             st.markdown("<div class='cek'>Salah</div>",unsafe_allow_html=True)
 if st.session_state.materi:
+    st.markdown('<style>.st-key-tombol5 .e1obcldf2{background-color:blue;color:yellow}</style>',unsafe_allow_html=True)
     materi_tampilkan()
 if st.session_state.kelompok['kondisi4']:
-    if st.sidebar.button("Materi Persamaan 1 variabel"):
+    if st.sidebar.button("Materi Persamaan 1 variabel",key="tombol5"):
         st.session_state.peta = False
         st.session_state.prasyarat = False
         st.session_state.materi_prasyarat = False
@@ -1385,21 +1404,22 @@ if st.session_state.kelompok['kondisi4']:
         st.session_state.pretest1=False
         st.session_state.soal_kuisioner=False
         st.session_state.soal_kevalidan=False
+        st.session_state.akhir=False
         st.rerun()
 def video_pertidaksamaan():
     st.markdown("<div class='video'>Video Pertidaksamaan Satu variabel</div>",unsafe_allow_html=True)
     st.video("https://www.youtube.com/embed/SM7qejnJv28?si=8r2mqnQDD0-Eo1T5")
     st.markdown('**Courtesy by Youtube: https://www.youtube.com/embed/SM7qejnJv28?si=8r2mqnQDD0-Eo1T5**')
 if st.session_state.video2:
+    st.markdown('<style>.st-key-tombol6 .e1obcldf2{background-color:blue;color:yellow}</style>',unsafe_allow_html=True)
     video_pertidaksamaan()
 if st.session_state.kelompok['kondisi19']:
-    if st.sidebar.button("Video Pertidaksamaan 1 Variabel"):
+    if st.sidebar.button("Video Pertidaksamaan 1 Variabel", key="tombol6"):
         st.session_state.peta = False
         st.session_state.prasyarat = False
         st.session_state.materi_prasyarat = False
         st.session_state.adaptif=False
         st.session_state.materi = False
-        st.session_state.kelompok['kondisi5']=False
         st.session_state.kelompok['kondisi20']=True
         st.session_state.pengecekan1 = False
         st.session_state.pengecekan2 = False
@@ -1420,6 +1440,7 @@ if st.session_state.kelompok['kondisi19']:
         st.session_state.pretest1=False
         st.session_state.soal_kuisioner=False
         st.session_state.soal_kevalidan=False
+        st.session_state.akhir=False
         st.rerun()
 def materi_pertidaksamaan():
     koding_html='''
@@ -1971,9 +1992,10 @@ def materi_pertidaksamaan():
 '''
     components.html(koding_html, height=2600, width=None)
 if st.session_state.materi1:
+    st.markdown('<style>.st-key-tombol7 .e1obcldf2{background-color:blue;color:yellow}</style>',unsafe_allow_html=True)
     materi_pertidaksamaan()
 if st.session_state.kelompok['kondisi20']:
-    if st.sidebar.button("Materi Pertidaksamaan 1 Variabel"):
+    if st.sidebar.button("Materi Pertidaksamaan 1 Variabel",key="tombol7"):
         st.session_state.peta = False
         st.session_state.prasyarat = False
         st.session_state.materi_prasyarat = False
@@ -1999,6 +2021,7 @@ if st.session_state.kelompok['kondisi20']:
         st.session_state.pretest1=False
         st.session_state.soal_kuisioner=False
         st.session_state.soal_kevalidan=False
+        st.session_state.akhir=False
         st.rerun()
 def soal_adaptif():
     st.markdown(""" <div style="display:flex; justify-content:space-evenly;align-items:center; border:2px solid white; margin-bottom:10px; padding:2px; background-color:grey">
@@ -2033,6 +2056,7 @@ def soal_adaptif():
         st.session_state.pengecekan1=True
     
 if st.session_state.adaptif:
+    st.markdown('<style>.st-key-tombol8 .e1obcldf2{background-color:blue;color:yellow}</style>',unsafe_allow_html=True)
     soal_adaptif()
 def level_kedua():
     st.markdown(""" <div style="display:flex; justify-content:space-evenly;align-items:center; border:2px solid white; margin-bottom:10px; padding:2px;">
@@ -2100,7 +2124,7 @@ if st.session_state.pengecekan2:
     level_ketiga()
     
 if st.session_state.kelompok['kondisi5']:
-    if st.sidebar.button("Soal Level"):
+    if st.sidebar.button("Soal Level",key="tombol8"):
         st.session_state.peta = False
         st.session_state.prasyarat = False
         st.session_state.materi_prasyarat = False
@@ -2124,6 +2148,7 @@ if st.session_state.kelompok['kondisi5']:
         st.session_state.pretest1=False
         st.session_state.soal_kuisioner=False
         st.session_state.soal_kevalidan=False
+        st.session_state.akhir=False
         st.rerun()
 def soal_cerita1():
     st.markdown("""
@@ -2143,12 +2168,13 @@ def soal_cerita1():
                   <li style="font-size:20px">Bagaimana kegiatan gotong royong ini mencerminkan nilai persatuan dalam Pancasila?</li>
                 </ol>
                 """,unsafe_allow_html=True)
-    st.session_state.jawaban1['jawab1']=st.text_area("Keterangan Jawaban1")
+    st.session_state.jawaban1['jawab1']=st.text_area("Keterangan Jawaban1",value=st.session_state.jawaban1['jawab1'])
 if st.session_state.cerita1:
+    st.markdown('<style>.st-key-tombol10 .e1obcldf2{background-color:blue;color:yellow}</style>',unsafe_allow_html=True)
     soal_cerita1()
 if st.session_state.kelompok['kondisi6']:
     st.sidebar.write("**Persamaan 1 variabel**")
-    if st.sidebar.button("Gotong Royong"):
+    if st.sidebar.button("Gotong Royong",key="tombol10"):
         st.session_state.peta = False
         st.session_state.prasyarat = False
         st.session_state.materi_prasyarat = False
@@ -2174,6 +2200,7 @@ if st.session_state.kelompok['kondisi6']:
         st.session_state.pretest1=False
         st.session_state.soal_kuisioner=False
         st.session_state.soal_kevalidan=False
+        st.session_state.akhir=False
         st.rerun()
 
 def soal_cerita2():
@@ -2193,11 +2220,12 @@ def soal_cerita2():
                 - ##### Tentukan berapa jumlah roti yang Dina jual dengan menggunakan persamaan satu variabel.
                 - ##### Mengapa kejujuran dalam mencatat hasil penjualan merupakan bagian dari nilai kemanusiaan yang adil dan beradab?
                 """)
-    st.session_state.jawaban1['jawab2']=st.text_area("Keterangan Jawaban2")
+    st.session_state.jawaban1['jawab2']=st.text_area("Keterangan Jawaban2",value=st.session_state.jawaban1['jawab2'])
 if st.session_state.cerita2:
+    st.markdown('<style>.st-key-tombol11 .e1obcldf2{background-color:blue;color:yellow}</style>',unsafe_allow_html=True)
     soal_cerita2()
 if st.session_state.kelompok['kondisi7']:
-    if st.sidebar.button('Jujur dalam Jual Beli'):
+    if st.sidebar.button('Jujur dalam Jual Beli',key="tombol11"):
         st.session_state.peta = False
         st.session_state.prasyarat = False
         st.session_state.materi_prasyarat = False
@@ -2223,6 +2251,7 @@ if st.session_state.kelompok['kondisi7']:
         st.session_state.pretest1=False
         st.session_state.soal_kuisioner=False
         st.session_state.soal_kevalidan=False
+        st.session_state.akhir=False
         st.rerun()
 
 def soal_cerita3():
@@ -2240,11 +2269,12 @@ def soal_cerita3():
                 - ##### Tentukan berapa jumlah siswa dalam kelas tersebut.
                 - ##### Bagaimana sikap membantu teman ini mencerminkan nilai keadilan sosial dalam Pancasila?
                 """)
-    st.session_state.jawaban1['jawab3']=st.text_area("Keterangan Jawaban3")
+    st.session_state.jawaban1['jawab3']=st.text_area("Keterangan Jawaban3",value=st.session_state.jawaban1['jawab3'])
 if st.session_state.cerita3:
+    st.markdown('<style>.st-key-tombol12 .e1obcldf2{background-color:blue;color:yellow}</style>',unsafe_allow_html=True)
     soal_cerita3()
 if st.session_state.kelompok['kondisi8']:
-    if st.sidebar.button("Membantu Sesama"):
+    if st.sidebar.button("Membantu Sesama",key="tombol12"):
         st.session_state.peta = False
         st.session_state.prasyarat = False
         st.session_state.materi_prasyarat = False
@@ -2270,6 +2300,7 @@ if st.session_state.kelompok['kondisi8']:
         st.session_state.pretest1=False
         st.session_state.soal_kuisioner=False
         st.session_state.soal_kevalidan=False
+        st.session_state.akhir=False
         st.rerun()
         
 def soal_cerita4():
@@ -2287,11 +2318,12 @@ def soal_cerita4():
                 - ##### Tentukan jumlah siswa dalam kelas tersebut dengan menggunakan persamaan satu variabel.
                 - ##### Bagaimana kegiatan musyawarah dalam menentukan biaya ini sesuai dengan nilai kerakyatan dalam Pancasila?
                 """)
-    st.session_state.jawaban1['jawab4']=st.text_area("Keterangan Jawaban4")
+    st.session_state.jawaban1['jawab4']=st.text_area("Keterangan Jawaban4", value=st.session_state.jawaban1['jawab4'])
 if st.session_state.cerita4:
+    st.markdown('<style>.st-key-tombol13 .e1obcldf2{background-color:blue;color:yellow}</style>',unsafe_allow_html=True)
     soal_cerita4()
 if st.session_state.kelompok['kondisi9']:
-    if st.sidebar.button("Musyawarah Kelas"):
+    if st.sidebar.button("Musyawarah Kelas",key="tombol13"):
         st.session_state.peta = False
         st.session_state.prasyarat = False
         st.session_state.materi_prasyarat = False
@@ -2317,6 +2349,7 @@ if st.session_state.kelompok['kondisi9']:
         st.session_state.pretest1=False
         st.session_state.soal_kuisioner=False
         st.session_state.soal_kevalidan=False
+        st.session_state.akhir=False
         st.rerun()
 
 def soal_cerita5():
@@ -2335,11 +2368,13 @@ def soal_cerita5():
                 - ##### Tentukan berapa banyak karung beras yang disumbangkan masing-masing kelompok dengan menggunakan persamaan satu variabel.
                 - ##### Mengapa kegiatan ini mencerminkan nilai toleransi dan Ketuhanan Yang Maha Esa dalam Pancasila?
                 """)
-    st.session_state.jawaban1['jawab5']=st.text_area("Keterangan Jawaban5")
+    st.session_state.jawaban1['jawab5']=st.text_area("Keterangan Jawaban5",value=st.session_state.jawaban1['jawab5'])
 if st.session_state.cerita5:
+    st.markdown('<style>.st-key-tombol15 .e1obcldf2{background-color:blue;color:yellow}</style>',unsafe_allow_html=True)
     soal_cerita5()
 if st.session_state.kelompok['kondisi10']:
-    if st.sidebar.button("Kerukunan Agama"):
+    if st.sidebar.button("Kerukunan Agama", key="tombol15"):
+        st.session_state.kelompok['kondisi16']=True
         st.session_state.peta = False
         st.session_state.prasyarat = False
         st.session_state.materi_prasyarat = False
@@ -2365,6 +2400,7 @@ if st.session_state.kelompok['kondisi10']:
         st.session_state.pretest1=False
         st.session_state.soal_kuisioner=False
         st.session_state.soal_kevalidan=False
+        st.session_state.akhir=False
         st.rerun()
 
 def soal_cerita6():
@@ -2383,12 +2419,13 @@ def soal_cerita6():
                 - ##### Berapakah rentang nilai sumbangan yang mungkin diminta panitia?
                 - ##### Bagaimana kegiatan gotong royong ini mencerminkan nilai persatuan dan kebersamaan dalam Pancasila?
                 """)
-    st.session_state.jawaban1['jawab6']=st.text_area("Keterangan Jawaban6")
+    st.session_state.jawaban1['jawab6']=st.text_area("Keterangan Jawaban6",value=st.session_state.jawaban1['jawab6'])
 if st.session_state.cerita6:
+    st.markdown('<style>.st-key-tombol16 .e1obcldf2{background-color:blue;color:yellow}</style>',unsafe_allow_html=True)
     soal_cerita6()
 if st.session_state.kelompok['kondisi11']:
     st.sidebar.write("**Pertidaksamaan 1 variabel**")
-    if st.sidebar.button("Sumbangan Kegiatan"):
+    if st.sidebar.button("Sumbangan Kegiatan", key="tombol16"):
         st.session_state.peta = False
         st.session_state.prasyarat = False
         st.session_state.materi_prasyarat = False
@@ -2414,6 +2451,7 @@ if st.session_state.kelompok['kondisi11']:
         st.session_state.pretest1=False
         st.session_state.soal_kuisioner=False
         st.session_state.soal_kevalidan=False
+        st.session_state.akhir=False
         st.rerun()
 
 def soal_cerita7():
@@ -2432,11 +2470,12 @@ def soal_cerita7():
                 - ##### Jika setiap roti yang terjual memberi keuntungan Rp1.000, tentukan batas minimum dan maksimum keuntungan Ani dalam sehari.
                 - ##### Mengapa sikap jujur Ani dalam mencatat hasil penjualan sesuai dengan nilai kemanusiaan yang adil dan beradab?
                 """)
-    st.session_state.jawaban1['jawab7']=st.text_area("Keterangan Jawaban7")
+    st.session_state.jawaban1['jawab7']=st.text_area("Keterangan Jawaban7",st.session_state.jawaban1['jawab7'])
 if st.session_state.cerita7:
+    st.markdown('<style>.st-key-tombol17 .e1obcldf2{background-color:blue;color:yellow}</style>',unsafe_allow_html=True)
     soal_cerita7()
 if st.session_state.kelompok['kondisi12']:
-    if st.sidebar.button("Kejujuran"):
+    if st.sidebar.button("Kejujuran", key="tombol17"):
         st.session_state.peta = False
         st.session_state.prasyarat = False
         st.session_state.materi_prasyarat = False
@@ -2462,6 +2501,7 @@ if st.session_state.kelompok['kondisi12']:
         st.session_state.pretest1=False
         st.session_state.soal_kuisioner=False
         st.session_state.soal_kevalidan=False
+        st.session_state.akhir=False
         st.rerun()
 
 def soal_cerita8():
@@ -2480,11 +2520,12 @@ def soal_cerita8():
                 - ##### Tentukan rentang total dana yang mungkin terkumpul.
                 - ##### Bagaimana kegiatan ini mencerminkan nilai keadilan sosial dalam Pancasila?
                 """)
-    st.session_state.jawaban1['jawab8']=st.text_area("Keterangan Jawaban8")
+    st.session_state.jawaban1['jawab8']=st.text_area("Keterangan Jawaban8",value=st.session_state.jawaban1['jawab8'])
 if st.session_state.cerita8:
+    st.markdown('<style>.st-key-tombol18 .e1obcldf2{background-color:blue;color:yellow}</style>',unsafe_allow_html=True)
     soal_cerita8()
 if st.session_state.kelompok['kondisi13']:
-    if st.sidebar.button("Membantu Teman"):
+    if st.sidebar.button("Membantu Teman", key="tombol18"):
         st.session_state.peta = False
         st.session_state.prasyarat = False
         st.session_state.materi_prasyarat = False
@@ -2510,6 +2551,7 @@ if st.session_state.kelompok['kondisi13']:
         st.session_state.pretest1=False
         st.session_state.soal_kuisioner=False
         st.session_state.soal_kevalidan=False
+        st.session_state.akhir=False
         st.rerun()
 
 def soal_cerita9():
@@ -2528,11 +2570,12 @@ def soal_cerita9():
                 - ##### Tentukan batas minimum dan maksimum uang kas kelas dalam sebulan.
                 - ##### Bagaimana kegiatan musyawarah ini mencerminkan nilai demokrasi dalam Pancasila?
                 """)
-    st.session_state.jawaban1['jawab9']=st.text_area("Keterangan Jawaban9")
+    st.session_state.jawaban1['jawab9']=st.text_area("Keterangan Jawaban9",value=st.session_state.jawaban1['jawab9'])
 if st.session_state.cerita9:
+    st.markdown('<style>.st-key-tombol19 .e1obcldf2{background-color:blue;color:yellow}</style>',unsafe_allow_html=True)
     soal_cerita9()
 if st.session_state.kelompok['kondisi14']:
-    if st.sidebar.button("Musyawarah"):
+    if st.sidebar.button("Musyawarah", key="tombol19"):
         st.session_state.peta = False
         st.session_state.prasyarat = False
         st.session_state.materi_prasyarat = False
@@ -2558,6 +2601,7 @@ if st.session_state.kelompok['kondisi14']:
         st.session_state.pretest1=False
         st.session_state.soal_kuisioner=False
         st.session_state.soal_kevalidan=False
+        st.session_state.akhir=False
         st.rerun()
 
 def soal_cerita10():
@@ -2575,11 +2619,12 @@ def soal_cerita10():
                 - ##### Tentukan rentang jumlah total beras yang mungkin terkumpul.
                 - ##### Bagaimana kegiatan ini mencerminkan nilai toleransi antar umat beragama dan Ketuhanan Yang Maha Esa?
                 """)
-    st.session_state.jawaban1['jawab10']=st.text_area("Keterangan Jawaban10")
+    st.session_state.jawaban1['jawab10']=st.text_area("Keterangan Jawaban10",st.session_state.jawaban1['jawab10'])
 if st.session_state.cerita10:
+    st.markdown('<style>.st-key-tombol20 .e1obcldf2{background-color:blue;color:yellow}</style>',unsafe_allow_html=True)
     soal_cerita10()
 if st.session_state.kelompok['kondisi15']:
-    if st.sidebar.button("Toleransi"):
+    if st.sidebar.button("Toleransi", key="tombol20"):
         st.session_state.peta = False
         st.session_state.prasyarat = False
         st.session_state.materi_prasyarat = False
@@ -2605,14 +2650,14 @@ if st.session_state.kelompok['kondisi15']:
         st.session_state.pretest1=False
         st.session_state.soal_kuisioner=False
         st.session_state.soal_kevalidan=False
+        st.session_state.akhir=False
         st.rerun()
 
-if st.session_state.kelompok['kondisi16']:
-    if st.sidebar.button("Lihat Hasil Akhir"):
-        st.write(st.session_state.jawaban1)
-        if nama and kelas and sekolah:
-            url = "https://docs.google.com/forms/u/0/d/e/1FAIpQLSewIefkRWG20MZKNTE9uj2GsAGcJh7692-F9sA3MZBmwwmLIg/formResponse"
-            data = {
+def hasil_akhir():
+    st.write(st.session_state.jawaban1)
+    if nama and kelas and sekolah:
+        url = "https://docs.google.com/forms/u/0/d/e/1FAIpQLSewIefkRWG20MZKNTE9uj2GsAGcJh7692-F9sA3MZBmwwmLIg/formResponse"
+        data = {
             "entry.998794637": nama,   # Ganti dengan entry ID dari form
             "entry.1343498210": kelas,   # Ganti dengan entry ID dari form
             "entry.1376928479": sekolah,   # Ganti dengan entry ID dari form
@@ -2626,12 +2671,44 @@ if st.session_state.kelompok['kondisi16']:
             "entry.1675641791": st.session_state.jawaban1['jawab8'],   # Ganti dengan entry ID dari form
             "entry.1207143181": st.session_state.jawaban1['jawab9'],   # Ganti dengan entry ID dari form
             "entry.125676604": st.session_state.jawaban1['jawab10'],   # Ganti dengan entry ID dari form
-            }
-            response = requests.post(url, data=data)
-            if response.status_code == 200:
-                st.success("Berhasil dikirim!")
-            else:
-                st.error(f"Gagal mengirim. Status code: {response.status_code}")
+        }
+        response = requests.post(url, data=data)
+        if response.status_code == 200:
+            st.success("Berhasil dikirim!")
+        else:
+            st.error(f"Gagal mengirim. Status code: {response.status_code}")
+if st.session_state.akhir:
+    st.markdown('<style>.st-key-tombol21 .e1obcldf2{background-color:blue;color:yellow}</style>',unsafe_allow_html=True)
+    hasil_akhir()
+if st.session_state.kelompok['kondisi16']:
+    if st.sidebar.button("Lihat Hasil Akhir",key="tombol21"):
+        st.session_state.peta = False
+        st.session_state.prasyarat = False
+        st.session_state.materi_prasyarat = False
+        st.session_state.materi = False
+        st.session_state.adaptif=False
+        st.session_state.cerita1=False
+        st.session_state.cerita2=False
+        st.session_state.cerita3=False
+        st.session_state.cerita4=False
+        st.session_state.cerita5=False
+        st.session_state.cerita6=False
+        st.session_state.cerita7=False
+        st.session_state.cerita8=False
+        st.session_state.cerita9=False
+        st.session_state.cerita10=True
+        st.session_state.pengecekan1 = False
+        st.session_state.pengecekan2 = False
+        st.session_state.pretest = False
+        st.session_state.kelompok['kondisi16']=True
+        st.session_state.video1 = False
+        st.session_state.video2 = False
+        st.session_state.materi1 = False
+        st.session_state.pretest1=False
+        st.session_state.soal_kuisioner=False
+        st.session_state.soal_kevalidan=False
+        st.session_state.akhir=True
+        st.rerun()
 
 
 
