@@ -800,7 +800,7 @@ def kover():
     st.markdown('<div id="gambar" ></div>',unsafe_allow_html=True)
 
 if st.session_state.peta:
-    st.markdown('<style>.st-key-tombol3 .e1obcldf2{background-color:blue;color:yellow}</style>',unsafe_allow_html=True)
+    st.markdown('<style>.st-key-tombol3 .e1haskxa2{background-color:blue;color:yellow}</style>',unsafe_allow_html=True)
     pemetaan()
     
 if st.session_state.kelompok['kondisi1']:
@@ -836,7 +836,7 @@ if st.session_state.kelompok['kondisi2']:
         st.session_state.akhir=False
         st.rerun()
 def soal_pretest():
-    st.markdown('<style>.st-key-tombol2 .e1obcldf2{background-color:blue;color:yellow}</style>',unsafe_allow_html=True)
+    st.markdown('<style>.st-key-tombol2 .e1haskxa2{background-color:blue;color:yellow}</style>',unsafe_allow_html=True)
     st.markdown("<span>klik di sini </span> <a id='format' href='https://emodulterbaru.github.io/pretestHarry1/pretest1'> Soal Pretest</a>",unsafe_allow_html=True)
 if st.session_state.pretest:
     soal_pretest()
@@ -1009,7 +1009,7 @@ def tampilkan_video1():
     st.video("https://www.youtube.com/embed/7veosRwnWVg?si=rt4Dahc9Ax30PAyw")
     st.markdown('**Courtesy by Youtube: https://www.youtube.com/embed/7veosRwnWVg?si=rt4Dahc9Ax30PAyw**')
 if st.session_state.video1:
-    st.markdown('<style>.st-key-tombol4 .e1obcldf2{background-color:blue;color:yellow}</style>',unsafe_allow_html=True)
+    st.markdown('<style>.st-key-tombol4 .e1haskxa2{background-color:blue;color:yellow}</style>',unsafe_allow_html=True)
     tampilkan_video1()
 if st.session_state.kelompok['kondisi18']:
     if st.sidebar.button("Video Persamaan 1 Variabel", key="tombol4"):
@@ -1374,7 +1374,7 @@ def materi_tampilkan():
         else:
             st.markdown("<div class='cek'>Salah</div>",unsafe_allow_html=True)
 if st.session_state.materi:
-    st.markdown('<style>.st-key-tombol5 .e1obcldf2{background-color:blue;color:yellow}</style>',unsafe_allow_html=True)
+    st.markdown('<style>.st-key-tombol5 .e1haskxa2{background-color:blue;color:yellow}</style>',unsafe_allow_html=True)
     materi_tampilkan()
 if st.session_state.kelompok['kondisi4']:
     if st.sidebar.button("Materi Persamaan 1 variabel",key="tombol5"):
@@ -1411,7 +1411,7 @@ def video_pertidaksamaan():
     st.video("https://www.youtube.com/embed/SM7qejnJv28?si=8r2mqnQDD0-Eo1T5")
     st.markdown('**Courtesy by Youtube: https://www.youtube.com/embed/SM7qejnJv28?si=8r2mqnQDD0-Eo1T5**')
 if st.session_state.video2:
-    st.markdown('<style>.st-key-tombol6 .e1obcldf2{background-color:blue;color:yellow}</style>',unsafe_allow_html=True)
+    st.markdown('<style>.st-key-tombol6 .e1haskxa2{background-color:blue;color:yellow}</style>',unsafe_allow_html=True)
     video_pertidaksamaan()
 if st.session_state.kelompok['kondisi19']:
     if st.sidebar.button("Video Pertidaksamaan 1 Variabel", key="tombol6"):
@@ -1992,7 +1992,7 @@ def materi_pertidaksamaan():
 '''
     components.html(koding_html, height=2600, width=None)
 if st.session_state.materi1:
-    st.markdown('<style>.st-key-tombol7 .e1obcldf2{background-color:blue;color:yellow}</style>',unsafe_allow_html=True)
+    st.markdown('<style>.st-key-tombol7 .e1haskxa2{background-color:blue;color:yellow}</style>',unsafe_allow_html=True)
     materi_pertidaksamaan()
 if st.session_state.kelompok['kondisi20']:
     if st.sidebar.button("Materi Pertidaksamaan 1 Variabel",key="tombol7"):
@@ -2056,7 +2056,7 @@ def soal_adaptif():
         st.session_state.pengecekan1=True
     
 if st.session_state.adaptif:
-    st.markdown('<style>.st-key-tombol8 .e1obcldf2{background-color:blue;color:yellow}</style>',unsafe_allow_html=True)
+    st.markdown('<style>.st-key-tombol8 .e1haskxa2{background-color:blue;color:yellow}</style>',unsafe_allow_html=True)
     soal_adaptif()
 def level_kedua():
     st.markdown(""" <div style="display:flex; justify-content:space-evenly;align-items:center; border:2px solid white; margin-bottom:10px; padding:2px;">
@@ -2170,7 +2170,7 @@ def soal_cerita1():
                 """,unsafe_allow_html=True)
     st.session_state.jawaban1['jawab1']=st.text_area("Keterangan Jawaban1",value=st.session_state.jawaban1['jawab1'])
 if st.session_state.cerita1:
-    st.markdown('<style>.st-key-tombol10 .e1obcldf2{background-color:blue;color:yellow}</style>',unsafe_allow_html=True)
+    st.markdown('<style>.st-key-tombol10 .e1haskxa2{background-color:blue;color:yellow}</style>',unsafe_allow_html=True)
     soal_cerita1()
 if st.session_state.kelompok['kondisi6']:
     st.sidebar.write("**Persamaan 1 variabel**")
@@ -2222,7 +2222,7 @@ def soal_cerita2():
                 """)
     st.session_state.jawaban1['jawab2']=st.text_area("Keterangan Jawaban2",value=st.session_state.jawaban1['jawab2'])
 if st.session_state.cerita2:
-    st.markdown('<style>.st-key-tombol11 .e1obcldf2{background-color:blue;color:yellow}</style>',unsafe_allow_html=True)
+    st.markdown('<style>.st-key-tombol11 .e1haskxa2{background-color:blue;color:yellow}</style>',unsafe_allow_html=True)
     soal_cerita2()
 if st.session_state.kelompok['kondisi7']:
     if st.sidebar.button('Jujur dalam Jual Beli',key="tombol11"):
@@ -2271,7 +2271,7 @@ def soal_cerita3():
                 """)
     st.session_state.jawaban1['jawab3']=st.text_area("Keterangan Jawaban3",value=st.session_state.jawaban1['jawab3'])
 if st.session_state.cerita3:
-    st.markdown('<style>.st-key-tombol12 .e1obcldf2{background-color:blue;color:yellow}</style>',unsafe_allow_html=True)
+    st.markdown('<style>.st-key-tombol12 .e1haskxa2{background-color:blue;color:yellow}</style>',unsafe_allow_html=True)
     soal_cerita3()
 if st.session_state.kelompok['kondisi8']:
     if st.sidebar.button("Membantu Sesama",key="tombol12"):
@@ -2320,7 +2320,7 @@ def soal_cerita4():
                 """)
     st.session_state.jawaban1['jawab4']=st.text_area("Keterangan Jawaban4", value=st.session_state.jawaban1['jawab4'])
 if st.session_state.cerita4:
-    st.markdown('<style>.st-key-tombol13 .e1obcldf2{background-color:blue;color:yellow}</style>',unsafe_allow_html=True)
+    st.markdown('<style>.st-key-tombol13 .e1haskxa2{background-color:blue;color:yellow}</style>',unsafe_allow_html=True)
     soal_cerita4()
 if st.session_state.kelompok['kondisi9']:
     if st.sidebar.button("Musyawarah Kelas",key="tombol13"):
@@ -2370,7 +2370,7 @@ def soal_cerita5():
                 """)
     st.session_state.jawaban1['jawab5']=st.text_area("Keterangan Jawaban5",value=st.session_state.jawaban1['jawab5'])
 if st.session_state.cerita5:
-    st.markdown('<style>.st-key-tombol15 .e1obcldf2{background-color:blue;color:yellow}</style>',unsafe_allow_html=True)
+    st.markdown('<style>.st-key-tombol15 .e1haskxa2{background-color:blue;color:yellow}</style>',unsafe_allow_html=True)
     soal_cerita5()
 if st.session_state.kelompok['kondisi10']:
     if st.sidebar.button("Kerukunan Agama", key="tombol15"):
@@ -2421,7 +2421,7 @@ def soal_cerita6():
                 """)
     st.session_state.jawaban1['jawab6']=st.text_area("Keterangan Jawaban6",value=st.session_state.jawaban1['jawab6'])
 if st.session_state.cerita6:
-    st.markdown('<style>.st-key-tombol16 .e1obcldf2{background-color:blue;color:yellow}</style>',unsafe_allow_html=True)
+    st.markdown('<style>.st-key-tombol16 .e1haskxa2{background-color:blue;color:yellow}</style>',unsafe_allow_html=True)
     soal_cerita6()
 if st.session_state.kelompok['kondisi11']:
     st.sidebar.write("**Pertidaksamaan 1 variabel**")
@@ -2472,7 +2472,7 @@ def soal_cerita7():
                 """)
     st.session_state.jawaban1['jawab7']=st.text_area("Keterangan Jawaban7",st.session_state.jawaban1['jawab7'])
 if st.session_state.cerita7:
-    st.markdown('<style>.st-key-tombol17 .e1obcldf2{background-color:blue;color:yellow}</style>',unsafe_allow_html=True)
+    st.markdown('<style>.st-key-tombol17 .e1haskxa2{background-color:blue;color:yellow}</style>',unsafe_allow_html=True)
     soal_cerita7()
 if st.session_state.kelompok['kondisi12']:
     if st.sidebar.button("Kejujuran", key="tombol17"):
@@ -2522,7 +2522,7 @@ def soal_cerita8():
                 """)
     st.session_state.jawaban1['jawab8']=st.text_area("Keterangan Jawaban8",value=st.session_state.jawaban1['jawab8'])
 if st.session_state.cerita8:
-    st.markdown('<style>.st-key-tombol18 .e1obcldf2{background-color:blue;color:yellow}</style>',unsafe_allow_html=True)
+    st.markdown('<style>.st-key-tombol18 .e1haskxa2{background-color:blue;color:yellow}</style>',unsafe_allow_html=True)
     soal_cerita8()
 if st.session_state.kelompok['kondisi13']:
     if st.sidebar.button("Membantu Teman", key="tombol18"):
@@ -2572,7 +2572,7 @@ def soal_cerita9():
                 """)
     st.session_state.jawaban1['jawab9']=st.text_area("Keterangan Jawaban9",value=st.session_state.jawaban1['jawab9'])
 if st.session_state.cerita9:
-    st.markdown('<style>.st-key-tombol19 .e1obcldf2{background-color:blue;color:yellow}</style>',unsafe_allow_html=True)
+    st.markdown('<style>.st-key-tombol19 .e1haskxa2{background-color:blue;color:yellow}</style>',unsafe_allow_html=True)
     soal_cerita9()
 if st.session_state.kelompok['kondisi14']:
     if st.sidebar.button("Musyawarah", key="tombol19"):
@@ -2621,7 +2621,7 @@ def soal_cerita10():
                 """)
     st.session_state.jawaban1['jawab10']=st.text_area("Keterangan Jawaban10",st.session_state.jawaban1['jawab10'])
 if st.session_state.cerita10:
-    st.markdown('<style>.st-key-tombol20 .e1obcldf2{background-color:blue;color:yellow}</style>',unsafe_allow_html=True)
+    st.markdown('<style>.st-key-tombol20 .e1haskxa2{background-color:blue;color:yellow}</style>',unsafe_allow_html=True)
     soal_cerita10()
 if st.session_state.kelompok['kondisi15']:
     if st.sidebar.button("Toleransi", key="tombol20"):
@@ -2678,7 +2678,7 @@ def hasil_akhir():
         else:
             st.error(f"Gagal mengirim. Status code: {response.status_code}")
 if st.session_state.akhir:
-    st.markdown('<style>.st-key-tombol21 .e1obcldf2{background-color:blue;color:yellow}</style>',unsafe_allow_html=True)
+    st.markdown('<style>.st-key-tombol21 .e1haskxa2{background-color:blue;color:yellow}</style>',unsafe_allow_html=True)
     hasil_akhir()
 if st.session_state.kelompok['kondisi16']:
     if st.sidebar.button("Lihat Hasil Akhir",key="tombol21"):
@@ -2709,6 +2709,7 @@ if st.session_state.kelompok['kondisi16']:
         st.session_state.soal_kevalidan=False
         st.session_state.akhir=True
         st.rerun()
+
 
 
 
