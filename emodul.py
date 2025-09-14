@@ -970,7 +970,7 @@ def soal_prasyarat():
             st.rerun()
     
 if st.session_state.prasyarat:
-    st.markdown('<style>.st-key-tombol1 .e1mlolmg0{background-color:blue;color:yellow}</style>',unsafe_allow_html=True)
+    st.markdown('<style>.st-key-tombol1 .e1haskxa2{background-color:blue;color:yellow}</style>',unsafe_allow_html=True)
     soal_prasyarat()
 
 if st.session_state.kelompok['kondisi3']:
@@ -2709,6 +2709,7 @@ if st.session_state.kelompok['kondisi16']:
         st.session_state.soal_kevalidan=False
         st.session_state.akhir=True
         st.rerun()
+
 
 
 
