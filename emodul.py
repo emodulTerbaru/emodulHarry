@@ -99,6 +99,34 @@ if "jawaban4" not in st.session_state:
 if "akhir" not in st.session_state:
     st.session_state.akhir=False
 st.sidebar.image("https://res.cloudinary.com/ikip-siliwangi/image/upload/v1753921874/logo_rw63xi.jpg", width=100)
+if st.button("Game"):
+    st.session_state.peta=False
+    st.session_state.prasyarat = False
+    st.session_state.kelompok['kondisi1']=True
+    st.session_state.pretest1=False
+    st.session_state.adaptif=False
+    st.session_state.materi = False
+    st.session_state.pengecekan1 = False
+    st.session_state.pengecekan2 = False
+    st.session_state.cerita1=False
+    st.session_state.cerita2=False
+    st.session_state.cerita3=False
+    st.session_state.cerita4=False
+    st.session_state.cerita5=False
+    st.session_state.cerita6=False
+    st.session_state.cerita7=False
+    st.session_state.cerita8=False
+    st.session_state.cerita9=False
+    st.session_state.cerita10=False
+    st.session_state.pretest = False
+    st.session_state.video1 = False
+    st.session_state.video2 = False
+    st.session_state.materi_prasyarat = False
+    st.session_state.materi1 = False
+    st.session_state.soal_kuisioner=False
+    st.session_state.soal_kevalidan=False
+    st.session_state.akhir=False
+    st.rerun()
 kolom = st.columns(3)
 with kolom[0]:
     nama = st.text_input("Nama: ")
@@ -797,6 +825,10 @@ def pemetaan():
     """,unsafe_allow_html=True)
 
 def kover():
+    st.markdown('''
+    <iframe src="https://scratch.mit.edu/projects/1216822076/embed" allowtransparency="true"
+    width="600" height="402" frameborder="0" scrolling="no" allowfullscreen></iframe>
+    ''',unsafe_allow_html=True)
     st.markdown('<div id="gambar" ></div>',unsafe_allow_html=True)
 
 if st.session_state.peta:
@@ -2709,6 +2741,7 @@ if st.session_state.kelompok['kondisi16']:
         st.session_state.soal_kevalidan=False
         st.session_state.akhir=True
         st.rerun()
+
 
 
 
