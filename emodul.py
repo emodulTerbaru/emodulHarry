@@ -2704,7 +2704,6 @@ if st.session_state.kelompok['kondisi16']:
         st.session_state.akhir=True
         st.rerun()
 #==========================================
-
 if st.session_state.kelompok['kondisi23']:
     if st.sidebar.button("Angket",key="tombol31"):
         st.session_state.peta = False
@@ -2735,7 +2734,7 @@ if st.session_state.kelompok['kondisi23']:
         st.session_state.akhir=False
         st.rerun()
 #===============================================
-if st.session_state.kelompok['kondisi23']:
+if st.session_state.kelompok['kondisi24']:
     if st.sidebar.button("Kevalidan",key="tombol32"):
         st.session_state.peta = False
         st.session_state.prasyarat = False
@@ -2764,6 +2763,7 @@ if st.session_state.kelompok['kondisi23']:
         st.session_state.soal_kevalidan=True
         st.session_state.akhir=False
         st.rerun()
+
 
 
 
