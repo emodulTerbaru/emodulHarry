@@ -2195,7 +2195,7 @@ if st.session_state.kelompok['kondisi6']:
         st.session_state.soal_kuisioner=False
         st.session_state.soal_kevalidan=False
         st.session_state.akhir=False
-         st.session_state.pretest2 = False
+        st.session_state.pretest2 = False
         st.rerun()
 
 def soal_cerita2():
@@ -2776,4 +2776,5 @@ if st.session_state.kelompok['kondisi24']:
         st.session_state.akhir=False
         st.session_state.pretest2 = False
         st.rerun()
+
 
