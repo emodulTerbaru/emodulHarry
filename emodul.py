@@ -992,7 +992,7 @@ if st.session_state.kelompok['kondisi3']:
 def tampilkan_video1():
     st.markdown("<div class='video'>Video Persamaan Satu variabel</div>",unsafe_allow_html=True)
     st.markdown('''
-        <iframe src="https://drive.google.com/file/d/1U-60Jyervr5zTtUZJwCSUN5FmrxxrTcY/preview" width="640" height="480" allow="autoplay"></iframe>
+        <iframe src="https://drive.google.com/file/d/1U-60Jyervr5zTtUZJwCSUN5FmrxxrTcY/preview" style="width:100%"  height="480" allow="autoplay"></iframe>
     ''',unsafe_allow_html=True)
     st.markdown('**Courtesy by Youtube: https://www.youtube.com/embed/7veosRwnWVg?si=rt4Dahc9Ax30PAyw**')
 if st.session_state.video1:
@@ -2763,6 +2763,7 @@ if st.session_state.kelompok['kondisi24']:
         st.session_state.soal_kevalidan=True
         st.session_state.akhir=False
         st.rerun()
+
 
 
 
