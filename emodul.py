@@ -2247,7 +2247,7 @@ if st.session_state.kelompok['kondisi7']:
         st.session_state.soal_kuisioner=False
         st.session_state.soal_kevalidan=False
         st.session_state.akhir=False
-         st.session_state.pretest2 = False
+        st.session_state.pretest2 = False
         st.rerun()
 
 def soal_cerita3():
@@ -2297,7 +2297,7 @@ if st.session_state.kelompok['kondisi8']:
         st.session_state.soal_kuisioner=False
         st.session_state.soal_kevalidan=False
         st.session_state.akhir=False
-         st.session_state.pretest2 = False
+        st.session_state.pretest2 = False
         st.rerun()
         
 def soal_cerita4():
@@ -2347,7 +2347,7 @@ if st.session_state.kelompok['kondisi9']:
         st.session_state.soal_kuisioner=False
         st.session_state.soal_kevalidan=False
         st.session_state.akhir=False
-         st.session_state.pretest2 = False
+        st.session_state.pretest2 = False
         st.rerun()
 
 def soal_cerita5():
@@ -2399,7 +2399,7 @@ if st.session_state.kelompok['kondisi10']:
         st.session_state.soal_kuisioner=False
         st.session_state.soal_kevalidan=False
         st.session_state.akhir=False
-         st.session_state.pretest2 = False
+        st.session_state.pretest2 = False
         st.rerun()
 
 def soal_cerita6():
@@ -2776,5 +2776,6 @@ if st.session_state.kelompok['kondisi24']:
         st.session_state.akhir=False
         st.session_state.pretest2 = False
         st.rerun()
+
 
 
