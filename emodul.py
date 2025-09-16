@@ -12,6 +12,8 @@ if "pretest" not in st.session_state:
     st.session_state.pretest = False
 if "pretest1" not in st.session_state:
     st.session_state.pretest1 = False
+if "pretest2" not in st.session_state:
+    st.session_state.pretest2 = False
 if "video1" not in st.session_state:
     st.session_state.video1=False
 
@@ -36,7 +38,7 @@ if "kelompok" not in st.session_state:
                                  'kondisi6':False,'kondisi7':False,'kondisi8':False,'kondisi9':False, 'kondisi10':False,
                                  'kondisi11':False,'kondisi12':False,'kondisi13':False,'kondisi14':False, 'kondisi15':False,
                                  'kondisi16':False,'kondisi17':False,'kondisi18':False,'kondisi19':False,'kondisi20':False,
-                                 'kondisi21':False}
+                                 'kondisi21':False,'kondisi22':False,'kondisi23':False, 'kondisi24':False}
 
 if "jawaban" not in st.session_state:
     st.session_state.jawaban = {"jawab1":0,"jawab2":0,"jawab3":0,"jawab4":0,"jawab5":0,
@@ -126,6 +128,7 @@ if st.button("Game"):
     st.session_state.soal_kuisioner=False
     st.session_state.soal_kevalidan=False
     st.session_state.akhir=False
+    st.session_state.pretest2 = False
     st.rerun()
 kolom = st.columns(3)
 with kolom[0]:
@@ -278,101 +281,16 @@ st.markdown('''
             </style>
             ''',unsafe_allow_html=True)
 
-kumpulan = st.columns(3)
-with kumpulan[0]:
-    st.markdown('''<div id="bantuan">
+
+
+st.markdown('''<div id="bantuan">
             <a href="https://emodulterbaru.github.io/penjumlahan/Operasi Penjumlahan.html">Penjumlahan</a>
             <a href="https://emodulterbaru.github.io/penjumlahan/perkalian1.html">Perkalian</a></div>
-            ''',unsafe_allow_html=True)
-with kumpulan[1]:
-    if st.button("Posttest",key="soal_1"):
-        st.session_state.peta=False
-        st.session_state.prasyarat = False
-        st.session_state.kelompok['kondisi1']=False
-        st.session_state.pretest1=True
-        st.session_state.adaptif=False
-        st.session_state.materi = False
-        st.session_state.pengecekan1 = False
-        st.session_state.pengecekan2 = False
-        st.session_state.cerita1=False
-        st.session_state.cerita2=False
-        st.session_state.cerita3=False
-        st.session_state.cerita4=False
-        st.session_state.cerita5=False
-        st.session_state.cerita6=False
-        st.session_state.cerita7=False
-        st.session_state.cerita8=False
-        st.session_state.cerita9=False
-        st.session_state.cerita10=False
-        st.session_state.pretest = False
-        st.session_state.video1 = False
-        st.session_state.video2 = False
-        st.session_state.materi_prasyarat = False
-        st.session_state.materi1 = False
-        st.session_state.soal_kuisioner=False
-        st.session_state.soal_kevalidan=False
-        st.session_state.akhir=False
-        st.rerun()
-with kumpulan[2]:
-    if st.button("Kuesioner Kepraktisan"):
-        st.session_state.peta=False
-        st.session_state.prasyarat = False
-        st.session_state.kelompok['kondisi1']=False
-        st.session_state.pretest1=False
-        st.session_state.soal_kuisioner=True
-        st.session_state.adaptif=False
-        st.session_state.materi = False
-        st.session_state.pengecekan1 = False
-        st.session_state.pengecekan2 = False
-        st.session_state.cerita1=False
-        st.session_state.cerita2=False
-        st.session_state.cerita3=False
-        st.session_state.cerita4=False
-        st.session_state.cerita5=False
-        st.session_state.cerita6=False
-        st.session_state.cerita7=False
-        st.session_state.cerita8=False
-        st.session_state.cerita9=False
-        st.session_state.cerita10=False
-        st.session_state.pretest = False
-        st.session_state.video1 = False
-        st.session_state.video2 = False
-        st.session_state.materi_prasyarat = False
-        st.session_state.materi1 = False
-        st.session_state.soal_kevalidan=False
-        st.session_state.akhir=False
-        st.rerun()
+        ''',unsafe_allow_html=True)
 
-if st.button("Kuesioner Kevalidan"):
-    st.session_state.peta=False
-    st.session_state.prasyarat = False
-    st.session_state.kelompok['kondisi1']=False
-    st.session_state.pretest1=False
-    st.session_state.soal_kuisioner=False
-    st.session_state.soal_kevalidan=True
-    st.session_state.adaptif=False
-    st.session_state.materi = False
-    st.session_state.pengecekan1 = False
-    st.session_state.pengecekan2 = False
-    st.session_state.cerita1=False
-    st.session_state.cerita2=False
-    st.session_state.cerita3=False
-    st.session_state.cerita4=False
-    st.session_state.cerita5=False
-    st.session_state.cerita6=False
-    st.session_state.cerita7=False
-    st.session_state.cerita8=False
-    st.session_state.cerita9=False
-    st.session_state.cerita10=False
-    st.session_state.pretest = False
-    st.session_state.video1 = False
-    st.session_state.video2 = False
-    st.session_state.materi_prasyarat = False
-    st.session_state.materi1 = False
-    st.session_state.akhir=False
-    st.rerun()
 
 def tampilkan_kevalidan():
+    st.markdown('<style>.st-key-tombol32 .e1haskxa2{background-color:blue;color:yellow}</style>',unsafe_allow_html=True)
     st.markdown(f'''
         <div style="border:2px solid black; background-color:yellow;color:black; padding:10px; border-radius:10px; margin-bottom:10px; box-shadow:-2px -2px 3px 3px red,2px 2px 3px 3px green">
         <div style="font-weight:bold; font-size:20px">LEMBAR VALIDASI LMS OLEH AHLI MATERI</div>
@@ -536,6 +454,7 @@ def tampilkan_kevalidan():
 if st.session_state.soal_kevalidan:
     tampilkan_kevalidan()
 def tampil_kuisioner():
+    st.markdown('<style>.st-key-tombol31 .e1haskxa2{background-color:blue;color:yellow}</style>',unsafe_allow_html=True)
     with st.container():
         st.markdown('''
         <div style="border:2px solid black; background-color:cyan;color:black; padding:10px; border-radius:10px; margin-bottom:10px; box-shadow:-2px -2px 3px 3px red,2px 2px 3px 3px green">
@@ -651,7 +570,100 @@ def tampil_kuisioner():
             
 if st.session_state.soal_kuisioner:
     tampil_kuisioner()
-def soal_pretest1():
+
+def pemetaan():
+    st.markdown('<div id="konsep">Peta Konsep</div>',unsafe_allow_html=True)
+    st.markdown('<div id="gambar1"></div>',unsafe_allow_html=True)
+    st.markdown('##### Permainan tentang persamaan dan pertidaksamaan satu variabel')
+    
+    st.markdown("""
+    <iframe src='https://emodulterbaru.github.io/persamaan1variabel/PSLV.html' style='width:100%; height:2400px'></iframe>
+    """,unsafe_allow_html=True)
+
+def kover():
+    st.markdown('''
+    <iframe src="https://scratch.mit.edu/projects/1216822076/embed" allowtransparency="true"
+    width="600" height="402" frameborder="0" scrolling="no" allowfullscreen></iframe>
+    ''',unsafe_allow_html=True)
+    st.markdown('<div id="gambar" ></div>',unsafe_allow_html=True)
+
+if st.session_state.peta:
+    st.markdown('<style>.st-key-tombol3 .e1haskxa2{background-color:blue;color:yellow}</style>',unsafe_allow_html=True)
+    pemetaan()
+    
+if st.session_state.kelompok['kondisi1']:
+    kover()
+if st.session_state.kelompok['kondisi2']:
+    if st.sidebar.button("Prasyarat",key="tombol1"):
+        st.session_state.peta=False
+        st.session_state.prasyarat = True
+        st.session_state.kelompok['kondisi1']=False
+        st.session_state.kelompok['kondisi17']=True
+        st.session_state.adaptif=False
+        st.session_state.materi = False
+        st.session_state.pengecekan1 = False
+        st.session_state.pengecekan2 = False
+        st.session_state.cerita1=False
+        st.session_state.cerita2=False
+        st.session_state.cerita3=False
+        st.session_state.cerita4=False
+        st.session_state.cerita5=False
+        st.session_state.cerita6=False
+        st.session_state.cerita7=False
+        st.session_state.cerita8=False
+        st.session_state.cerita9=False
+        st.session_state.cerita10=False
+        st.session_state.pretest = False
+        st.session_state.video1 = False
+        st.session_state.video2 = False
+        st.session_state.materi_prasyarat = False
+        st.session_state.materi1 = False
+        st.session_state.pretest1=False
+        st.session_state.soal_kuisioner=False
+        st.session_state.soal_kevalidan=False
+        st.session_state.akhir=False
+        st.session_state.pretest2 = False
+        st.rerun()
+        
+def soal_pretest():
+    st.markdown('<style>.st-key-tombol2 .e1haskxa2{background-color:blue;color:yellow}</style>',unsafe_allow_html=True)
+    st.markdown("<a id='format'> Soal Pretest</a>",unsafe_allow_html=True)
+    st.markdown("<iframe src='https://emodulterbaru.github.io/pretestHarry1/pretest1' style='width:100%; height:3500px'></iframe>",unsafe_allow_html=True)
+if st.session_state.pretest:
+    soal_pretest()
+if st.session_state.kelompok['kondisi17']:
+    if st.sidebar.button("Pretest", key="tombol2"):
+        st.session_state.peta=False
+        st.session_state.prasyarat = False
+        st.session_state.pretest = True
+        st.session_state.kelompok['kondisi22']=True
+        st.session_state.adaptif=False
+        st.session_state.materi = False
+        st.session_state.pengecekan1 = False
+        st.session_state.pengecekan2 = False
+        st.session_state.cerita1=False
+        st.session_state.cerita2=False
+        st.session_state.cerita3=False
+        st.session_state.cerita4=False
+        st.session_state.cerita5=False
+        st.session_state.cerita6=False
+        st.session_state.cerita7=False
+        st.session_state.cerita8=False
+        st.session_state.cerita9=False
+        st.session_state.cerita10=False
+        st.session_state.video1 = False
+        st.session_state.video2 = False
+        st.session_state.materi1 = False
+        st.session_state.materi_prasyarat = False
+        st.session_state.pretest1=False
+        st.session_state.soal_kuisioner=False
+        st.session_state.soal_kevalidan=False
+        st.session_state.akhir=False
+        st.session_state.pretest2 = False
+        st.rerun()
+#===============================================================
+def soal_pretest2():
+    st.markdown('<style>.st-key-tombol30 .e1haskxa2{background-color:blue;color:yellow}</style>',unsafe_allow_html=True)
     st.write("## Soal1")
     st.markdown('''
     <style>
@@ -810,73 +822,14 @@ def soal_pretest1():
                 st.error(f"Gagal mengirim. Status code: {response.status_code}")
         else:
             st.error("Ada Jawaban Soal yang masih kosong, Periksa lagi")
-    
-if st.session_state.pretest1:
-    soal_pretest1()
-def pemetaan():
-    st.markdown('<div id="konsep">Peta Konsep</div>',unsafe_allow_html=True)
-    st.markdown('<div id="gambar1"></div>',unsafe_allow_html=True)
-    st.markdown('##### Pelajari video tentang persamaan dan pertidaksamaan satu variabel')
-    st.video("https://youtu.be/OJhDRcYojt8?si=-igxq_rr3taW-Un5")
-    st.markdown('##### Permainan tentang persamaan dan pertidaksamaan satu variabel')
-    
-    st.markdown("""
-    <iframe src='https://emodulterbaru.github.io/persamaan1variabel/PSLV.html' style='width:100%; height:2400px'></iframe>
-    """,unsafe_allow_html=True)
-
-def kover():
-    st.markdown('''
-    <iframe src="https://scratch.mit.edu/projects/1216822076/embed" allowtransparency="true"
-    width="600" height="402" frameborder="0" scrolling="no" allowfullscreen></iframe>
-    ''',unsafe_allow_html=True)
-    st.markdown('<div id="gambar" ></div>',unsafe_allow_html=True)
-
-if st.session_state.peta:
-    st.markdown('<style>.st-key-tombol3 .e1haskxa2{background-color:blue;color:yellow}</style>',unsafe_allow_html=True)
-    pemetaan()
-    
-if st.session_state.kelompok['kondisi1']:
-    kover()
-if st.session_state.kelompok['kondisi2']:
-    if st.sidebar.button("Prasyarat",key="tombol1"):
-        st.session_state.peta=False
-        st.session_state.prasyarat = True
-        st.session_state.kelompok['kondisi1']=False
-        st.session_state.kelompok['kondisi17']=True
-        st.session_state.adaptif=False
-        st.session_state.materi = False
-        st.session_state.pengecekan1 = False
-        st.session_state.pengecekan2 = False
-        st.session_state.cerita1=False
-        st.session_state.cerita2=False
-        st.session_state.cerita3=False
-        st.session_state.cerita4=False
-        st.session_state.cerita5=False
-        st.session_state.cerita6=False
-        st.session_state.cerita7=False
-        st.session_state.cerita8=False
-        st.session_state.cerita9=False
-        st.session_state.cerita10=False
-        st.session_state.pretest = False
-        st.session_state.video1 = False
-        st.session_state.video2 = False
-        st.session_state.materi_prasyarat = False
-        st.session_state.materi1 = False
-        st.session_state.pretest1=False
-        st.session_state.soal_kuisioner=False
-        st.session_state.soal_kevalidan=False
-        st.session_state.akhir=False
-        st.rerun()
-def soal_pretest():
-    st.markdown('<style>.st-key-tombol2 .e1haskxa2{background-color:blue;color:yellow}</style>',unsafe_allow_html=True)
-    st.markdown("<span>klik di sini </span> <a id='format' href='https://emodulterbaru.github.io/pretestHarry1/pretest1'> Soal Pretest</a>",unsafe_allow_html=True)
-if st.session_state.pretest:
-    soal_pretest()
-if st.session_state.kelompok['kondisi17']:
-    if st.sidebar.button("Pretest", key="tombol2"):
+if st.session_state.pretest2:
+    soal_pretest2()
+if st.session_state.kelompok['kondisi22']:
+    if st.sidebar.button("Pretest_Lanjut", key="tombo30"):
         st.session_state.peta=False
         st.session_state.prasyarat = False
-        st.session_state.pretest = True
+        st.session_state.pretest = False
+        st.session_state.pretest2 = True
         st.session_state.kelompok['kondisi3']=True
         st.session_state.adaptif=False
         st.session_state.materi = False
@@ -901,7 +854,6 @@ if st.session_state.kelompok['kondisi17']:
         st.session_state.soal_kevalidan=False
         st.session_state.akhir=False
         st.rerun()
-    
 def soal_prasyarat():
     st.markdown("<div class='menu'>Soal Prasyarat</div>",unsafe_allow_html=True)
     st.markdown("<div class='submenu'>A. Operasi Bilangan Bulat dan Pecahan</div>",unsafe_allow_html=True)
@@ -1034,6 +986,7 @@ if st.session_state.kelompok['kondisi3']:
         st.session_state.soal_kuisioner=False
         st.session_state.soal_kevalidan=False
         st.session_state.akhir=False
+        st.session_state.pretest2 = False
         st.rerun()
 
 def tampilkan_video1():
@@ -1074,6 +1027,7 @@ if st.session_state.kelompok['kondisi18']:
         st.session_state.soal_kuisioner=False
         st.session_state.soal_kevalidan=False
         st.session_state.akhir=False
+        st.session_state.pretest2 = False
         st.rerun()
 def materi_prasyarat_tampil():
     st.error("Nilai Anda: "+str(st.session_state.nilai_prasyarat))
@@ -1439,6 +1393,7 @@ if st.session_state.kelompok['kondisi4']:
         st.session_state.soal_kuisioner=False
         st.session_state.soal_kevalidan=False
         st.session_state.akhir=False
+        st.session_state.pretest2 = False
         st.rerun()
 def video_pertidaksamaan():
     st.markdown("<div class='video'>Video Pertidaksamaan Satu variabel</div>",unsafe_allow_html=True)
@@ -1477,6 +1432,7 @@ if st.session_state.kelompok['kondisi19']:
         st.session_state.soal_kuisioner=False
         st.session_state.soal_kevalidan=False
         st.session_state.akhir=False
+        st.session_state.pretest2 = False
         st.rerun()
 def materi_pertidaksamaan():
     koding_html='''
@@ -2058,6 +2014,7 @@ if st.session_state.kelompok['kondisi20']:
         st.session_state.soal_kuisioner=False
         st.session_state.soal_kevalidan=False
         st.session_state.akhir=False
+        st.session_state.pretest2 = False
         st.rerun()
 def soal_adaptif():
     st.markdown(""" <div style="display:flex; justify-content:space-evenly;align-items:center; border:2px solid white; margin-bottom:10px; padding:2px; background-color:grey">
@@ -2185,6 +2142,7 @@ if st.session_state.kelompok['kondisi5']:
         st.session_state.soal_kuisioner=False
         st.session_state.soal_kevalidan=False
         st.session_state.akhir=False
+        st.session_state.pretest2 = False
         st.rerun()
 def soal_cerita1():
     st.markdown("""
@@ -2732,11 +2690,11 @@ if st.session_state.kelompok['kondisi16']:
         st.session_state.cerita7=False
         st.session_state.cerita8=False
         st.session_state.cerita9=False
-        st.session_state.cerita10=True
+        st.session_state.cerita10=False
         st.session_state.pengecekan1 = False
         st.session_state.pengecekan2 = False
         st.session_state.pretest = False
-        st.session_state.kelompok['kondisi16']=True
+        st.session_state.kelompok['kondisi23']=True
         st.session_state.video1 = False
         st.session_state.video2 = False
         st.session_state.materi1 = False
@@ -2744,6 +2702,67 @@ if st.session_state.kelompok['kondisi16']:
         st.session_state.soal_kuisioner=False
         st.session_state.soal_kevalidan=False
         st.session_state.akhir=True
+        st.rerun()
+#==========================================
+
+if st.session_state.kelompok['kondisi23']:
+    if st.sidebar.button("Angket",key="tombol31"):
+        st.session_state.peta = False
+        st.session_state.prasyarat = False
+        st.session_state.materi_prasyarat = False
+        st.session_state.materi = False
+        st.session_state.adaptif=False
+        st.session_state.cerita1=False
+        st.session_state.cerita2=False
+        st.session_state.cerita3=False
+        st.session_state.cerita4=False
+        st.session_state.cerita5=False
+        st.session_state.cerita6=False
+        st.session_state.cerita7=False
+        st.session_state.cerita8=False
+        st.session_state.cerita9=False
+        st.session_state.cerita10=False
+        st.session_state.pengecekan1 = False
+        st.session_state.pengecekan2 = False
+        st.session_state.pretest = False
+        st.session_state.kelompok['kondisi24']=True
+        st.session_state.video1 = False
+        st.session_state.video2 = False
+        st.session_state.materi1 = False
+        st.session_state.pretest1=False
+        st.session_state.soal_kuisioner=True
+        st.session_state.soal_kevalidan=False
+        st.session_state.akhir=False
+        st.rerun()
+#===============================================
+if st.session_state.kelompok['kondisi23']:
+    if st.sidebar.button("Kevalidan",key="tombol32"):
+        st.session_state.peta = False
+        st.session_state.prasyarat = False
+        st.session_state.materi_prasyarat = False
+        st.session_state.materi = False
+        st.session_state.adaptif=False
+        st.session_state.cerita1=False
+        st.session_state.cerita2=False
+        st.session_state.cerita3=False
+        st.session_state.cerita4=False
+        st.session_state.cerita5=False
+        st.session_state.cerita6=False
+        st.session_state.cerita7=False
+        st.session_state.cerita8=False
+        st.session_state.cerita9=False
+        st.session_state.cerita10=False
+        st.session_state.pengecekan1 = False
+        st.session_state.pengecekan2 = False
+        st.session_state.pretest = False
+        st.session_state.kelompok['kondisi24']=True
+        st.session_state.video1 = False
+        st.session_state.video2 = False
+        st.session_state.materi1 = False
+        st.session_state.pretest1=False
+        st.session_state.soal_kuisioner=False
+        st.session_state.soal_kevalidan=True
+        st.session_state.akhir=False
         st.rerun()
 
 
