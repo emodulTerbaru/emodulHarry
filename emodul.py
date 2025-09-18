@@ -558,8 +558,7 @@ def kover():
     <iframe src="https://scratch.mit.edu/projects/1216822076/embed" allowtransparency="true"
     width="600" height="402" frameborder="0" scrolling="no" allowfullscreen></iframe>
     ''',unsafe_allow_html=True)
-    st.markdown('<div id="gambar" ></div>',unsafe_allow_html=True)
-
+    
 if st.session_state.peta:
     st.markdown('<style>.st-key-tombol3 .e1haskxa2{background-color:blue;color:yellow}</style>',unsafe_allow_html=True)
     pemetaan()
@@ -2822,6 +2821,7 @@ if st.session_state.kelompok['kondisi24']:
         st.session_state.kelompok['kondisi1']=False
         st.session_state.game=False
         st.rerun()
+
 
 
 
