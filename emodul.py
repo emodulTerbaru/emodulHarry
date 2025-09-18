@@ -596,6 +596,7 @@ if st.session_state.kelompok['kondisi2']:
         st.session_state.soal_kevalidan=False
         st.session_state.akhir=False
         st.session_state.pretest2 = False
+        st.session_state.game=False
         st.rerun()
         
 def soal_pretest():
@@ -634,8 +635,9 @@ if st.session_state.kelompok['kondisi17']:
         st.session_state.akhir=False
         st.session_state.pretest2 = False
         st.session_state.kelompok['kondisi1']=False
+        st.session_state.game=False
         st.rerun()
-#===============================================================
+#===============================================================Soal Pretest2
 def soal_pretest2():
     st.markdown('<style>.st-key-tombol30 .e1haskxa2{background-color:blue;color:yellow}</style>',unsafe_allow_html=True)
     st.write("## Soal1")
@@ -828,6 +830,7 @@ if st.session_state.kelompok['kondisi22']:
         st.session_state.soal_kevalidan=False
         st.session_state.akhir=False
         st.session_state.kelompok['kondisi1']=False
+        st.session_state.game=False
         st.rerun()
 def soal_prasyarat():
     st.markdown("<div class='menu'>Soal Prasyarat</div>",unsafe_allow_html=True)
@@ -929,6 +932,7 @@ def soal_prasyarat():
             st.session_state.kelompok['kondisi1']=False
             st.session_state.pretest2=False
             st.session_state.kelompok['kondisi1']=False
+            st.session_state.game=False
             st.rerun()
     
 if st.session_state.prasyarat:
@@ -966,6 +970,7 @@ if st.session_state.kelompok['kondisi3']:
         st.session_state.akhir=False
         st.session_state.pretest2 = False
         st.session_state.kelompok['kondisi1']=False
+        st.session_state.game=False
         st.rerun()
 
 def tampilkan_video1():
@@ -1008,6 +1013,7 @@ if st.session_state.kelompok['kondisi18']:
         st.session_state.akhir=False
         st.session_state.pretest2 = False
         st.session_state.kelompok['kondisi1']=False
+        st.session_state.game=False
         st.rerun()
 def materi_prasyarat_tampil():
     st.error("Nilai Anda: "+str(st.session_state.nilai_prasyarat))
@@ -1375,6 +1381,7 @@ if st.session_state.kelompok['kondisi4']:
         st.session_state.akhir=False
         st.session_state.pretest2 = False
         st.session_state.kelompok['kondisi1']=False
+        st.session_state.game=False
         st.rerun()
 #====permainan 1 variabel
 def permainan_math():
@@ -1453,6 +1460,7 @@ if st.session_state.kelompok['kondisi19']:
         st.session_state.akhir=False
         st.session_state.pretest2 = False
         st.session_state.kelompok['kondisi1']=False
+        st.session_state.game=False
         st.rerun()
 def materi_pertidaksamaan():
     koding_html='''
@@ -2036,6 +2044,7 @@ if st.session_state.kelompok['kondisi20']:
         st.session_state.akhir=False
         st.session_state.pretest2 = False
         st.session_state.kelompok['kondisi1']=False
+        st.session_state.game=False
         st.rerun()
 def soal_adaptif():
     st.markdown(""" <div style="display:flex; justify-content:space-evenly;align-items:center; border:2px solid white; margin-bottom:10px; padding:2px; background-color:grey">
@@ -2165,6 +2174,7 @@ if st.session_state.kelompok['kondisi5']:
         st.session_state.akhir=False
         st.session_state.pretest2 = False
         st.session_state.kelompok['kondisi1']=False
+        st.session_state.game=False
         st.rerun()
 def soal_cerita1():
     st.markdown("""
@@ -2218,6 +2228,7 @@ if st.session_state.kelompok['kondisi6']:
         st.session_state.soal_kevalidan=False
         st.session_state.akhir=False
         st.session_state.kelompok['kondisi1']=False
+        st.session_state.game=False
         st.rerun()
 
 def soal_cerita2():
@@ -2270,6 +2281,7 @@ if st.session_state.kelompok['kondisi7']:
         st.session_state.soal_kevalidan=False
         st.session_state.akhir=False
         st.session_state.kelompok['kondisi1']=False
+        st.session_state.game=False
         st.rerun()
 
 def soal_cerita3():
@@ -2320,6 +2332,7 @@ if st.session_state.kelompok['kondisi8']:
         st.session_state.soal_kevalidan=False
         st.session_state.akhir=False
         st.session_state.kelompok['kondisi1']=False
+        st.session_state.game=False
         st.rerun()
         
 def soal_cerita4():
@@ -2370,6 +2383,7 @@ if st.session_state.kelompok['kondisi9']:
         st.session_state.soal_kevalidan=False
         st.session_state.akhir=False
         st.session_state.kelompok['kondisi1']=False
+        st.session_state.game=False
         st.rerun()
 
 def soal_cerita5():
@@ -2422,6 +2436,7 @@ if st.session_state.kelompok['kondisi10']:
         st.session_state.soal_kevalidan=False
         st.session_state.akhir=False
         st.session_state.kelompok['kondisi1']=False
+        st.session_state.game=False
         st.rerun()
 
 def soal_cerita6():
@@ -2474,6 +2489,7 @@ if st.session_state.kelompok['kondisi11']:
         st.session_state.soal_kevalidan=False
         st.session_state.akhir=False
         st.session_state.kelompok['kondisi1']=False
+        st.session_state.game=False
         st.rerun()
 
 def soal_cerita7():
@@ -2525,6 +2541,7 @@ if st.session_state.kelompok['kondisi12']:
         st.session_state.soal_kevalidan=False
         st.session_state.akhir=False
         st.session_state.kelompok['kondisi1']=False
+        st.session_state.game=False
         st.rerun()
 
 def soal_cerita8():
@@ -2576,6 +2593,7 @@ if st.session_state.kelompok['kondisi13']:
         st.session_state.soal_kevalidan=False
         st.session_state.akhir=False
         st.session_state.kelompok['kondisi1']=False
+        st.session_state.game=False
         st.rerun()
 
 def soal_cerita9():
@@ -2627,6 +2645,7 @@ if st.session_state.kelompok['kondisi14']:
         st.session_state.soal_kevalidan=False
         st.session_state.akhir=False
         st.session_state.kelompok['kondisi1']=False
+        st.session_state.game=False
         st.rerun()
 
 def soal_cerita10():
@@ -2677,6 +2696,7 @@ if st.session_state.kelompok['kondisi15']:
         st.session_state.soal_kevalidan=False
         st.session_state.akhir=False
         st.session_state.kelompok['kondisi1']=False
+        st.session_state.game=False
         st.rerun()
 
 def hasil_akhir():
@@ -2735,6 +2755,7 @@ if st.session_state.kelompok['kondisi16']:
         st.session_state.soal_kevalidan=False
         st.session_state.akhir=True
         st.session_state.kelompok['kondisi1']=False
+        st.session_state.game=False
         st.rerun()
 #==========================================
 
@@ -2767,6 +2788,7 @@ if st.session_state.kelompok['kondisi23']:
         st.session_state.soal_kevalidan=False
         st.session_state.akhir=False
         st.session_state.kelompok['kondisi1']=False
+        st.session_state.game=False
         st.rerun()
 #===============================================
 if st.session_state.kelompok['kondisi24']:
@@ -2798,7 +2820,9 @@ if st.session_state.kelompok['kondisi24']:
         st.session_state.soal_kevalidan=True
         st.session_state.akhir=False
         st.session_state.kelompok['kondisi1']=False
+        st.session_state.game=False
         st.rerun()
+
 
 
 
