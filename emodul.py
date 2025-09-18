@@ -32,13 +32,14 @@ if "materi1" not in st.session_state:
     st.session_state.materi1=False
 if "adaptif" not in st.session_state:
     st.session_state.adaptif=False
-
+if "game" not in st.session_state:
+    st.session_state.game=False
 if "kelompok" not in st.session_state:
     st.session_state.kelompok = {'kondisi1':True,'kondisi2':True,'kondisi3':False,'kondisi4':False,'kondisi5':False,
                                  'kondisi6':False,'kondisi7':False,'kondisi8':False,'kondisi9':False, 'kondisi10':False,
                                  'kondisi11':False,'kondisi12':False,'kondisi13':False,'kondisi14':False, 'kondisi15':False,
                                  'kondisi16':False,'kondisi17':False,'kondisi18':False,'kondisi19':False,'kondisi20':False,
-                                 'kondisi21':False,'kondisi22':False,'kondisi23':False, 'kondisi24':False}
+                                 'kondisi21':False,'kondisi22':False,'kondisi23':False, 'kondisi24':False,'kondisi25':False}
 
 if "jawaban" not in st.session_state:
     st.session_state.jawaban = {"jawab1":0,"jawab2":0,"jawab3":0,"jawab4":0,"jawab5":0,
@@ -1390,6 +1391,43 @@ if st.session_state.kelompok['kondisi4']:
         st.session_state.materi1 = False
         st.session_state.materi_prasyarat = False
         st.session_state.pretest1=False
+        st.session_state.soal_kuisioner=False
+        st.session_state.soal_kevalidan=False
+        st.session_state.akhir=False
+        st.session_state.pretest2 = False
+        st.rerun()
+#====permainan 1 variabel
+def permainan_math():
+    st.markdown('<style>.st-key-tombol40 .e1haskxa2{background-color:blue;color:yellow}</style>',unsafe_allow_html=True)
+    st.session_state.kelompok['kondisi1']=True
+if st.session_state['game']:
+    permainan_math()
+if st.session_state.kelompok["kondisi25"]:
+    if st.sidebar.button("Permainan",key="tombol40"):
+        st.session_state.peta=False
+        st.session_state.prasyarat = False
+        st.session_state.kelompok['kondisi19']=True
+        st.session_state.game=True
+        st.session_state.pretest1=False
+        st.session_state.adaptif=False
+        st.session_state.materi = False
+        st.session_state.pengecekan1 = False
+        st.session_state.pengecekan2 = False
+        st.session_state.cerita1=False
+        st.session_state.cerita2=False
+        st.session_state.cerita3=False
+        st.session_state.cerita4=False
+        st.session_state.cerita5=False
+        st.session_state.cerita6=False
+        st.session_state.cerita7=False
+        st.session_state.cerita8=False
+        st.session_state.cerita9=False
+        st.session_state.cerita10=False
+        st.session_state.pretest = False
+        st.session_state.video1 = False
+        st.session_state.video2 = False
+        st.session_state.materi_prasyarat = False
+        st.session_state.materi1 = False
         st.session_state.soal_kuisioner=False
         st.session_state.soal_kevalidan=False
         st.session_state.akhir=False
@@ -2776,6 +2814,7 @@ if st.session_state.kelompok['kondisi24']:
         st.session_state.akhir=False
         st.session_state.pretest2 = False
         st.rerun()
+
 
 
 
