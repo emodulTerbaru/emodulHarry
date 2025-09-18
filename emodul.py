@@ -2760,7 +2760,7 @@ if st.session_state.kelompok['kondisi16']:
 #==========================================
 
 if st.session_state.kelompok['kondisi23']:
-    if st.sidebar.button("Angket",key="tombol31"):
+    if st.sidebar.button("Pendapat Siswa",key="tombol31"):
         st.session_state.peta = False
         st.session_state.prasyarat = False
         st.session_state.materi_prasyarat = False
@@ -2792,7 +2792,7 @@ if st.session_state.kelompok['kondisi23']:
         st.rerun()
 #===============================================
 if st.session_state.kelompok['kondisi24']:
-    if st.sidebar.button("Kevalidan",key="tombol32"):
+    if st.sidebar.button("Pendapat Guru",key="tombol32"):
         st.session_state.peta = False
         st.session_state.prasyarat = False
         st.session_state.materi_prasyarat = False
@@ -2822,6 +2822,7 @@ if st.session_state.kelompok['kondisi24']:
         st.session_state.kelompok['kondisi1']=False
         st.session_state.game=False
         st.rerun()
+
 
 
 
