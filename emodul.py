@@ -2407,7 +2407,7 @@ if st.session_state.cerita5:
     soal_cerita5()
 if st.session_state.kelompok['kondisi10']:
     if st.sidebar.button("Kerukunan Agama", key="tombol15"):
-        st.session_state.kelompok['kondisi16']=True
+        st.session_state.kelompok['kondisi16']=False
         st.session_state.peta = False
         st.session_state.prasyarat = False
         st.session_state.materi_prasyarat = False
@@ -2821,6 +2821,7 @@ if st.session_state.kelompok['kondisi24']:
         st.session_state.kelompok['kondisi1']=False
         st.session_state.game=False
         st.rerun()
+
 
 
 
