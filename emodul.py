@@ -2,6 +2,8 @@ import streamlit as st
 import requests
 import streamlit.components.v1 as components
 
+st.set_page_config(layout="wide")
+
 if "peta" not in st.session_state:
     st.session_state.peta = False
 
@@ -40,7 +42,7 @@ if "kelompok" not in st.session_state:
                                  'kondisi6':False,'kondisi7':False,'kondisi8':False,'kondisi9':False, 'kondisi10':False,
                                  'kondisi11':False,'kondisi12':False,'kondisi13':False,'kondisi14':False, 'kondisi15':False,
                                  'kondisi16':False,'kondisi17':False,'kondisi18':False,'kondisi19':False,'kondisi20':False,
-                                 'kondisi21':False,'kondisi22':False,'kondisi23':False, 'kondisi24':False, 'kondisi25':False}
+                                 'kondisi21':False,'kondisi22':False,'kondisi23':False, 'kondisi24':False, 'kondisi25':False, 'kondisi26':False}
 
 if "jawaban" not in st.session_state:
     st.session_state.jawaban = {"jawab1":0,"jawab2":0,"jawab3":0,"jawab4":0,"jawab5":0,
@@ -102,14 +104,19 @@ if "jawaban4" not in st.session_state:
                                  }
 if "akhir" not in st.session_state:
     st.session_state.akhir=False
+if "jawaban5" not in st.session_state:
+    st.session_state.jawaban5 = {"jawab1":"","jawab2":"","jawab3":"","jawab4":""}
+if "posttest" not in st.session_state:
+    st.session_state.posttest=False
 st.sidebar.image("https://res.cloudinary.com/ikip-siliwangi/image/upload/v1753921874/logo_rw63xi.jpg", width=100)
-kolom = st.columns(3)
-with kolom[0]:
-    nama = st.text_input("Nama: ")
-with kolom[1]:
-    kelas = st.text_input("Kelas: ")
-with kolom[2]:
-    sekolah = st.text_input("Sekolah: ")
+if not st.session_state.kelompok['kondisi1']:
+    kolom = st.columns(3)
+    with kolom[0]:
+        nama = st.text_input("Nama: ")
+    with kolom[1]:
+        kelas = st.text_input("Kelas: ")
+    with kolom[2]:
+        sekolah = st.text_input("Sekolah: ")
 st.markdown('''
             <style>
                 #konsep{
@@ -255,8 +262,8 @@ st.markdown('''
             ''',unsafe_allow_html=True)
 
 
-
-st.markdown('''<div id="bantuan">
+if not st.session_state.kelompok['kondisi1']:
+    st.markdown('''<div id="bantuan">
             <a href="https://emodulterbaru.github.io/penjumlahan/Operasi Penjumlahan.html">Penjumlahan</a>
             <a href="https://emodulterbaru.github.io/penjumlahan/perkalian1.html">Perkalian</a></div>
         ''',unsafe_allow_html=True)
@@ -559,12 +566,19 @@ def kover():
     width="600" height="402" frameborder="0" scrolling="no" allowfullscreen></iframe>
     ''',unsafe_allow_html=True)
     
+
+def kover1():
+    st.markdown('''
+    <img src="https://res.cloudinary.com/dfkw4ux0e/image/upload/v1758599434/cover_fotuwr.jpg" allowtransparency="true"
+    width="100%" height="1200px" frameborder="0" scrolling="no" allowfullscreen></img>
+    ''',unsafe_allow_html=True)
+
 if st.session_state.peta:
     st.markdown('<style>.st-key-tombol3 .e1haskxa2{background-color:blue;color:yellow}</style>',unsafe_allow_html=True)
     pemetaan()
     
 if st.session_state.kelompok['kondisi1']:
-    kover()
+    kover1()
 if st.session_state.kelompok['kondisi2']:
     if st.sidebar.button("Prasyarat",key="tombol1"):
         st.session_state.peta=False
@@ -595,6 +609,7 @@ if st.session_state.kelompok['kondisi2']:
         st.session_state.soal_kevalidan=False
         st.session_state.akhir=False
         st.session_state.pretest2 = False
+        st.session_state.posttest=False
         st.session_state.game=False
         st.rerun()
         
@@ -634,9 +649,10 @@ if st.session_state.kelompok['kondisi17']:
         st.session_state.akhir=False
         st.session_state.pretest2 = False
         st.session_state.kelompok['kondisi1']=False
+        st.session_state.posttest=False
         st.session_state.game=False
         st.rerun()
-#===============================================================Soal Pretest2
+#===============================================================
 def soal_pretest2():
     st.markdown('<style>.st-key-tombol30 .e1haskxa2{background-color:blue;color:yellow}</style>',unsafe_allow_html=True)
     st.write("## Soal1")
@@ -797,10 +813,173 @@ def soal_pretest2():
                 st.error(f"Gagal mengirim. Status code: {response.status_code}")
         else:
             st.error("Ada Jawaban Soal yang masih kosong, Periksa lagi")
+
+#=====Postest
+def soal_pretest3():
+    st.markdown('<style>.st-key-tombol30 .e1haskxa2{background-color:blue;color:yellow}</style>',unsafe_allow_html=True)
+    st.write("## Soal1")
+    st.markdown('''
+    <style>
+        .text-bar {
+            min-height: 10vh; /* Tinggi penuh layar */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+            background-size: 400% 400%;
+            animation: gradientShift 15s ease infinite;
+            position: relative;
+            overflow: hidden;
+            text-align:justify;
+            padding:10px;
+            border-radius:10px;
+            margin-bottom:10px;
+        }
+
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .text-bar h1 {
+            color: white;
+            font-size: 1rem; /* Ukuran teks besar */
+            text-shadow: 
+                0 0 10px rgba(255, 255, 255, 0.5),
+                0 0 20px rgba(255, 255, 255, 0.3),
+                0 0 30px rgba(255, 255, 255, 0.2);
+            letter-spacing: 3px;
+            z-index: 2;
+            position: relative;
+            animation: textGlow 3s ease-in-out infinite alternate;
+            color:black;
+        }
+
+        @keyframes textGlow {
+            from {
+                text-shadow: 
+                    0 0 10px rgba(255, 255, 255, 0.5),
+                    0 0 20px rgba(255, 255, 255, 0.3),
+                    0 0 30px rgba(255, 255, 255, 0.2);
+            }
+            to {
+                text-shadow: 
+                    0 0 20px rgba(255, 255, 255, 0.8),
+                    0 0 30px rgba(255, 255, 255, 0.6),
+                    0 0 40px rgba(255, 255, 255, 0.4);
+            }
+        }
+
+        /* Partikel animasi latar belakang */
+        .particles {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .particle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background-color: rgba(255, 255, 255, 0.5);
+            border-radius: 50%;
+            animation: float 6s infinite ease-in-out;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0) translateX(0);
+                opacity: 0.5;
+            }
+            25% {
+                transform: translateY(-20px) translateX(10px);
+                opacity: 0.8;
+            }
+            50% {
+                transform: translateY(-10px) translateX(-15px);
+                opacity: 0.3;
+            }
+            75% {
+                transform: translateY(-30px) translateX(5px);
+                opacity: 0.9;
+            }
+        }
+
+        /* Responsif untuk mobile */
+        @media (max-width: 768px) {
+            .text-bar h1 {
+                font-size: 3rem;
+            }
+        }
+    </style>
+    <div class="text-bar">
+        <div class="particles"></div>
+        <h1>Seorang pedagang buah menjual apel dengan harga Rp7.000 per buah. Ia juga menjual jeruk dengan harga
+        Rp6.000 per buah. Pada suatu hari, seorang pembeli membeli beberapa apel dan beberapa jeruk. Jumlah apel
+        yang dibeli dua kali lebih banyak daripada jumlah jeruk. Jika total harga yang harus dibayar pembeli tersebut
+        adalah Rp200.000, tentukan berapa banyak apel dan berapa banyak jeruk yang dibeli oleh pembeli tersebut.</h1>
+    </div>
+    ''',unsafe_allow_html=True)
+    st.session_state.jawaban5['jawab1'] = st.text_area("Masukan Jawaban 1")
+    st.write("## Soal2")
+    st.markdown('''
+    <div class="text-bar">
+        <div class="particles"></div>
+        <h1>Rani menabung di celengan setiap hari dengan jumlah yang berbeda-beda. Pada minggu pertama, ia menabung Rp4.000
+        setiap hari. Setelah satu minggu hari berikutnya, ia menaikkan jumlah tabungan hariannya Rp2.000 setiap hari. Rani berencana mengumpulkan
+        uang lebih dari Rp268.000. Tentukan berapa hari minimal Rani harus menabung pada lebih dari Rp268.000.</h1>
+    </div>
+    ''',unsafe_allow_html=True)
+    st.session_state.jawaban5['jawab2'] = st.text_area("Masukan Jawaban 2")
+    st.write("## Soal3")
+    st.markdown('''
+    <div class="text-bar">
+        <div class="particles"></div>
+        <h1>Sebuah taman kota berbentuk persegi panjang dengan panjang 5 kali lebarnya. Pemerintah kota berencana menambah panjang
+        taman itu sebanyak 15 meter dan lebarnya sebanyak 9 meter. Setelah diperluas, keliling taman menjadi 360 meter. Tentukan ukuran
+        panjang dan lebar taman sebelum diperluas.</h1>
+    </div>
+    ''',unsafe_allow_html=True)
+    st.session_state.jawaban5['jawab3'] = st.text_area("Masukan Jawaban 3")
+    st.write("## Soal4")
+    st.markdown('''
+    <div class="text-bar">
+        <div class="particles"></div>
+        <h1>Andi ingin membeli buku tulis dan pulpen di sebuah toko alat tulis. Harga satu buku tulis adalah Rp7.000, sedangkan harga
+        satu pulpen adalah Rp4.000. Uang yang dimiliki Andi hanya Rp162.000. Jika Andi membeli 6 buku tulis, berapa pulpen paling banyak
+        yang masih bisa dibeli Andi? Tulis jawabanmu dalam bentuk pertidaksamaan dan tentukan nilai maksimum jumlah pulpen.</h1>
+    </div>
+    ''',unsafe_allow_html=True)
+    st.session_state.jawaban5['jawab4'] = st.text_area("Masukan Jawaban 4")
+    if st.button("Masukan Hasilnya"):
+        if st.session_state.jawaban5['jawab1'] and st.session_state.jawaban5['jawab2'] and st.session_state.jawaban5['jawab3'] and st.session_state.jawaban5['jawab4']:
+            url = "https://docs.google.com/forms/u/0/d/e/1FAIpQLSdhYuNsgeSeGYP4PaX_K61jizyYpISAmjFs3rACGiuarpETKw/formResponse"
+            data = {
+            "entry.1901995254": nama,   # Ganti dengan entry ID dari form
+            "entry.91265595": kelas,   # Ganti dengan entry ID dari form
+            "entry.2066116752": sekolah,   # Ganti dengan entry ID dari form
+            "entry.932030520": st.session_state.jawaban5['jawab1'],   # Ganti dengan entry ID dari form
+            "entry.655296782": st.session_state.jawaban5['jawab2'],   # Ganti dengan entry ID dari form
+            "entry.682901784": st.session_state.jawaban5['jawab3'],   # Ganti dengan entry ID dari form
+            "entry.1986471437": st.session_state.jawaban5['jawab4'],   # Ganti dengan entry ID dari form
+                }
+            response = requests.post(url, data=data)
+            if response.status_code == 200:
+                st.success("Berhasil dikirim!")
+            else:
+                st.error(f"Gagal mengirim. Status code: {response.status_code}")
+        else:
+            st.error("Ada Jawaban Soal yang masih kosong, Periksa lagi")
+#========================================
 if st.session_state.pretest2:
     soal_pretest2()
 if st.session_state.kelompok['kondisi22']:
-    if st.sidebar.button("Pretest_Lanjut", key="tombol30"):
+    if st.sidebar.button("Pretest_Lanjut", key="tombo30"):
         st.session_state.peta=False
         st.session_state.prasyarat = False
         st.session_state.pretest = False
@@ -829,6 +1008,7 @@ if st.session_state.kelompok['kondisi22']:
         st.session_state.soal_kevalidan=False
         st.session_state.akhir=False
         st.session_state.kelompok['kondisi1']=False
+        st.session_state.posttest=False
         st.session_state.game=False
         st.rerun()
 def soal_prasyarat():
@@ -931,6 +1111,7 @@ def soal_prasyarat():
             st.session_state.kelompok['kondisi1']=False
             st.session_state.pretest2=False
             st.session_state.kelompok['kondisi1']=False
+            st.session_state.posttest=False
             st.session_state.game=False
             st.rerun()
     
@@ -969,6 +1150,7 @@ if st.session_state.kelompok['kondisi3']:
         st.session_state.akhir=False
         st.session_state.pretest2 = False
         st.session_state.kelompok['kondisi1']=False
+        st.session_state.posttest=False
         st.session_state.game=False
         st.rerun()
 
@@ -1012,6 +1194,7 @@ if st.session_state.kelompok['kondisi18']:
         st.session_state.akhir=False
         st.session_state.pretest2 = False
         st.session_state.kelompok['kondisi1']=False
+        st.session_state.posttest=False
         st.session_state.game=False
         st.rerun()
 def materi_prasyarat_tampil():
@@ -1380,12 +1563,13 @@ if st.session_state.kelompok['kondisi4']:
         st.session_state.akhir=False
         st.session_state.pretest2 = False
         st.session_state.kelompok['kondisi1']=False
+        st.session_state.posttest=False
         st.session_state.game=False
         st.rerun()
 #====permainan 1 variabel
 def permainan_math():
     st.markdown('<style>.st-key-tombol40 .e1haskxa2{background-color:blue;color:yellow}</style>',unsafe_allow_html=True)
-    st.session_state.kelompok['kondisi1']=True
+    kover()
 if st.session_state['game']:
     permainan_math()
 if st.session_state.kelompok["kondisi25"]:
@@ -1418,6 +1602,7 @@ if st.session_state.kelompok["kondisi25"]:
         st.session_state.soal_kevalidan=False
         st.session_state.akhir=False
         st.session_state.pretest2 = False
+        st.session_state.posttest=False
         st.rerun()
 
 def video_pertidaksamaan():
@@ -1459,6 +1644,7 @@ if st.session_state.kelompok['kondisi19']:
         st.session_state.akhir=False
         st.session_state.pretest2 = False
         st.session_state.kelompok['kondisi1']=False
+        st.session_state.posttest=False
         st.session_state.game=False
         st.rerun()
 def materi_pertidaksamaan():
@@ -2043,6 +2229,7 @@ if st.session_state.kelompok['kondisi20']:
         st.session_state.akhir=False
         st.session_state.pretest2 = False
         st.session_state.kelompok['kondisi1']=False
+        st.session_state.posttest=False
         st.session_state.game=False
         st.rerun()
 def soal_adaptif():
@@ -2173,6 +2360,7 @@ if st.session_state.kelompok['kondisi5']:
         st.session_state.akhir=False
         st.session_state.pretest2 = False
         st.session_state.kelompok['kondisi1']=False
+        st.session_state.posttest=False
         st.session_state.game=False
         st.rerun()
 def soal_cerita1():
@@ -2227,6 +2415,7 @@ if st.session_state.kelompok['kondisi6']:
         st.session_state.soal_kevalidan=False
         st.session_state.akhir=False
         st.session_state.kelompok['kondisi1']=False
+        st.session_state.posttest=False
         st.session_state.game=False
         st.rerun()
 
@@ -2280,6 +2469,7 @@ if st.session_state.kelompok['kondisi7']:
         st.session_state.soal_kevalidan=False
         st.session_state.akhir=False
         st.session_state.kelompok['kondisi1']=False
+        st.session_state.posttest=False
         st.session_state.game=False
         st.rerun()
 
@@ -2331,6 +2521,7 @@ if st.session_state.kelompok['kondisi8']:
         st.session_state.soal_kevalidan=False
         st.session_state.akhir=False
         st.session_state.kelompok['kondisi1']=False
+        st.session_state.posttest=False
         st.session_state.game=False
         st.rerun()
         
@@ -2341,6 +2532,7 @@ def soal_cerita4():
     st.markdown("##### Sebuah kelas melakukan musyawarah untuk menentukan biaya per siswa dalam acara perpisahan.")
     st.markdown("""
                 - ##### Total biaya yang dibutuhkan adalah Rp2.400.000. 
+                - ##### Jika jumlah siswa adalah $x$, maka uang terkumpul Rp1.500.000.
                 - ##### Jika setiap siswa membayar Rp50.000, maka masih kurang Rp300.000.
                 """)
     st.markdown("##### Pertanyaan")
@@ -2381,6 +2573,7 @@ if st.session_state.kelompok['kondisi9']:
         st.session_state.soal_kevalidan=False
         st.session_state.akhir=False
         st.session_state.kelompok['kondisi1']=False
+        st.session_state.posttest=False
         st.session_state.game=False
         st.rerun()
 
@@ -2434,6 +2627,7 @@ if st.session_state.kelompok['kondisi10']:
         st.session_state.soal_kevalidan=False
         st.session_state.akhir=False
         st.session_state.kelompok['kondisi1']=False
+        st.session_state.posttest=False
         st.session_state.game=False
         st.rerun()
 
@@ -2487,7 +2681,7 @@ if st.session_state.kelompok['kondisi11']:
         st.session_state.soal_kevalidan=False
         st.session_state.akhir=False
         st.session_state.kelompok['kondisi1']=False
-        st.session_state.game=False
+        st.session_state.posttest=False
         st.rerun()
 
 def soal_cerita7():
@@ -2539,6 +2733,7 @@ if st.session_state.kelompok['kondisi12']:
         st.session_state.soal_kevalidan=False
         st.session_state.akhir=False
         st.session_state.kelompok['kondisi1']=False
+        st.session_state.posttest=False
         st.session_state.game=False
         st.rerun()
 
@@ -2591,6 +2786,7 @@ if st.session_state.kelompok['kondisi13']:
         st.session_state.soal_kevalidan=False
         st.session_state.akhir=False
         st.session_state.kelompok['kondisi1']=False
+        st.session_state.posttest=False
         st.session_state.game=False
         st.rerun()
 
@@ -2643,6 +2839,7 @@ if st.session_state.kelompok['kondisi14']:
         st.session_state.soal_kevalidan=False
         st.session_state.akhir=False
         st.session_state.kelompok['kondisi1']=False
+        st.session_state.posttest=False
         st.session_state.game=False
         st.rerun()
 
@@ -2694,6 +2891,7 @@ if st.session_state.kelompok['kondisi15']:
         st.session_state.soal_kevalidan=False
         st.session_state.akhir=False
         st.session_state.kelompok['kondisi1']=False
+        st.session_state.posttest=False
         st.session_state.game=False
         st.rerun()
 
@@ -2744,7 +2942,7 @@ if st.session_state.kelompok['kondisi16']:
         st.session_state.pengecekan1 = False
         st.session_state.pengecekan2 = False
         st.session_state.pretest = False
-        st.session_state.kelompok['kondisi23']=True
+        st.session_state.kelompok['kondisi26']=True
         st.session_state.video1 = False
         st.session_state.video2 = False
         st.session_state.materi1 = False
@@ -2753,10 +2951,46 @@ if st.session_state.kelompok['kondisi16']:
         st.session_state.soal_kevalidan=False
         st.session_state.akhir=True
         st.session_state.kelompok['kondisi1']=False
+        st.session_state.posttest=False
         st.session_state.game=False
         st.rerun()
 #==========================================
-
+if st.session_state.posttest:
+    st.markdown('<style>.st-key-tombol50 .e1haskxa2{background-color:blue;color:yellow}</style>',unsafe_allow_html=True)
+    soal_pretest3()
+if st.session_state.kelompok['kondisi26']:
+    if st.sidebar.button("Postest",key="tombol50"):
+        st.session_state.peta = False
+        st.session_state.prasyarat = False
+        st.session_state.materi_prasyarat = False
+        st.session_state.materi = False
+        st.session_state.adaptif=False
+        st.session_state.cerita1=False
+        st.session_state.cerita2=False
+        st.session_state.cerita3=False
+        st.session_state.cerita4=False
+        st.session_state.cerita5=False
+        st.session_state.cerita6=False
+        st.session_state.cerita7=False
+        st.session_state.cerita8=False
+        st.session_state.cerita9=False
+        st.session_state.cerita10=False
+        st.session_state.pengecekan1 = False
+        st.session_state.pengecekan2 = False
+        st.session_state.pretest = False
+        st.session_state.kelompok['kondisi23']=True
+        st.session_state.video1 = False
+        st.session_state.video2 = False
+        st.session_state.materi1 = False
+        st.session_state.pretest1=False
+        st.session_state.soal_kuisioner=False
+        st.session_state.soal_kevalidan=False
+        st.session_state.kelompok['kondisi1']=False
+        st.session_state.posttest=True
+        st.session_state.akhir=False
+        st.session_state.game=False
+        st.rerun()
+#========================================
 if st.session_state.kelompok['kondisi23']:
     if st.sidebar.button("Pendapat Siswa",key="tombol31"):
         st.session_state.peta = False
@@ -2786,6 +3020,7 @@ if st.session_state.kelompok['kondisi23']:
         st.session_state.soal_kevalidan=False
         st.session_state.akhir=False
         st.session_state.kelompok['kondisi1']=False
+        st.session_state.posttest=False
         st.session_state.game=False
         st.rerun()
 #===============================================
@@ -2818,14 +3053,9 @@ if st.session_state.kelompok['kondisi24']:
         st.session_state.soal_kevalidan=True
         st.session_state.akhir=False
         st.session_state.kelompok['kondisi1']=False
+        st.session_state.posttest=False
         st.session_state.game=False
         st.rerun()
-
-
-
-
-
-
 
 
 
