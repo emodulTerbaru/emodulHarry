@@ -2341,7 +2341,6 @@ def soal_cerita4():
     st.markdown("##### Sebuah kelas melakukan musyawarah untuk menentukan biaya per siswa dalam acara perpisahan.")
     st.markdown("""
                 - ##### Total biaya yang dibutuhkan adalah Rp2.400.000. 
-                - ##### Jika jumlah siswa adalah $x$, maka uang terkumpul Rp1.500.000.
                 - ##### Jika setiap siswa membayar Rp50.000, maka masih kurang Rp300.000.
                 """)
     st.markdown("##### Pertanyaan")
@@ -2821,6 +2820,7 @@ if st.session_state.kelompok['kondisi24']:
         st.session_state.kelompok['kondisi1']=False
         st.session_state.game=False
         st.rerun()
+
 
 
 
