@@ -276,7 +276,7 @@ def tampilkan_kevalidan():
         <div style="border:2px solid black; background-color:yellow;color:black; padding:10px; border-radius:10px; margin-bottom:10px; box-shadow:-2px -2px 3px 3px red,2px 2px 3px 3px green">
         <div style="font-weight:bold; font-size:20px">LEMBAR VALIDASI LMS OLEH AHLI MATERI</div>
         <div style="font-size:15px;text-align:justify;">Pengembangan LMS Adaftif
-        Berbasis Deep Learning Terhadap Literasi dan Numerasi serta Propil Pelajar
+        Berbasis Deep Learning Terhadap Literasi dan Numerasi serta Profil Pelajar
         Pancasila Pada Siswa SMP</div>
         <div>
             <table>
@@ -3080,6 +3080,7 @@ if st.session_state.kelompok['kondisi24']:
         st.session_state.game=False
         st.session_state.kelompok['kondisi27']=False
         st.rerun()
+
 
 
 
