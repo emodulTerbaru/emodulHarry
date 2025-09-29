@@ -982,7 +982,7 @@ def soal_pretest3():
 if st.session_state.pretest2:
     soal_pretest2()
 if st.session_state.kelompok['kondisi22']:
-    if st.sidebar.button("Pretest_Lanjut", key="tombo30"):
+    if st.sidebar.button("Pretest_Lanjut", key="tombol30"):
         st.session_state.peta=False
         st.session_state.prasyarat = False
         st.session_state.pretest = False
@@ -3080,6 +3080,7 @@ if st.session_state.kelompok['kondisi24']:
         st.session_state.game=False
         st.session_state.kelompok['kondisi27']=False
         st.rerun()
+
 
 
 
