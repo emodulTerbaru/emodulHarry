@@ -2276,7 +2276,7 @@ def soal_adaptif():
         st.session_state.pengecekan1=True
     
 if st.session_state.adaptif:
-    st.markdown('<style>.st-key-tombol8 .e1haskxa2{background-color:blue;color:yellow}</style>',unsafe_allow_html=True)
+    st.markdown('<style>.st-key-tombol8 .e8vg11g2{background-color:blue;color:yellow}</style>',unsafe_allow_html=True)
     soal_adaptif()
 def level_kedua():
     st.markdown(""" <div style="display:flex; justify-content:space-evenly;align-items:center; border:2px solid white; margin-bottom:10px; padding:2px;">
@@ -3080,6 +3080,7 @@ if st.session_state.kelompok['kondisi24']:
         st.session_state.game=False
         st.session_state.kelompok['kondisi27']=False
         st.rerun()
+
 
 
 
