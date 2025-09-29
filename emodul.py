@@ -2609,7 +2609,7 @@ def soal_cerita5():
                 """)
     st.session_state.jawaban1['jawab5']=st.text_area("Keterangan Jawaban5",value=st.session_state.jawaban1['jawab5'])
 if st.session_state.cerita5:
-    st.markdown('<style>.st-key-tombol15 .e1haskxa2{background-color:blue;color:yellow}</style>',unsafe_allow_html=True)
+    st.markdown('<style>.st-key-tombol15 .e8vg11g2{background-color:blue;color:yellow}</style>',unsafe_allow_html=True)
     soal_cerita5()
 if st.session_state.kelompok['kondisi10']:
     if st.sidebar.button("Kerukunan Agama", key="tombol15"):
@@ -3080,6 +3080,7 @@ if st.session_state.kelompok['kondisi24']:
         st.session_state.game=False
         st.session_state.kelompok['kondisi27']=False
         st.rerun()
+
 
 
 
