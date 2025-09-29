@@ -1121,7 +1121,7 @@ def soal_prasyarat():
             st.rerun()
     
 if st.session_state.prasyarat:
-    st.markdown('<style>.st-key-tombol1 .e1haskxa2{background-color:blue;color:yellow}</style>',unsafe_allow_html=True)
+    st.markdown('<style>.st-key-tombol1 .e8vg11g2{background-color:blue;color:yellow}</style>',unsafe_allow_html=True)
     soal_prasyarat()
 
 if st.session_state.kelompok['kondisi3']:
@@ -3080,6 +3080,7 @@ if st.session_state.kelompok['kondisi24']:
         st.session_state.game=False
         st.session_state.kelompok['kondisi27']=False
         st.rerun()
+
 
 
 
