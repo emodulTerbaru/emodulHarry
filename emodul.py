@@ -2450,7 +2450,7 @@ def soal_cerita2():
                 """)
     st.session_state.jawaban1['jawab2']=st.text_area("Keterangan Jawaban2",value=st.session_state.jawaban1['jawab2'])
 if st.session_state.cerita2:
-    st.markdown('<style>.st-key-tombol11 .e1haskxa2{background-color:blue;color:yellow}</style>',unsafe_allow_html=True)
+    st.markdown('<style>.st-key-tombol11 .e8vg11g2{background-color:blue;color:yellow}</style>',unsafe_allow_html=True)
     soal_cerita2()
 if st.session_state.kelompok['kondisi7']:
     if st.sidebar.button('Jujur dalam Jual Beli',key="tombol11"):
@@ -3080,6 +3080,7 @@ if st.session_state.kelompok['kondisi24']:
         st.session_state.game=False
         st.session_state.kelompok['kondisi27']=False
         st.rerun()
+
 
 
 
