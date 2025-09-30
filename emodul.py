@@ -639,8 +639,8 @@ def tampil_kuisioner():
     font-family:'comic sans ms';text-align:center;font-weight:bold">Kebermanfaatan</div>
     ''',unsafe_allow_html=True)
     st.session_state.jawaban3['jawab1']=st.radio("1 LMS membantu saya memahami materi dengan lebih baik.",[1,2,3,4],index=None)
-    st.session_state.jawaban3['jawab2']=st.radio("2 LMS membuat pembelajaran lebih efisien dan terstruktur",[1,2,3,4],index=None)
-    st.session_state.jawaban3['jawab3']=st.radio("3 Materi dapat saya akses kapan saja dan di mana saja melalui LMS..",[1,2,3,4],index=None)
+    st.session_state.jawaban3['jawab2']=st.radio("2 LMS membuat pembelajaran lebih efisien dan terstruktur.",[1,2,3,4],index=None)
+    st.session_state.jawaban3['jawab3']=st.radio("3 Materi dapat saya akses kapan saja dan di mana saja melalui LMS.",[1,2,3,4],index=None)
     st.session_state.jawaban3['jawab4']=st.radio("4 LMS memudahkan saya dalam mengerjakan evaluasi/tes secara online.",[1,2,3,4],index=None)
     st.session_state.jawaban3['jawab5']=st.radio("5 LMS membuat saya lebih aktif  dalam pembelajaran)",[1,2,3,4],index=None)
     st.markdown('''
@@ -3319,6 +3319,7 @@ if st.session_state.kelompok['kondisi29']:
         st.session_state.kelompok['kondisi27']=False
         st.session_state.kevalidan_media = True
         st.rerun()
+
 
 
 
