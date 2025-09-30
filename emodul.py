@@ -392,7 +392,7 @@ def tampilkan_kevalidan():
     <div style="background-color:black;color:yellow;padding:5px; margin:5px; font-size:18px;border-radius:8px;border:2px solid cyan;
     font-family:'comic sans ms';text-align:center;font-weight:bold">Kesimpulan</div>
     ''',unsafe_allow_html=True)
-    st.session_state.jawaban4['jawab25']=st.radio("Bahan ajar berbentuk LKS dengan pendekatan PBL dinyatakan *)",["1 Layak digunakan di lapangan tanpa revisi","2 Layak digunakan di lapangan dengan revisi","3 Tidak layak digunakan di lapangan"],index=None)
+    st.session_state.jawaban4['jawab25']=st.radio("Bahan ajar berbentuk LKS dengan pendekatan LMS Adaptif Berbasis Deep Learning Terhadap Literasi Numerasi dan Profil Pelajar Pancasila dinyatakan *)",["1 Layak digunakan di lapangan tanpa revisi","2 Layak digunakan di lapangan dengan revisi","3 Tidak layak digunakan di lapangan"],index=None)
     st.markdown('''
     <div>*) Pilih salah satu</div>
     ''',unsafe_allow_html=True)
@@ -559,7 +559,7 @@ def tampilkan_kevalidan1():
     <div style="background-color:black;color:yellow;padding:5px; margin:5px; font-size:18px;border-radius:8px;border:2px solid cyan;
     font-family:'comic sans ms';text-align:center;font-weight:bold">Kesimpulan</div>
     ''',unsafe_allow_html=True)
-    st.session_state.jawaban6['jawab27']=st.radio("Bahan ajar berbentuk LKS dengan pendekatan PBL dinyatakan *)",["1 Layak digunakan di lapangan tanpa revisi","2 Layak digunakan di lapangan dengan revisi","3 Tidak layak digunakan di lapangan"],index=None)
+    st.session_state.jawaban6['jawab27']=st.radio("Bahan ajar berbentuk LKS dengan pendekatan LMS Adaptif Berbasis Deep Learning Terhadap Literasi Numerasi dan Pofil Pelajar Pancasila dinyatakan *)",["1 Layak digunakan di lapangan tanpa revisi","2 Layak digunakan di lapangan dengan revisi","3 Tidak layak digunakan di lapangan"],index=None)
     st.markdown('''
     <div>*) Pilih salah satu</div>
     ''',unsafe_allow_html=True)
@@ -3286,7 +3286,7 @@ if st.session_state.kevalidan_media:
     st.markdown('<style>.st-key-tombol60 .e8vg11g2{background-color:blue;color:yellow}</style>',unsafe_allow_html=True)
     tampilkan_kevalidan1()
 if st.session_state.kelompok['kondisi29']:
-    if st.sidebar.button("Pendapat Ahli media",key="tombol60"):
+    if st.sidebar.button("Pendapat Ahli Media",key="tombol60"):
         st.session_state.peta = False
         st.session_state.prasyarat = False
         st.session_state.materi_prasyarat = False
@@ -3319,6 +3319,7 @@ if st.session_state.kelompok['kondisi29']:
         st.session_state.kelompok['kondisi27']=False
         st.session_state.kevalidan_media = True
         st.rerun()
+
 
 
 
