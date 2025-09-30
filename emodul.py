@@ -795,12 +795,12 @@ if st.session_state.kelompok['kondisi2']:
         
 def soal_pretest():
     st.markdown('<style>.st-key-tombol2 .e8vg11g2{background-color:blue;color:yellow}</style>',unsafe_allow_html=True)
-    st.markdown("<a id='format'> Soal Pretest</a>",unsafe_allow_html=True)
+    st.markdown("<a id='format'> Soal Test Awal</a>",unsafe_allow_html=True)
     st.markdown("<iframe src='https://emodulterbaru.github.io/pretestHarry1/pretest1' style='width:100%; height:3500px'></iframe>",unsafe_allow_html=True)
 if st.session_state.pretest:
     soal_pretest()
 if st.session_state.kelompok['kondisi17']:
-    if st.sidebar.button("Pretest", key="tombol2"):
+    if st.sidebar.button("Test Awal", key="tombol2"):
         st.session_state.peta=False
         st.session_state.prasyarat = False
         st.session_state.pretest = True
@@ -3319,6 +3319,7 @@ if st.session_state.kelompok['kondisi29']:
         st.session_state.kelompok['kondisi27']=False
         st.session_state.kevalidan_media = True
         st.rerun()
+
 
 
 
