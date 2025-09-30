@@ -43,7 +43,7 @@ if "kelompok" not in st.session_state:
                                  'kondisi11':False,'kondisi12':False,'kondisi13':False,'kondisi14':False, 'kondisi15':False,
                                  'kondisi16':False,'kondisi17':False,'kondisi18':False,'kondisi19':False,'kondisi20':False,
                                  'kondisi21':False,'kondisi22':False,'kondisi23':False, 'kondisi24':False, 'kondisi25':False, 'kondisi26':False,
-                                 'kondisi27':False}
+                                 'kondisi27':False,'kondisi28':False,'kondisi29':False}
 
 if "jawaban" not in st.session_state:
     st.session_state.jawaban = {"jawab1":0,"jawab2":0,"jawab3":0,"jawab4":0,"jawab5":0,
@@ -109,6 +109,16 @@ if "jawaban5" not in st.session_state:
     st.session_state.jawaban5 = {"jawab1":"","jawab2":"","jawab3":"","jawab4":""}
 if "posttest" not in st.session_state:
     st.session_state.posttest=False
+if "jawaban6" not in st.session_state:
+    st.session_state.jawaban6 = {"jawab1":0,"jawab2":0,"jawab3":0,"jawab4":0,"jawab5":0,
+                                "jawab6":0,"jawab7":0,"jawab8":0,"jawab9":0,"jawab10":0,
+                                 "jawab11":0,"jawab12":0,"jawab13":0,"jawab14":0,"jawab15":0,
+                                "jawab16":0,"jawab17":0,"jawab18":0,"jawab19":0,"jawab20":0,
+                                 "jawab21":0,"jawab22":0,"jawab23":0, "jawab24":0,"jawab25":0,
+                                 "jawab26":'',"jawab27":''
+                                 }
+if "kevalidan_media" not in st.session_state:
+    st.session_state.kevalidan_media = False
 st.sidebar.image("https://res.cloudinary.com/ikip-siliwangi/image/upload/v1753921874/logo_rw63xi.jpg", width=100)
 if not st.session_state.kelompok['kondisi1']:
     kolom = st.columns(3)
@@ -434,6 +444,173 @@ def tampilkan_kevalidan():
                 st.error(f"Gagal mengirim. Status code: {response.status_code}")
 if st.session_state.soal_kevalidan:
     tampilkan_kevalidan()
+#============ahli media
+def tampilkan_kevalidan1():
+    st.markdown('<style>.st-key-tombol32 .e1haskxa2{background-color:blue;color:yellow}</style>',unsafe_allow_html=True)
+    st.markdown(f'''
+        <div style="border:2px solid black; background-color:orange;color:black; padding:10px; border-radius:10px; margin-bottom:10px; box-shadow:-2px -2px 3px 3px red,2px 2px 3px 3px green">
+        <div style="font-weight:bold; font-size:20px">LEMBAR VALIDASI LMS OLEH AHLI MEDIA</div>
+        <div style="font-size:15px;text-align:justify;">Pengembangan LMS Adaftif
+        Berbasis Deep Learning Terhadap Literasi dan Numerasi serta Profil Pelajar
+        Pancasila Pada Siswa SMP</div>
+        <div>
+            <table>
+                <tr>
+                    <td>Materi Pokok</td>
+                    <td>:</td>
+                    <td>Persamaan dan Pertidaksamaan Satu Variabel</td>
+                </tr>
+                <tr>
+                    <td>Sasaran</td>
+                    <td>:</td>
+                    <td>Siswa Kelas VIII Semester 1</td>
+                </tr>
+                <tr>
+                    <td>Peneliti</td>
+                    <td>:</td>
+                    <td><ol>
+                            <li>Dr. Harry Dwi Putra, M.Pd</li>
+                            <li>Dr. H. Asep Ikin Sugandi, M.Pd</li>
+                            <li>Martin Bernard, M.Pd</li>
+                        </ol>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Validator</td>
+                    <td>:</td>
+                    <td>{nama}</td>
+                </tr>
+                <tr>
+                    <td>Tanggal</td>
+                    <td>:</td>
+                    <td></td>
+                </tr>
+            </table>
+            <div style="text-align:justify">
+                Lembar penilaian LMS ini bertujuan untuk memperoleh validitas muka sehingga memperoleh masukan-masukan terkait kesesuaian tingkat kelas dengan bahan ajar yang digunakan. Serta mengetahui pendapat Bapak/Ibu Guru tentang kevalidan produk yang dihasilkan untuk mengetahui
+                layak atau tidaknya LKS tersebut digunakan dalam pembelajaran di sekolah. Atas kesediaan Bapak/Ibu Guru untuk mengisi angket
+                ini saya ucapkan terima kasih.
+            </div>
+            <div>Petunjuk Pengisian</div>
+        </div>
+        <div>
+            <ol>
+                <li>Isilah pilihan pada kolom yang Bapak/Ibu anggap sesuai dengan aspek penilaian yang ada.
+                Jika ada masukan, tulislah di kolom masukan.</li>
+                <li>Rentang skala penilaian adalah sebagai berikut :
+                    SS(4) = sangat setuju, S(3) = setuju,  TS(2) = tidak setuju, STS(1) = sangat tidak setuju
+                </li>
+            </ol>
+        </div>
+        </div>
+        ''',unsafe_allow_html=True)
+    st.markdown('''
+    <div style="background-color:black;color:yellow;padding:5px; margin:5px; font-size:18px;border-radius:8px;border:2px solid cyan;
+    font-family:'comic sans ms';text-align:center;font-weight:bold">Aspek Tampilan </div>
+    ''',unsafe_allow_html=True)
+    st.session_state.jawaban6['jawab1']=st.radio("1 Desain visual (warna, ikon, layout) konsisten di seluruh laman.",[1,2,3,4],index=None)
+    st.session_state.jawaban6['jawab2']=st.radio("2 Tata letak/struktur informasi memudahkan pengguna menemukan fitur.",[1,2,3,4],index=None)
+    st.session_state.jawaban6['jawab3']=st.radio("3 Ukuran, jenis huruf, dan jarak antar teks mendukung keterbacaan.",[1,2,3,4],index=None)
+    st.session_state.jawaban6['jawab4']=st.radio("4 Kontras warna cukup untuk aksesibilitas (kemampuan baca semua pengguna).",[1,2,3,4],index=None)
+    st.session_state.jawaban6['jawab5']=st.radio("5 Visual (grafik, ikon, animasi) mendukung tujuan pembelajaran dan tidak mengganggu.",[1,2,3,4],index=None)
+    st.markdown('''
+    <div style="background-color:black;color:yellow;padding:5px; margin:5px; font-size:18px;border-radius:8px;border:2px solid cyan;
+    font-family:'comic sans ms';text-align:center;font-weight:bold">Aspek Fungsionalitas & Teknis</div>
+    ''',unsafe_allow_html=True)
+    st.session_state.jawaban6['jawab6']=st.radio("6 Sistem dapat dijalankan dengan cepat dan stabil (load time, respon).",[1,2,3,4],index=None)
+    st.session_state.jawaban6['jawab7']=st.radio("7 Proses login, pendaftaran, dan manajemen akun bekerja mudah dan aman.",[1,2,3,4],index=None)
+    st.session_state.jawaban6['jawab8']=st.radio("8 Fitur inti (kuis, upload tugas, forum, tracking) berfungsi sesuai spesifikasi.dan Berpikir Kritis).",[1,2,3,4],index=None)
+    st.session_state.jawaban6['jawab9']=st.radio("9 Aplikasi responsif di berbagai perangkat (desktop, tablet, smartphone)..",[1,2,3,4],index=None)
+    st.session_state.jawaban6['jawab10']=st.radio("10 Mekanisme backup dan recovery/data protection tersedia dan memadai.",[1,2,3,4],index=None)
+    st.markdown('''
+    <div style="background-color:black;color:yellow;padding:5px; margin:5px; font-size:18px;border-radius:8px;border:2px solid cyan;
+    font-family:'comic sans ms';text-align:center;font-weight:bold">Aspek Interaktivitas Media</div>
+    ''',unsafe_allow_html=True)
+    st.session_state.jawaban6['jawab11']=st.radio("11 Tersedia mekanisme interaksi real-time (chat/forum) yang mudah digunakan.",[1,2,3,4],index=None)
+    st.session_state.jawaban6['jawab12']=st.radio("12 Media interaktif (kuis adaptif, simulasi, drag & drop, dsb.) berfungsi dengan baik.",[1,2,3,4],index=None)
+    st.session_state.jawaban6['jawab13']=st.radio("13 Umpan balik otomatis yang diberikan jelas, relevan, dan membantu belajar.",[1,2,3,4],index=None)
+    st.session_state.jawaban6['jawab14']=st.radio("14 Material multimedia (video/audio/gambar) terintegrasi dengan tata letak pembelajaran.",[1,2,3,4],index=None)
+    st.session_state.jawaban6['jawab15']=st.radio("15 Fitur kolaboratif (ruang kerja kelompok, penilaian peer) mendukung interaksi bermakna.",[1,2,3,4],index=None)
+    st.markdown('''
+    <div style="background-color:black;color:yellow;padding:5px; margin:5px; font-size:18px;border-radius:8px;border:2px solid cyan;
+    font-family:'comic sans ms';text-align:center;font-weight:bold">Aspek Keamanan & Privasi</div>
+    ''',unsafe_allow_html=True)
+    st.session_state.jawaban6['jawab16']=st.radio("16 Sistem menggunakan model deep learning untuk memberikan rekomendasi materi yang relevan).",[1,2,3,4],index=None)
+    st.session_state.jawaban6['jawab17']=st.radio("17 Personalisasi (adaptive path) jelas terlihat berdasarkan performa dan profil pengguna.",[1,2,3,4],index=None)
+    st.session_state.jawaban6['jawab18']=st.radio("18 Learning analytics memvisualisasi capaian, tren, dan area yang perlu perhatian.",[1,2,3,4],index=None)
+    st.session_state.jawaban6['jawab19']=st.radio("19 Prediksi/alert (mis. risiko drop-out, butuh intervensi) akurat dan berguna.",[1,2,3,4],index=None)
+    st.session_state.jawaban6['jawab20']=st.radio("20 Sistem menjelaskan (explainability) dasar rekomendasi/keputusan AI agar dapat dipahami pengguna.",[1,2,3,4],index=None)
+    st.markdown('''
+    <div style="background-color:black;color:yellow;padding:5px; margin:5px; font-size:18px;border-radius:8px;border:2px solid cyan;
+    font-family:'comic sans ms';text-align:center;font-weight:bold">Aspek Keamanan & Privasi</div>
+    ''',unsafe_allow_html=True)
+    st.session_state.jawaban6['jawab21']=st.radio("21 Pengelolaan data pengguna sesuai prinsip privasi (minimasi data, enkripsi, dsb).",[1,2,3,4],index=None)
+    st.session_state.jawaban6['jawab22']=st.radio("22 Hak akses dan otorisasi pengguna terimplementasi dengan baik.",[1,2,3,4],index=None)
+    st.session_state.jawaban6['jawab23']=st.radio("23 Kebijakan privasi dan persetujuan penggunaan data tersedia dan jelas.",[1,2,3,4],index=None)
+    st.session_state.jawaban6['jawab24']=st.radio("24 Sistem aman terhadap ancaman umum (autentikasi kuat, proteksi serangan umum).",[1,2,3,4],index=None)
+    st.session_state.jawaban6['jawab25']=st.radio("25 Mekanisme penghapusan/permintaan data pengguna mudah diakses.",[1,2,3,4],index=None)
+    st.markdown('''
+    <div style="background-color:black;color:yellow;padding:5px; margin:5px; font-size:18px;border-radius:8px;border:2px solid cyan;
+    font-family:'comic sans ms';text-align:center;font-weight:bold">Komentar/ Saran untuk Perbaikan LMS</div>
+    <div></div>
+    ''',unsafe_allow_html=True)
+    st.session_state.jawaban6['jawab26']=st.text_area("Mohon isi di sini")
+    st.markdown('''
+    <div style="background-color:black;color:yellow;padding:5px; margin:5px; font-size:18px;border-radius:8px;border:2px solid cyan;
+    font-family:'comic sans ms';text-align:center;font-weight:bold">Kesimpulan</div>
+    ''',unsafe_allow_html=True)
+    st.session_state.jawaban6['jawab27']=st.radio("Bahan ajar berbentuk LKS dengan pendekatan PBL dinyatakan *)",["1 Layak digunakan di lapangan tanpa revisi","2 Layak digunakan di lapangan dengan revisi","3 Tidak layak digunakan di lapangan"],index=None)
+    st.markdown('''
+    <div>*) Pilih salah satu</div>
+    ''',unsafe_allow_html=True)
+    if st.button("Masukan jawaban Ahli Media"):
+        poin = 0
+        for i in st.session_state.jawaban6:
+            if st.session_state.jawaban6[i]==None or st.session_state.jawaban6[i]=="":
+                st.error(i+" Belum terisi")
+                break
+            else:
+                poin +=1
+        st.write(poin)
+        if poin==27:
+            url = "https://docs.google.com/forms/u/0/d/e/1FAIpQLSdbJKEX31Pmy6A6k1-dApWnNVAhOl7cmr9U2hy4_naNnOlqSw/formResponse"
+            data = {
+            "entry.1474505802": nama,   # Ganti dengan entry ID dari form
+            "entry.22517126": sekolah,   # Ganti dengan entry ID dari form
+            "entry.894743694": st.session_state.jawaban6['jawab1'],   # Ganti dengan entry ID dari form
+            "entry.1181979855": st.session_state.jawaban6['jawab2'],   # Ganti dengan entry ID dari form
+            "entry.49256181": st.session_state.jawaban6['jawab3'],   # Ganti dengan entry ID dari form
+            "entry.633576234": st.session_state.jawaban6['jawab4'],   # Ganti dengan entry ID dari form
+            "entry.778685164": st.session_state.jawaban6['jawab5'],   # Ganti dengan entry ID dari form
+            "entry.853840279": st.session_state.jawaban6['jawab6'],   # Ganti dengan entry ID dari form
+            "entry.1563002000": st.session_state.jawaban6['jawab7'],   # Ganti dengan entry ID dari form
+            "entry.1597568141": st.session_state.jawaban6['jawab8'],   # Ganti dengan entry ID dari form
+            "entry.879327998": st.session_state.jawaban6['jawab9'],   # Ganti dengan entry ID dari form
+            "entry.2119178410": st.session_state.jawaban6['jawab10'],   # Ganti dengan entry ID dari form
+            "entry.1710320937": st.session_state.jawaban6['jawab11'],   # Ganti dengan entry ID dari form
+            "entry.91420189": st.session_state.jawaban6['jawab12'],   # Ganti dengan entry ID dari form
+            "entry.521044252": st.session_state.jawaban6['jawab13'],   # Ganti dengan entry ID dari form
+            "entry.1351075123": st.session_state.jawaban6['jawab14'],   # Ganti dengan entry ID dari form
+            "entry.1739617730": st.session_state.jawaban6['jawab15'],   # Ganti dengan entry ID dari form
+            "entry.661911191": st.session_state.jawaban6['jawab16'],   # Ganti dengan entry ID dari form
+            "entry.1424280546": st.session_state.jawaban6['jawab17'],   # Ganti dengan entry ID dari form
+            "entry.748854670": st.session_state.jawaban6['jawab18'],   # Ganti dengan entry ID dari form
+            "entry.1984682441": st.session_state.jawaban6['jawab19'],   # Ganti dengan entry ID dari form
+            "entry.663328225": st.session_state.jawaban6['jawab20'],   # Ganti dengan entry ID dari form
+            "entry.769803424": st.session_state.jawaban6['jawab21'],   # Ganti dengan entry ID dari form
+            "entry.9428513": st.session_state.jawaban6['jawab22'],   # Ganti dengan entry ID dari form
+            "entry.303343529": st.session_state.jawaban6['jawab23'],   # Ganti dengan entry ID dari form
+            "entry.1164439999": st.session_state.jawaban6['jawab24'],   # Ganti dengan entry ID dari form
+            "entry.2130741694": st.session_state.jawaban6['jawab25'],   # Ganti dengan entry ID dari form
+            "entry.19657503": st.session_state.jawaban6['jawab26'],   # Ganti dengan entry ID dari form
+            "entry.1903400958": st.session_state.jawaban6['jawab27'],   # Ganti dengan entry ID dari form
+                }
+            response = requests.post(url, data=data)
+            if response.status_code == 200:
+                st.success("Berhasil dikirim!")
+            else:
+                st.error(f"Gagal mengirim. Status code: {response.status_code}")
+#===============Batas Ahli Media
 def tampil_kuisioner():
     st.markdown('<style>.st-key-tombol31 .e8vg11g2{background-color:blue;color:yellow}</style>',unsafe_allow_html=True)
     with st.container():
@@ -613,6 +790,7 @@ if st.session_state.kelompok['kondisi2']:
         st.session_state.posttest=False
         st.session_state.game=False
         st.session_state.kelompok['kondisi27']=True
+        st.session_state.kevalidan_media = False
         st.rerun()
         
 def soal_pretest():
@@ -654,6 +832,7 @@ if st.session_state.kelompok['kondisi17']:
         st.session_state.posttest=False
         st.session_state.game=False
         st.session_state.kelompok['kondisi27']=False
+        st.session_state.kevalidan_media = False
         st.rerun()
 #===============================================================
 def soal_pretest2():
@@ -1014,6 +1193,7 @@ if st.session_state.kelompok['kondisi22']:
         st.session_state.posttest=False
         st.session_state.game=False
         st.session_state.kelompok['kondisi27']=False
+        st.session_state.kevalidan_media = False
         st.rerun()
 def soal_prasyarat():
     st.markdown("<div class='menu'>Soal Prasyarat</div>",unsafe_allow_html=True)
@@ -1158,6 +1338,7 @@ if st.session_state.kelompok['kondisi3']:
         st.session_state.posttest=False
         st.session_state.game=False
         st.session_state.kelompok['kondisi27']=False
+        st.session_state.kevalidan_media = False
         st.rerun()
 
 def tampilkan_video1():
@@ -1203,6 +1384,7 @@ if st.session_state.kelompok['kondisi18']:
         st.session_state.posttest=False
         st.session_state.game=False
         st.session_state.kelompok['kondisi27']=False
+        st.session_state.kevalidan_media = False
         st.rerun()
 def materi_prasyarat_tampil():
     st.error("Nilai Anda: "+str(st.session_state.nilai_prasyarat))
@@ -1573,6 +1755,7 @@ if st.session_state.kelompok['kondisi4']:
         st.session_state.posttest=False
         st.session_state.kelompok['kondisi27']=False
         st.session_state.game=False
+        st.session_state.kevalidan_media = False
         st.rerun()
 #====permainan 1 variabel
 def permainan_math():
@@ -1612,6 +1795,7 @@ if st.session_state.kelompok["kondisi25"]:
         st.session_state.pretest2 = False
         st.session_state.kelompok['kondisi27']=False
         st.session_state.posttest=False
+        st.session_state.kevalidan_media = False
         st.rerun()
 
 def video_pertidaksamaan():
@@ -1656,6 +1840,7 @@ if st.session_state.kelompok['kondisi19']:
         st.session_state.posttest=False
         st.session_state.game=False
         st.session_state.kelompok['kondisi27']=False
+        st.session_state.kevalidan_media = False
         st.rerun()
 def materi_pertidaksamaan():
     koding_html='''
@@ -2242,6 +2427,7 @@ if st.session_state.kelompok['kondisi20']:
         st.session_state.posttest=False
         st.session_state.game=False
         st.session_state.kelompok['kondisi27']=False
+        st.session_state.kevalidan_media = False
         st.rerun()
 def soal_adaptif():
     st.markdown(""" <div style="display:flex; justify-content:space-evenly;align-items:center; border:2px solid white; margin-bottom:10px; padding:2px; background-color:grey">
@@ -2374,6 +2560,7 @@ if st.session_state.kelompok['kondisi5']:
         st.session_state.posttest=False
         st.session_state.game=False
         st.session_state.kelompok['kondisi27']=False
+        st.session_state.kevalidan_media = False
         st.rerun()
 def soal_cerita1():
     st.markdown("""
@@ -2429,6 +2616,7 @@ if st.session_state.kelompok['kondisi6']:
         st.session_state.kelompok['kondisi1']=False
         st.session_state.posttest=False
         st.session_state.game=False
+        st.session_state.kevalidan_media = False
         st.rerun()
 
 def soal_cerita2():
@@ -2483,6 +2671,7 @@ if st.session_state.kelompok['kondisi7']:
         st.session_state.kelompok['kondisi1']=False
         st.session_state.posttest=False
         st.session_state.game=False
+        st.session_state.kevalidan_media = False
         st.rerun()
 
 def soal_cerita3():
@@ -2536,6 +2725,7 @@ if st.session_state.kelompok['kondisi8']:
         st.session_state.posttest=False
         st.session_state.game=False
         st.session_state.kelompok['kondisi27']=False
+        st.session_state.kevalidan_media = False
         st.rerun()
         
 def soal_cerita4():
@@ -2589,6 +2779,7 @@ if st.session_state.kelompok['kondisi9']:
         st.session_state.posttest=False
         st.session_state.game=False
         st.session_state.kelompok['kondisi27']=False
+        st.session_state.kevalidan_media = False
         st.rerun()
 
 def soal_cerita5():
@@ -2644,6 +2835,7 @@ if st.session_state.kelompok['kondisi10']:
         st.session_state.posttest=False
         st.session_state.game=False
         st.session_state.kelompok['kondisi27']=False
+        st.session_state.kevalidan_media = False
         st.rerun()
 
 def soal_cerita6():
@@ -2698,6 +2890,7 @@ if st.session_state.kelompok['kondisi11']:
         st.session_state.kelompok['kondisi1']=False
         st.session_state.posttest=False
         st.session_state.kelompok['kondisi27']=False
+        st.session_state.kevalidan_media = False
         st.rerun()
 
 def soal_cerita7():
@@ -2752,6 +2945,7 @@ if st.session_state.kelompok['kondisi12']:
         st.session_state.posttest=False
         st.session_state.game=False
         st.session_state.kelompok['kondisi27']=False
+        st.session_state.kevalidan_media = False
         st.rerun()
 
 def soal_cerita8():
@@ -2806,6 +3000,7 @@ if st.session_state.kelompok['kondisi13']:
         st.session_state.posttest=False
         st.session_state.game=False
         st.session_state.kelompok['kondisi27']=False
+        st.session_state.kevalidan_media = False
         st.rerun()
 
 def soal_cerita9():
@@ -2860,6 +3055,7 @@ if st.session_state.kelompok['kondisi14']:
         st.session_state.posttest=False
         st.session_state.game=False
         st.session_state.kelompok['kondisi27']=False
+        st.session_state.kevalidan_media = False
         st.rerun()
 
 def soal_cerita10():
@@ -2913,6 +3109,7 @@ if st.session_state.kelompok['kondisi15']:
         st.session_state.posttest=False
         st.session_state.game=False
         st.session_state.kelompok['kondisi27']=False
+        st.session_state.kevalidan_media = False
         st.rerun()
 
 def hasil_akhir():
@@ -2974,6 +3171,7 @@ if st.session_state.kelompok['kondisi16']:
         st.session_state.posttest=False
         st.session_state.game=False
         st.session_state.kelompok['kondisi27']=False
+        st.session_state.kevalidan_media = False
         st.rerun()
 #==========================================
 if st.session_state.posttest:
@@ -3011,6 +3209,7 @@ if st.session_state.kelompok['kondisi26']:
         st.session_state.akhir=False
         st.session_state.game=False
         st.session_state.kelompok['kondisi27']=False
+        st.session_state.kevalidan_media = False
         st.rerun()
 #========================================
 if st.session_state.kelompok['kondisi23']:
@@ -3045,6 +3244,7 @@ if st.session_state.kelompok['kondisi23']:
         st.session_state.posttest=False
         st.session_state.game=False
         st.session_state.kelompok['kondisi27']=False
+        st.session_state.kevalidan_media = False
         st.rerun()
 #===============================================
 if st.session_state.kelompok['kondisi24']:
@@ -3067,7 +3267,7 @@ if st.session_state.kelompok['kondisi24']:
         st.session_state.pengecekan1 = False
         st.session_state.pengecekan2 = False
         st.session_state.pretest = False
-        st.session_state.kelompok['kondisi24']=True
+        st.session_state.kelompok['kondisi29']=True
         st.session_state.video1 = False
         st.session_state.video2 = False
         st.session_state.materi1 = False
@@ -3079,6 +3279,45 @@ if st.session_state.kelompok['kondisi24']:
         st.session_state.posttest=False
         st.session_state.game=False
         st.session_state.kelompok['kondisi27']=False
+        st.session_state.kevalidan_media = False
+        st.rerun()
+#===============
+if st.session_state.kevalidan_media:
+    st.markdown('<style>.st-key-tombol60 .e8vg11g2{background-color:blue;color:yellow}</style>',unsafe_allow_html=True)
+    tampilkan_kevalidan1()
+if st.session_state.kelompok['kondisi29']:
+    if st.sidebar.button("Pendapat Ahli media",key="tombol60"):
+        st.session_state.peta = False
+        st.session_state.prasyarat = False
+        st.session_state.materi_prasyarat = False
+        st.session_state.materi = False
+        st.session_state.adaptif=False
+        st.session_state.cerita1=False
+        st.session_state.cerita2=False
+        st.session_state.cerita3=False
+        st.session_state.cerita4=False
+        st.session_state.cerita5=False
+        st.session_state.cerita6=False
+        st.session_state.cerita7=False
+        st.session_state.cerita8=False
+        st.session_state.cerita9=False
+        st.session_state.cerita10=False
+        st.session_state.pengecekan1 = False
+        st.session_state.pengecekan2 = False
+        st.session_state.pretest = False
+        st.session_state.kelompok['kondisi29']=True
+        st.session_state.video1 = False
+        st.session_state.video2 = False
+        st.session_state.materi1 = False
+        st.session_state.pretest1=False
+        st.session_state.soal_kuisioner=False
+        st.session_state.soal_kevalidan=False
+        st.session_state.akhir=False
+        st.session_state.kelompok['kondisi1']=False
+        st.session_state.posttest=False
+        st.session_state.game=False
+        st.session_state.kelompok['kondisi27']=False
+        st.session_state.kevalidan_media = True
         st.rerun()
 
 
