@@ -1722,7 +1722,7 @@ if st.session_state.materi:
     st.markdown('<style>.st-key-tombol5 .e8vg11g2{background-color:blue;color:yellow}</style>',unsafe_allow_html=True)
     materi_tampilkan()
 if st.session_state.kelompok['kondisi4']:
-    if st.sidebar.button("Materi Persamaan 1 variabel",key="tombol5"):
+    if st.sidebar.button("Materi Persamaan 1 Variabel",key="tombol5"):
         st.session_state.peta = False
         st.session_state.prasyarat = False
         st.session_state.materi_prasyarat = False
@@ -3319,6 +3319,7 @@ if st.session_state.kelompok['kondisi29']:
         st.session_state.kelompok['kondisi27']=False
         st.session_state.kevalidan_media = True
         st.rerun()
+
 
 
 
