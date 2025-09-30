@@ -1211,7 +1211,7 @@ def soal_prasyarat():
     st.session_state.jawaban['jawab5'] = st.text_input("Jawaban no.5")
     st.markdown("6. jika $x=5$, hitunglah nilai dari $2x+7$")
     st.session_state.jawaban['jawab6'] = st.text_input("Jawaban no.6")
-    st.markdown("<div class='submenu'>C. Sifat Keteraan</div>",unsafe_allow_html=True)
+    st.markdown("<div class='submenu'>C. Sifat Kesetearaan</div>",unsafe_allow_html=True)
     st.markdown("7. Tentukan nilai x dari persamaan: $$x+4=10$$")
     st.session_state.jawaban['jawab7'] = st.text_input("Jawaban no.7")
     st.markdown("8. Tentukan nilai p dari persamaan: $$p-3=8$$")
@@ -3319,6 +3319,7 @@ if st.session_state.kelompok['kondisi29']:
         st.session_state.kelompok['kondisi27']=False
         st.session_state.kevalidan_media = True
         st.rerun()
+
 
 
 
