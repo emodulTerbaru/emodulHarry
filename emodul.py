@@ -2737,10 +2737,10 @@ def soal_cerita4():
                 - ##### Jika setiap siswa membayar Rp50.000, maka masih kurang Rp300.000.
                 """)
     st.markdown("##### Pertanyaan")
-    st.markdown("""
-                - ##### Tentukan jumlah siswa dalam kelas tersebut dengan menggunakan persamaan satu variabel.
-                - ##### Bagaimana kegiatan musyawarah dalam menentukan biaya ini sesuai dengan nilai kerakyatan dalam Pancasila?
-                """)
+    st.markdown("""<ol type='A'>
+                <li style='sont-size:20px'>Tentukan jumlah siswa dalam kelas tersebut dengan menggunakan persamaan satu variabel.</li>
+                <li style='sont-size:20px'> Bagaimana kegiatan musyawarah dalam menentukan biaya ini sesuai dengan nilai kerakyatan dalam Pancasila?</li>
+                """,unsafe_allow_html=True)
     st.session_state.jawaban1['jawab4']=st.text_area("Keterangan Jawaban4", value=st.session_state.jawaban1['jawab4'])
 if st.session_state.cerita4:
     st.markdown('<style>.st-key-tombol13 .e8vg11g2{background-color:blue;color:yellow}</style>',unsafe_allow_html=True)
@@ -2792,10 +2792,10 @@ def soal_cerita5():
                 """)
     st.markdown("##### Jumlah seluruh karung beras yang terkumpul adalah 47 karung.")
     st.markdown("##### Pertanyaan")
-    st.markdown("""
-                - ##### Tentukan berapa banyak karung beras yang disumbangkan masing-masing kelompok dengan menggunakan persamaan satu variabel.
-                - ##### Mengapa kegiatan ini mencerminkan nilai toleransi dan Ketuhanan Yang Maha Esa dalam Pancasila?
-                """)
+    st.markdown("""<ol type='A'>
+                <li style='font-size:20px'> Tentukan berapa banyak karung beras yang disumbangkan masing-masing kelompok dengan menggunakan persamaan satu variabel.</li>
+                <li style='font-size:20px'> Mengapa kegiatan ini mencerminkan nilai toleransi dan Ketuhanan Yang Maha Esa dalam Pancasila?</li>
+                """,unsafe_allow_html=True)
     st.session_state.jawaban1['jawab5']=st.text_area("Keterangan Jawaban5",value=st.session_state.jawaban1['jawab5'])
 if st.session_state.cerita5:
     st.markdown('<style>.st-key-tombol15 .e8vg11g2{background-color:blue;color:yellow}</style>',unsafe_allow_html=True)
@@ -3317,6 +3317,7 @@ if st.session_state.kelompok['kondisi29']:
         st.session_state.kelompok['kondisi27']=False
         st.session_state.kevalidan_media = True
         st.rerun()
+
 
 
 
