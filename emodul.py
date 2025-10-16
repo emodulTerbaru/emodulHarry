@@ -3006,17 +3006,17 @@ def soal_cerita9():
                 <div class="efek1">Musyawarah Menentukan Uang Kas(Sila ke-4: Kerakyatan yang Dipimpin oleh Hikmat Kebijaksanaan)</div>""",unsafe_allow_html=True)
     st.image("https://i.pinimg.com/736x/81/2b/1a/812b1acc0b6856b3eefde041db3bb318.jpg",use_container_width=True)
     st.markdown("##### Sebuah kelas berencana mengumpulkan uang kas untuk kegiatan akhir tahun.")
-    st.markdown("""<ol type='A'>
-                <li style='font-size:20px'> Mereka bermusyawarah dan memutuskan bahwa uang kas per siswa adalah Rp x </li>   
-                <li style='font-size:20px'> Agar tidak memberatkan siswa, uang kas minimal Rp20.000 dan maksimal Rp40.000 per bulan.</li>
-                <li style='font-size:20px'> Jumlah siswa dalam kelas adalah 30 orang.</li>
-                </ol>""",unsafe_allow_html=True)
-    st.markdown("##### Pertanyaan")
     st.markdown("""
-                - ##### Nyatakan kondisi di atas dalam bentuk pertidaksamaan.
-                - ##### Tentukan batas minimum dan maksimum uang kas kelas dalam sebulan.
-                - ##### Bagaimana kegiatan musyawarah ini mencerminkan nilai demokrasi dalam Pancasila?
+                - ##### Mereka bermusyawarah dan memutuskan bahwa uang kas per siswa adalah Rp $x$  
+                - ##### Agar tidak memberatkan siswa, uang kas minimal Rp20.000 dan maksimal Rp40.000 per bulan.
+                - ##### Jumlah siswa dalam kelas adalah 30 orang.
                 """)
+    st.markdown("##### Pertanyaan")
+    st.markdown("""<ol type='A'>
+                <li style='font-size:20px'> Nyatakan kondisi di atas dalam bentuk pertidaksamaan.</li>
+                <li style='font-size:20px'> Tentukan batas minimum dan maksimum uang kas kelas dalam sebulan.</li>
+                <li style='font-size:20px'> Bagaimana kegiatan musyawarah ini mencerminkan nilai demokrasi dalam Pancasila?</li>
+                """,unsafe_allow_html=True)
     st.session_state.jawaban1['jawab9']=st.text_area("Keterangan Jawaban9",value=st.session_state.jawaban1['jawab9'])
 if st.session_state.cerita9:
     st.markdown('<style>.st-key-tombol19 .e8vg11g2{background-color:blue;color:yellow}</style>',unsafe_allow_html=True)
@@ -3317,6 +3317,7 @@ if st.session_state.kelompok['kondisi29']:
         st.session_state.kelompok['kondisi27']=False
         st.session_state.kevalidan_media = True
         st.rerun()
+
 
 
 
