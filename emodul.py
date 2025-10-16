@@ -2684,8 +2684,8 @@ def soal_cerita3():
                 """)
     st.markdown("##### Pertanyaan")
     st.markdown("""<ol type='A'>
-                <li style='font-size=20px'> Tentukan berapa jumlah siswa dalam kelas tersebut.</li>
-                <li style='font-size=20px'>Bagaimana sikap membantu teman ini mencerminkan nilai keadilan sosial dalam Pancasila?</li>
+                <li style='font-size:20px'> Tentukan berapa jumlah siswa dalam kelas tersebut.</li>
+                <li style='font-size:20px'>Bagaimana sikap membantu teman ini mencerminkan nilai keadilan sosial dalam Pancasila?</li>
                 """,unsafe_allow_html=True)
     st.session_state.jawaban1['jawab3']=st.text_area("Keterangan Jawaban3",value=st.session_state.jawaban1['jawab3'])
 if st.session_state.cerita3:
@@ -3317,6 +3317,7 @@ if st.session_state.kelompok['kondisi29']:
         st.session_state.kelompok['kondisi27']=False
         st.session_state.kevalidan_media = True
         st.rerun()
+
 
 
 
