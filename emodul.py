@@ -2957,11 +2957,11 @@ def soal_cerita8():
                 - ##### Total dana yang akan terkumpul bergantung pada berapa besar sumbangan tiap siswa.
                 """)
     st.markdown("##### Pertanyaan")
-    st.markdown("""
-                - ##### Nyatakan jumlah sumbangan tiap siswa sebagai $x$, lalu buat pertidaksamaan yang menggambarkan kondisi tersebut.
-                - ##### Tentukan rentang total dana yang mungkin terkumpul.
-                - ##### Bagaimana kegiatan ini mencerminkan nilai keadilan sosial dalam Pancasila?
-                """)
+    st.markdown("""<ol type='A'>
+                <li style='font-size:20px'> Nyatakan jumlah sumbangan tiap siswa sebagai $x$, lalu buat pertidaksamaan yang menggambarkan kondisi tersebut.</li>
+                <li style='font-size:20px'> Tentukan rentang total dana yang mungkin terkumpul.</li>
+                <li style='font-size:20px'> Bagaimana kegiatan ini mencerminkan nilai keadilan sosial dalam Pancasila?</li>
+                </ol>""",unsafe_allow_htm=True)
     st.session_state.jawaban1['jawab8']=st.text_area("Keterangan Jawaban8",value=st.session_state.jawaban1['jawab8'])
 if st.session_state.cerita8:
     st.markdown('<style>.st-key-tombol18 .e8vg11g2{background-color:blue;color:yellow}</style>',unsafe_allow_html=True)
@@ -3006,11 +3006,11 @@ def soal_cerita9():
                 <div class="efek1">Musyawarah Menentukan Uang Kas(Sila ke-4: Kerakyatan yang Dipimpin oleh Hikmat Kebijaksanaan)</div>""",unsafe_allow_html=True)
     st.image("https://i.pinimg.com/736x/81/2b/1a/812b1acc0b6856b3eefde041db3bb318.jpg",use_container_width=True)
     st.markdown("##### Sebuah kelas berencana mengumpulkan uang kas untuk kegiatan akhir tahun.")
-    st.markdown("""
-                - ##### Mereka bermusyawarah dan memutuskan bahwa uang kas per siswa adalah Rp $x$   
-                - ##### Agar tidak memberatkan siswa, uang kas minimal Rp20.000 dan maksimal Rp40.000 per bulan.
-                - ##### Jumlah siswa dalam kelas adalah 30 orang.
-                """)
+    st.markdown("""<ol type='A'>
+                <li style='font-size:20px'> Mereka bermusyawarah dan memutuskan bahwa uang kas per siswa adalah Rp x </li>   
+                <li style='font-size:20px'> Agar tidak memberatkan siswa, uang kas minimal Rp20.000 dan maksimal Rp40.000 per bulan.</li>
+                <li style='font-size:20px'> Jumlah siswa dalam kelas adalah 30 orang.</li>
+                </ol>""",unsafe_allow_html=True)
     st.markdown("##### Pertanyaan")
     st.markdown("""
                 - ##### Nyatakan kondisi di atas dalam bentuk pertidaksamaan.
@@ -3066,11 +3066,11 @@ def soal_cerita10():
                 - ##### Jika jumlah warga yang ikut serta adalah 60 orang, maka jumlah total beras yang terkumpul akan berada dalam batas tertentu.
                 """)
     st.markdown("##### Pertanyaan")
-    st.markdown("""
-                - ##### Buat pertidaksamaan untuk menggambarkan jumlah sumbangan beras tiap warga.
-                - ##### Tentukan rentang jumlah total beras yang mungkin terkumpul.
-                - ##### Bagaimana kegiatan ini mencerminkan nilai toleransi antar umat beragama dan Ketuhanan Yang Maha Esa?
-                """)
+    st.markdown("""<ol type='A'>
+                <li style='font-size:20px'> Buat pertidaksamaan untuk menggambarkan jumlah sumbangan beras tiap warga.</li>
+                <li style='font-size:20px'> Tentukan rentang jumlah total beras yang mungkin terkumpul.</li>
+                <li style='font-size:20px'> Bagaimana kegiatan ini mencerminkan nilai toleransi antar umat beragama dan Ketuhanan Yang Maha Esa?</li>
+                </ol>""",unsafe_allow_html=True)
     st.session_state.jawaban1['jawab10']=st.text_area("Keterangan Jawaban10",st.session_state.jawaban1['jawab10'])
 if st.session_state.cerita10:
     st.markdown('<style>.st-key-tombol20 .e8vg11g2{background-color:blue;color:yellow}</style>',unsafe_allow_html=True)
@@ -3317,6 +3317,7 @@ if st.session_state.kelompok['kondisi29']:
         st.session_state.kelompok['kondisi27']=False
         st.session_state.kevalidan_media = True
         st.rerun()
+
 
 
 
