@@ -2625,9 +2625,9 @@ def soal_cerita2():
     st.image("https://st2.depositphotos.com/26922084/44234/v/450/depositphotos_442342356-stock-illustration-male-salesman-is-working-at.jpg",use_container_width=True)
     st.markdown("##### Dina membuka kios kecil di sekolah. Ia menjual roti seharga Rp4.000 dan teh botol seharga Rp6.000.")
     st.markdown("""
-                 #### Suatu hari, Dina mencatat jumlah roti yang terjual adalah x. 
-                 #### Jumlah teh botol yang terjual adalah 2 lebih banyak dari jumlah roti.
-                 #### Uang hasil penjualan seluruhnya adalah Rp62.000.
+                 - ##### Suatu hari, Dina mencatat jumlah roti yang terjual adalah x. 
+                 - ##### Jumlah teh botol yang terjual adalah 2 lebih banyak dari jumlah roti.
+                 - ##### Uang hasil penjualan seluruhnya adalah Rp62.000.
                 """)
     st.markdown("##### Pertanyaan")
     st.markdown("""<ol type="A">
@@ -3317,6 +3317,7 @@ if st.session_state.kelompok['kondisi29']:
         st.session_state.kelompok['kondisi27']=False
         st.session_state.kevalidan_media = True
         st.rerun()
+
 
 
 
