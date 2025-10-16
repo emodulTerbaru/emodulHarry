@@ -2625,17 +2625,15 @@ def soal_cerita2():
     st.image("https://st2.depositphotos.com/26922084/44234/v/450/depositphotos_442342356-stock-illustration-male-salesman-is-working-at.jpg",use_container_width=True)
     st.markdown("##### Dina membuka kios kecil di sekolah. Ia menjual roti seharga Rp4.000 dan teh botol seharga Rp6.000.")
     st.markdown("""
-                <ol type="A">
-                 <li style="font-size:20px"> Suatu hari, Dina mencatat jumlah roti yang terjual adalah x. </li>
-                 <li style="font-size:20px"> Jumlah teh botol yang terjual adalah 2 lebih banyak dari jumlah roti.</li>
-                  <li style="font-size:20px"> Uang hasil penjualan seluruhnya adalah Rp62.000.</li>
-                </ol>
-                """,unsafe_allow_html=True)
-    st.markdown("##### Pertanyaan")
-    st.markdown("""
-                - ##### Tentukan berapa jumlah roti yang Dina jual dengan menggunakan persamaan satu variabel.
-                - ##### Mengapa kejujuran dalam mencatat hasil penjualan merupakan bagian dari nilai kemanusiaan yang adil dan beradab?
+                 #### Suatu hari, Dina mencatat jumlah roti yang terjual adalah x. 
+                 #### Jumlah teh botol yang terjual adalah 2 lebih banyak dari jumlah roti.
+                 #### Uang hasil penjualan seluruhnya adalah Rp62.000.
                 """)
+    st.markdown("##### Pertanyaan")
+    st.markdown("""<ol type="A">
+                <li style="font-size:20px"> Tentukan berapa jumlah roti yang Dina jual dengan menggunakan persamaan satu variabel.</li>
+                <li style="font-size:20px"># Mengapa kejujuran dalam mencatat hasil penjualan merupakan bagian dari nilai kemanusiaan yang adil dan beradab?</li>
+                """, unsafe_allow_html=True)
     st.session_state.jawaban1['jawab2']=st.text_area("Keterangan Jawaban2",value=st.session_state.jawaban1['jawab2'])
 if st.session_state.cerita2:
     st.markdown('<style>.st-key-tombol11 .e8vg11g2{background-color:blue;color:yellow}</style>',unsafe_allow_html=True)
@@ -3319,6 +3317,7 @@ if st.session_state.kelompok['kondisi29']:
         st.session_state.kelompok['kondisi27']=False
         st.session_state.kevalidan_media = True
         st.rerun()
+
 
 
 
