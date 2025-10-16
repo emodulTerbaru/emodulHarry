@@ -2738,8 +2738,8 @@ def soal_cerita4():
                 """)
     st.markdown("##### Pertanyaan")
     st.markdown("""<ol type='A'>
-                <li style='sont-size:20px'>Tentukan jumlah siswa dalam kelas tersebut dengan menggunakan persamaan satu variabel.</li>
-                <li style='sont-size:20px'> Bagaimana kegiatan musyawarah dalam menentukan biaya ini sesuai dengan nilai kerakyatan dalam Pancasila?</li>
+                <li style='font-size:20px'>Tentukan jumlah siswa dalam kelas tersebut dengan menggunakan persamaan satu variabel.</li>
+                <li style='font-size:20px'> Bagaimana kegiatan musyawarah dalam menentukan biaya ini sesuai dengan nilai kerakyatan dalam Pancasila?</li>
                 """,unsafe_allow_html=True)
     st.session_state.jawaban1['jawab4']=st.text_area("Keterangan Jawaban4", value=st.session_state.jawaban1['jawab4'])
 if st.session_state.cerita4:
@@ -3317,6 +3317,7 @@ if st.session_state.kelompok['kondisi29']:
         st.session_state.kelompok['kondisi27']=False
         st.session_state.kevalidan_media = True
         st.rerun()
+
 
 
 
