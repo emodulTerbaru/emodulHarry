@@ -2683,10 +2683,10 @@ def soal_cerita3():
                 - ##### Setelah dihitung ulang, ternyata ada 5 siswa yang tidak ikut menyumbang, sehingga total yang terkumpul hanya Rp1.350.000.
                 """)
     st.markdown("##### Pertanyaan")
-    st.markdown("""
-                - ##### Tentukan berapa jumlah siswa dalam kelas tersebut.
-                - ##### Bagaimana sikap membantu teman ini mencerminkan nilai keadilan sosial dalam Pancasila?
-                """)
+    st.markdown("""<ol type='A'>
+                <li style='font-size=20px'> Tentukan berapa jumlah siswa dalam kelas tersebut.</li>
+                <li style='font-size=20px'>Bagaimana sikap membantu teman ini mencerminkan nilai keadilan sosial dalam Pancasila?</li>
+                """,unsafe_allow_html=True)
     st.session_state.jawaban1['jawab3']=st.text_area("Keterangan Jawaban3",value=st.session_state.jawaban1['jawab3'])
 if st.session_state.cerita3:
     st.markdown('<style>.st-key-tombol12 .e8vg11g2{background-color:blue;color:yellow}</style>',unsafe_allow_html=True)
@@ -3317,6 +3317,7 @@ if st.session_state.kelompok['kondisi29']:
         st.session_state.kelompok['kondisi27']=False
         st.session_state.kevalidan_media = True
         st.rerun()
+
 
 
 
