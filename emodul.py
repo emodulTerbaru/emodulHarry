@@ -2847,11 +2847,11 @@ def soal_cerita6():
                 - ##### Jumlah keluarga di desa tersebut adalah 120.
                 """)
     st.markdown("##### Pertanyaan")
-    st.markdown("""
-                - ##### Nyatakan situasi ini dalam bentuk pertidaksamaan satu variabel.
-                - ##### Berapakah rentang nilai sumbangan yang mungkin diminta panitia?
-                - ##### Bagaimana kegiatan gotong royong ini mencerminkan nilai persatuan dan kebersamaan dalam Pancasila?
-                """)
+    st.markdown("""<ol type='A'>
+                <li style='font-size:20px'> Nyatakan situasi ini dalam bentuk pertidaksamaan satu variabel.</li>
+                <li style='font-size:20px'> Berapakah rentang nilai sumbangan yang mungkin diminta panitia?</li>
+                <li style='font-size:20px'> Bagaimana kegiatan gotong royong ini mencerminkan nilai persatuan dan kebersamaan dalam Pancasila?</li>
+                </ol>""",unsafe_allow_html=True)
     st.session_state.jawaban1['jawab6']=st.text_area("Keterangan Jawaban6",value=st.session_state.jawaban1['jawab6'])
 if st.session_state.cerita6:
     st.markdown('<style>.st-key-tombol16 .e8vg11g2{background-color:blue;color:yellow}</style>',unsafe_allow_html=True)
@@ -2902,11 +2902,11 @@ def soal_cerita7():
                 - ##### Jika jumlah roti yang tidak terjual dikurangi, Ani akan rugi. Oleh karena itu, ia ingin memastikan jumlah roti yang dibawa masih cukup wajar agar bisa laku habis.
                 """)
     st.markdown("##### Pertanyaan")
-    st.markdown("""
-                - ##### Tuliskan pertidaksamaan yang menyatakan jumlah roti yang dibawa Ani.
-                - ##### Jika setiap roti yang terjual memberi keuntungan Rp1.000, tentukan batas minimum dan maksimum keuntungan Ani dalam sehari.
-                - ##### Mengapa sikap jujur Ani dalam mencatat hasil penjualan sesuai dengan nilai kemanusiaan yang adil dan beradab?
-                """)
+    st.markdown("""<ol type='A'>
+                <li style='font-size:20px'> Tuliskan pertidaksamaan yang menyatakan jumlah roti yang dibawa Ani. </li>
+                <li style='font-size:20px'> Jika setiap roti yang terjual memberi keuntungan Rp1.000, tentukan batas minimum dan maksimum keuntungan Ani dalam sehari.</li>
+                <li style='font-size:20px'> Mengapa sikap jujur Ani dalam mencatat hasil penjualan sesuai dengan nilai kemanusiaan yang adil dan beradab?</li>
+                </ol>""", unsafe_allow_html=True)
     st.session_state.jawaban1['jawab7']=st.text_area("Keterangan Jawaban7",st.session_state.jawaban1['jawab7'])
 if st.session_state.cerita7:
     st.markdown('<style>.st-key-tombol17 .e8vg11g2{background-color:blue;color:yellow}</style>',unsafe_allow_html=True)
@@ -3317,6 +3317,7 @@ if st.session_state.kelompok['kondisi29']:
         st.session_state.kelompok['kondisi27']=False
         st.session_state.kevalidan_media = True
         st.rerun()
+
 
 
 
